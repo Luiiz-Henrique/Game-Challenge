@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://trqf6sx442fx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_082ss"]
+bg_color = Color(0.93333334, 0.7647059, 0.6039216, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.7726917, 0.5352934, 0.31039932, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0.08422076, 0.09163397, 0.8666667)
+
+[node name="TextureRect" type="TextureRect" unique_id=338028740]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = -6.166992
+offset_bottom = -13.452148
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0026016869
+
+[node name="Button3" type="Button" parent="." unique_id=677642446]
+layout_mode = 0
+offset_left = 746.2517
+offset_top = 672.94385
+offset_right = 1135.0981
+offset_bottom = 804.37885
+rotation = 0.006866662
+theme_override_colors/font_color = Color(0.19607843, 0.23529412, 0.22352941, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_082ss")
+text = "RESTART
+"
+
+[node name="Button" type="Button" parent="." unique_id=1243346075]
+layout_mode = 0
+offset_left = 738.6472
+offset_top = 520.92365
+offset_right = 1140.4053
+offset_bottom = 648.72925
+rotation = 0.006866662
+theme_override_colors/font_color = Color(0.19607843, 0.23529412, 0.22352941, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_082ss")
+text = "RESUME
+"
+
+[node name="Button2" type="Button" parent="." unique_id=1877600546]
+layout_mode = 0
+offset_left = 747.84076
+offset_top = 830.94855
+offset_right = 1134.877
+offset_bottom = 959.7618
+rotation = 0.006866662
+theme_override_colors/font_color = Color(0.19607843, 0.23529412, 0.22352941, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_082ss")
+text = "HOME
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=954683117]
+layout_mode = 0
+offset_left = 362.32233
+offset_top = 260.9435
+offset_right = 402.32233
+offset_bottom = 300.9435
+
+[node name="Label" type="Label" parent="." unique_id=946561588]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 0.34300002
+anchor_right = 0.60400003
+anchor_bottom = 0.35700002
+offset_left = -248.25198
+offset_top = -30.224487
+offset_right = 248.08191
+offset_bottom = 149.89987
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "GAME PAUSE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
