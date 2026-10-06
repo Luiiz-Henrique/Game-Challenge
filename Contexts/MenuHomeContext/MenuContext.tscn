@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://bs0o1hsjl06og"]
+
+[ext_resource type="Texture2D" uid="uid://cq6mftd2fxd7g" path="res://Assets/background_interface2.jpg" id="1_5vvkv"]
+[ext_resource type="PackedScene" uid="uid://c0ef7yb141lfc" path="res://Scenes/Button_customizado.tscn" id="2_qlhpb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el7go"]
+bg_color = Color(0.29411766, 0.4117647, 0.18431373, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 7
+shadow_color = Color(0.21679404, 0.36243317, 0.26360652, 1)
+shadow_size = 20
+shadow_offset = Vector2(10, -5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsb0n"]
+bg_color = Color(0.29411766, 0.4117647, 0.18431373, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.21568628, 0.36078432, 0.2627451, 1)
+shadow_size = 20
+shadow_offset = Vector2(15, -5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tibv"]
+bg_color = Color(0.29411766, 0.4117647, 0.18431373, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.21568628, 0.36078432, 0.2627451, 1)
+shadow_size = 29
+shadow_offset = Vector2(15, 5)
+
+[sub_resource type="FontFile" id="FontFile_8ib44"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_wr2o8"]
+line_spacing = 20.0
+font = SubResource("FontFile_8ib44")
+font_size = 80
+font_color = Color(0.8463432, 0.7427087, 0.9391626, 1)
+outline_size = 5
+outline_color = Color(0.14586785, 0.14586785, 0.14586785, 1)
+shadow_size = 40
+shadow_offset = Vector2(1000, 100)
+
+[node name="TextureRect" type="TextureRect" unique_id=678555536]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -231.0
+offset_right = 12.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_5vvkv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=319663632]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46100003
+anchor_right = 0.5
+anchor_bottom = 0.46100003
+offset_left = -213.0
+offset_top = -123.62604
+offset_right = 211.0
+offset_bottom = 123.37396
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Button" parent="VBoxContainer" unique_id=1108512567 instance=ExtResource("2_qlhpb")]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_el7go")
+button_mask = 7
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2048183536]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_gsb0n")
+text = "Settings
+"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=584341711]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_4tibv")
+button_mask = 7
+text = "Close
+
+"
+
+[node name="Label" type="Label" parent="." unique_id=969303422]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.23200001
+anchor_right = 0.5
+anchor_bottom = 0.23200001
+offset_left = -366.0
+offset_top = -12.712006
+offset_right = 365.0
+offset_bottom = 68.287994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "ALIENS IN SERTAO"
+label_settings = SubResource("LabelSettings_wr2o8")
+horizontal_alignment = 1
