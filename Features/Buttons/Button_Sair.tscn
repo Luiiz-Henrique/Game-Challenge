@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cdxnbc0f5wndn"]
+
+[ext_resource type="Texture2D" path="res://Features/Buttons/botaoSair.svg" id="1_3qt45"]
+
+[node name="Button_sair" type="TextureButton" unique_id=874596736]
+offset_left = 121.0
+offset_top = 237.0
+offset_right = 249.0
+offset_bottom = 335.0
+texture_normal = ExtResource("1_3qt45")
+ignore_texture_size = true
+stretch_mode = 5

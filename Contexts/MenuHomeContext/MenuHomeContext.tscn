@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bt5uvd8i47bsf"]
+
+[ext_resource type="Texture2D" uid="uid://bjq6yke47v53d" path="res://Contexts/MenuHomeContext/Tela Inicial.png" id="1_5fdye"]
+[ext_resource type="PackedScene" uid="uid://c4l62jg4c6m1q" path="res://Features/Buttons/Button_jogar.tscn" id="2_5a3en"]
+[ext_resource type="PackedScene" uid="uid://cdxnbc0f5wndn" path="res://Features/Buttons/Button_Sair.tscn" id="3_5fdye"]
+[ext_resource type="PackedScene" uid="uid://dpejrm65ji5eh" path="res://Features/Buttons/Button_Ajustes.tscn" id="4_5fdye"]
+
+[node name="MenuHomeContext" type="TextureRect" unique_id=359420042]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5fdye")
+
+[node name="Botao_jogar" parent="." unique_id=711292972 instance=ExtResource("2_5a3en")]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 341.0
+offset_right = 266.0
+offset_bottom = 425.0
+
+[node name="Button_sair" parent="." unique_id=874596736 instance=ExtResource("3_5fdye")]
+visible = false
+layout_mode = 0
+offset_left = 148.0
+offset_top = 514.0
+offset_right = 285.0
+offset_bottom = 641.0
+stretch_mode = 6
+
+[node name="TextureButton" parent="." unique_id=1079639817 instance=ExtResource("4_5fdye")]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 423.0
+offset_right = 323.0
+offset_bottom = 526.0
+stretch_mode = 6
