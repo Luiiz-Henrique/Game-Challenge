@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dom7r5kyoed2o"]
+
+[ext_resource type="Texture2D" uid="uid://b800y22vs60mx" path="res://Features/Cenarios/CenarioInverno.png" id="1_4yahv"]
+
+[node name="CenarioInverno" type="Node2D" unique_id=1630050829]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889922883]
+position = Vector2(201, 437)
+texture = ExtResource("1_4yahv")
