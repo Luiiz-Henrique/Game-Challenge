@@ -11,12 +11,20 @@ config_version=5
 [application]
 
 config/name="Game-Challenge-Project"
+run/main_scene="res://Core/Root.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
+
+[autoload]
+
+GameState="*res://Core/GameState.gd"
 
 [display]
 
+window/size/viewport_width=402
+window/size/viewport_height=874
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
 
 [physics]
 
