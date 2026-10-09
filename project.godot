@@ -20,8 +20,9 @@ GameState="*res://Core/GameState.gd"
 
 [display]
 
-window/size/viewport_width=402
-window/size/viewport_height=874
+
+window/size/viewport_width=393
+window/size/viewport_height=852
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
