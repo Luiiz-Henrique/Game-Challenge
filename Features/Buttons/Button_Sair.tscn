@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdxnbc0f5wndn"]
 
-[ext_resource type="Texture2D" path="res://Features/Buttons/botaoSair.svg" id="1_3qt45"]
+[ext_resource type="Texture2D" uid="uid://dktabwygbc0xu" path="res://Features/Buttons/botaaoSair.svg" id="1_3qt45"]
 
 [node name="Button_sair" type="TextureButton" unique_id=874596736]
 offset_left = 121.0
