@@ -3,9 +3,16 @@ extends TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+  pressed.connect(_pressioned_button)
+  pressed.connect(change_scene_to_file)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
+	
+	
+func _pressioned_button() -> void: 
+ print("O botão de rankink foi apertado com sucesso!")
+	
+	
+	
+func change_scene_to_file() -> void:
+ print("testando.....")
