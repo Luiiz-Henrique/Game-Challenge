@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game-Challenge-Project"
-run/main_scene="res://Core/Root.tscn"
+run/main_scene="uid://bt5uvd8i47bsf"
 config/features=PackedStringArray("4.7", "Mobile")
 
 [autoload]
@@ -19,7 +19,6 @@ config/features=PackedStringArray("4.7", "Mobile")
 GameState="*res://Core/GameState.gd"
 
 [display]
-
 
 window/size/viewport_width=393
 window/size/viewport_height=852

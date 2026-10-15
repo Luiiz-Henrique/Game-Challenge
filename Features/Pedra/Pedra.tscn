@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Features/Pedra/Pedra.gd" id="1_pedra"]
+[ext_resource type="Texture2D" path="res://Features/Pedra/rocha.png" id="2_rocha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pedra"]
+radius = 45.0
+
+[node name="Pedra" type="Node2D"]
+script = ExtResource("1_pedra")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_rocha")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pedra")
