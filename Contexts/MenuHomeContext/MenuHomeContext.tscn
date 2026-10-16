@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c4l62jg4c6m1q" path="res://Features/Buttons/Button_jogar.tscn" id="2_5a3en"]
 [ext_resource type="PackedScene" uid="uid://cdxnbc0f5wndn" path="res://Features/Buttons/Button_Sair.tscn" id="3_5fdye"]
 [ext_resource type="PackedScene" uid="uid://dpejrm65ji5eh" path="res://Features/Buttons/Button_Ajustes.tscn" id="4_5fdye"]
+[ext_resource type="Script" path="res://Contexts/MenuHomeContext/MenuHomeContext.gd" id="5_home"]
 
 [node name="MenuHomeContext" type="TextureRect" unique_id=359420042]
+script = ExtResource("5_home")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
