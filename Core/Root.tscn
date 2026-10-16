@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://q7b3yx5npjgb"]
 
-[ext_resource type="PackedScene" uid="uid://c5q34lo5ii7uj" path="res://Contexts/GameContext/GameContext.tscn" id="1_gamecontext"]
+[ext_resource type="PackedScene" path="res://Contexts/GameContext/GameContext.tscn" id="1_gamecontext"]
 
 [node name="Root" type="Node2D" unique_id=1222170244]
 
-[node name="GameContext" parent="." unique_id=904176780 instance=ExtResource("1_gamecontext")]
-position = Vector2(138, -33)
+[node name="GameContext" parent="." instance=ExtResource("1_gamecontext")]

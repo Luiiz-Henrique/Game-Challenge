@@ -11,15 +11,8 @@ config_version=5
 [application]
 
 config/name="Game-Challenge-Project"
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 run/main_scene="uid://bt5uvd8i47bsf"
-=======
-run/main_scene="uid://cd3igma6id1wr"
->>>>>>> 5a91b38e4781885995e3a89b2e168ecf8a591a81
-=======
-run/main_scene="uid://bt5uvd8i47bsf"
->>>>>>> 0b679cd63e1688ea062b32d33e9936c4277a9e6d
 config/features=PackedStringArray("4.7", "Mobile")
 
 [autoload]
