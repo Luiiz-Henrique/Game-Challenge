@@ -9,8 +9,6 @@ extends Node2D
 
 signal player_atingido
 
-var pistas_x: Array = [111.0, 201.0, 291.0]
-
 @onready var area_detecao: Area2D = $Area2D
 
 
@@ -28,7 +26,7 @@ func mover(delta: float, velocidade_atual: float) -> void:
 
 func _reposicionar() -> void:
 	position.y = -100.0
-	position.x = pistas_x.pick_random()
+	position.x = float(GameState.PISTAS_X.pick_random())
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
