@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://tybva3clgqa1"]
+
+[node name="BarraProgressaoMap" type="Control" unique_id=1964029799]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1687103888]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
