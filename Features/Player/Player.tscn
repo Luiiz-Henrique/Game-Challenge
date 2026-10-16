@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
-size = Vector2(90, 130)
+size = Vector2(71, 86)
 
 [node name="Player" type="CharacterBody2D" unique_id=1870082046]
 position = Vector2(201, 740)
@@ -27,10 +27,11 @@ disable_mode = 1
 script = ExtResource("1_player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=193645008]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_player")
 animation = &"correr"
 autoplay = "correr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736100201]
+position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_player")

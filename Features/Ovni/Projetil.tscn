@@ -29,7 +29,7 @@ script = SubResource("GDScript_g7rqx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1754226477]
 position = Vector2(1.1920929e-07, 0)
-scale = Vector2(0.08196722, 0.08292414)
+scale = Vector2(0.149, 0.15)
 texture = ExtResource("1_g7rqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=167884361]

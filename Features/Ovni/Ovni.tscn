@@ -31,7 +31,7 @@ script = SubResource("GDScript_q2sbe")
 metadata/_edit_vertical_guides_ = [-40.0, 41.0, 1.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540491839]
-scale = Vector2(0.08512395, 0.08512394)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_gfncp")
 
 [node name="Timer" type="Timer" parent="." unique_id=2090914021]
