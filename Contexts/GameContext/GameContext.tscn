@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://c5q34lo5ii7uj"]
 
 [ext_resource type="Script" uid="uid://ojosiilu8hqp" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
@@ -6,8 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://blrscng8pmaca" path="res://Features/Player/Player.tscn" id="4_player"]
 
 [node name="GameContext" type="Node2D" unique_id=1140571571]
-script = ExtResource("1_gamecontext")
+=======
+[gd_scene format=3 uid="uid://dwum8lcw0ylkm"]
 
+[ext_resource type="Script" uid="uid://ojosiilu8hqp" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
+[ext_resource type="PackedScene" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
+[ext_resource type="PackedScene" uid="uid://cd3igma6id1wr" path="res://Features/Ovni/Ovni.tscn" id="3_2bxrs"]
+
+[node name="GameContext" type="Node2D" unique_id=1716920165]
+>>>>>>> 5a91b38e4781885995e3a89b2e168ecf8a591a81
+script = ExtResource("1_gamecontext")
+metadata/_edit_vertical_guides_ = [80.0, 160.0, 163.0, 243.0, 246.0, 326.0, 288.0, 205.0, 122.0]
+
+<<<<<<< HEAD
 [node name="CenarioSpawner" parent="." unique_id=170833297 instance=ExtResource("2_cenario")]
 
 [node name="Pedra" parent="." unique_id=887827451 instance=ExtResource("3_pedra")]
@@ -17,3 +29,9 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1718007149]
 position = Vector2(197, 426)
+=======
+[node name="CenarioSpawner" parent="." unique_id=122773633 instance=ExtResource("2_cenario")]
+
+[node name="Ovni" parent="." unique_id=735828122 instance=ExtResource("3_2bxrs")]
+position = Vector2(203, 60)
+>>>>>>> 5a91b38e4781885995e3a89b2e168ecf8a591a81
