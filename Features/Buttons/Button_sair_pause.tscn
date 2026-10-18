@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bjpmc4ajld3m5"]
+
+[ext_resource type="Texture2D" uid="uid://b50fu7ye2ihoi" path="res://Features/Buttons/botaoSair 1.svg" id="1_7wd24"]
+[ext_resource type="Script" uid="uid://lpnef03wg2ew" path="res://Features/Buttons/action_button_sair_pause.gd" id="2_2kejp"]
+
+[node name="ButtonSairPause" type="TextureButton" unique_id=1002595391]
+anchors_preset = -1
+anchor_left = 0.305
+anchor_top = 0.30900002
+anchor_right = 0.57000005
+anchor_bottom = 0.379
+offset_left = 0.1349945
+offset_top = -0.26800537
+offset_right = -0.010025024
+offset_bottom = 0.09197998
+texture_normal = ExtResource("1_7wd24")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_2kejp")
