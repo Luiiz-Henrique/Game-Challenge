@@ -1,9 +1,27 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://bsdo7fyicjbcr"]
 
-[ext_resource type="Script" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
-[ext_resource type="PackedScene" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
+[ext_resource type="Script" uid="uid://ojosiilu8hqp" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
+[ext_resource type="PackedScene" uid="uid://deb2l2tgc13v3" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
+[ext_resource type="PackedScene" path="res://Features/Pedra/Pedra.tscn" id="3_pedra"]
+[ext_resource type="PackedScene" uid="uid://blrscng8pmaca" path="res://Features/Player/Player.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://cd3igma6id1wr" path="res://Features/Ovni/Ovni.tscn" id="5_ovni"]
 
-[node name="GameContext" type="Node2D"]
+[node name="GameContext" type="Node2D" unique_id=1716920165]
 script = ExtResource("1_gamecontext")
 
-[node name="CenarioSpawner" parent="." instance=ExtResource("2_cenario")]
+[node name="CenarioSpawner" parent="." unique_id=170833297 instance=ExtResource("2_cenario")]
+modo_atual = 1
+
+[node name="Pedra" parent="." unique_id=887827451 instance=ExtResource("3_pedra")]
+scale = Vector2(0.7, 0.7)
+
+[node name="Player" parent="." unique_id=1815302287 instance=ExtResource("4_player")]
+scale = Vector2(0.8, 0.8)
+
+[node name="Ovni" parent="." unique_id=735828122 instance=ExtResource("5_ovni")]
+position = Vector2(203, 60)
+
+[node name="Projeteis" type="Node2D" parent="." unique_id=2000000001]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1718007149]
+position = Vector2(197, 426)
