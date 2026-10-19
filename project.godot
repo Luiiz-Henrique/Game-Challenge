@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Game-Challenge-Project"
-
 run/main_scene="uid://bt5uvd8i47bsf"
 config/features=PackedStringArray("4.7", "Mobile")
 
@@ -35,3 +34,4 @@ window/handheld/orientation=1
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
