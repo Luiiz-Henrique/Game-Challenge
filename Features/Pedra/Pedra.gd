@@ -11,6 +11,7 @@ signal player_atingido
 
 @onready var area_detecao: Area2D = $Area2D
 
+const tela_morte = preload("res://Features/Pedra/Pedra.tscn")
 
 func _ready() -> void:
 	area_detecao.body_entered.connect(_on_area_2d_body_entered)
@@ -27,6 +28,12 @@ func mover(delta: float, velocidade_atual: float) -> void:
 func _reposicionar() -> void:
 	position.y = -100.0
 	position.x = float(GameState.PISTAS_X.pick_random())
+
+
+
+
+
+
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bimknq0heglki"]
+
+[ext_resource type="Texture2D" uid="uid://cvtoahh2dno25" path="res://Contexts/Tela_bateu_obstaculo/popuptentenovamentefundo 1 [Vectorized].svg" id="1_0dwnu"]
+[ext_resource type="PackedScene" uid="uid://cwyfvpbe72n53" path="res://Features/Buttons/Button_tentar_novamente.tscn" id="2_ruh1n"]
+
+[node name="PopupColisao" type="TextureRect" unique_id=1186763229]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 295.0
+offset_right = -23.0
+offset_bottom = -345.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0dwnu")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ButtonTentarNovamente" parent="." unique_id=1080584506 instance=ExtResource("2_ruh1n")]
+layout_mode = 1
+offset_left = 11.473999
+offset_top = 49.243996
+offset_right = 9.747986
+offset_bottom = 87.827995

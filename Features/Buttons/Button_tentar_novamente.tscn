@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cwyfvpbe72n53"]
+
+[ext_resource type="Texture2D" uid="uid://bhw31ja2pt8hs" path="res://Features/Buttons/tentar novamente 1 [Vectorized]-3.svg" id="1_xdvlp"]
+[ext_resource type="Script" uid="uid://53vbhvc5ugt4" path="res://Features/Buttons/action_button_tentar_novamente.gd" id="2_3owrf"]
+
+[node name="ButtonTentarNovamente" type="TextureButton" unique_id=1523029344]
+anchors_preset = -1
+anchor_left = 0.21900001
+anchor_top = 0.263
+anchor_right = 0.73800004
+anchor_bottom = 0.33100003
+offset_left = -18.067001
+offset_top = 1.923996
+offset_right = 27.965973
+offset_bottom = 23.987976
+texture_normal = ExtResource("1_xdvlp")
+stretch_mode = 5
+script = ExtResource("2_3owrf")
