@@ -7,6 +7,7 @@ extends Node2D
 
 signal bloco_reciclado
 
+
 enum ModoGeracao { SEQUENCIAL, ALEATORIO }
 @export var modo_atual: ModoGeracao = ModoGeracao.SEQUENCIAL
 

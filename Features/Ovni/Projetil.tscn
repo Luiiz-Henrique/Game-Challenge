@@ -1,7 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://cojr1xeaowrr3"]
 
-[ext_resource type="Script" path="res://Features/Ovni/Projetil.gd" id="1_projetil"]
-[ext_resource type="Texture2D" uid="uid://b2dbdrsf7omrs" path="res://Features/Ovni/projetil.svg" id="2_g7rqx"]
+[ext_resource type="Texture2D" uid="uid://b2dbdrsf7omrs" path="res://Features/Ovni/projetil.svg" id="1_g7rqx"]
+
+[sub_resource type="GDScript" id="GDScript_g7rqx"]
+resource_name = "Projetil"
+script/source = "extends Area2D
+
+var velocidade_projetil = GameState.velocidade_atual * 1.2 #Fogo mais rápido que o cenário para chegar no jogador.
+
+func _process(delta: float) -> void:
+	global_position.y += velocidade_projetil * delta # Move o fogo na direção vertical (pra cima)
+	
+	#if global_position.y < -100: #Fogo some ao sair da tela (passar do jogador)
+	#	queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == \"Player\":
+		print(\"Você morreu!\")
+		queue_free()
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q2sbe"]
 radius = 8.0

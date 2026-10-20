@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://q7b3yx5npjgb"]
 
-[ext_resource type="PackedScene" path="res://Contexts/GameContext/GameContext.tscn" id="1_gamecontext"]
+[ext_resource type="PackedScene" uid="uid://dwum8lcw0ylkm" path="res://Contexts/GameContext/GameContext.tscn" id="1_gamecontext"]
 
 [node name="Root" type="Node2D" unique_id=1222170244]
 
