@@ -11,8 +11,6 @@ const VELOCIDADE_PROJETIL: float = 600.0
 
 @onready var cenario_spawner: CenarioSpawner = $CenarioSpawner
 @onready var barra_progressao: Control = $HUD/BarraProgressaoMap
-@onready var ovni: ProjetilOvni = $Ovni
-
 @onready var pedra: Pedra = $Pedra
 @onready var player: Player = $Player
 @onready var ovni: Ovni = $Ovni
@@ -23,8 +21,6 @@ func _ready() -> void:
 	popup.hide()
 	ovni.disparar.connect(_on_ovni_disparar)
 	pedra.player_atingido.connect(_reiniciar_corrida)
-
-func _ready() -> void:
 	# O GameContext conecta o sinal emitido pela Feature de Barra de Progressão
 	barra_progressao.stage_time_finished.connect(_on_stage_time_finished)
 
@@ -47,7 +43,7 @@ func _process(delta: float) -> void:
 	player.atualizar(delta)
 	ovni.atualizar(delta)
 	_atualizar_projeteis(delta)
-	print (velocidade_atuall)
+	print (velocidade_atual)
 	ovni.disparos_por_segundo(delta, velocidade_atual)
 
 
