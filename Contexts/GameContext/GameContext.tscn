@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ojosiilu8hqp" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
 [ext_resource type="PackedScene" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
 [ext_resource type="PackedScene" uid="uid://cd3igma6id1wr" path="res://Features/Ovni/Ovni.tscn" id="3_2bxrs"]
+[ext_resource type="PackedScene" uid="uid://tybva3clgqa1" path="res://Features/BarraProgressaoMap/BarraProgressaoMap.tscn" id="4_quj11"]
 
 [node name="GameContext" type="Node2D" unique_id=1716920165]
 script = ExtResource("1_gamecontext")
@@ -11,4 +12,18 @@ metadata/_edit_vertical_guides_ = [80.0, 160.0, 163.0, 243.0, 246.0, 326.0, 288.
 [node name="CenarioSpawner" parent="." unique_id=122773633 instance=ExtResource("2_cenario")]
 
 [node name="Ovni" parent="." unique_id=735828122 instance=ExtResource("3_2bxrs")]
-position = Vector2(203, 60)
+position = Vector2(203, 104)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=56605100]
+
+[node name="BarraProgressaoMap" parent="HUD" unique_id=1964029799 instance=ExtResource("4_quj11")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 43.0
+offset_right = 150.0
+offset_bottom = 65.0
+grow_horizontal = 2
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true

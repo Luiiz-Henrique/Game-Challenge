@@ -6,7 +6,8 @@ extends Node
 
 signal velocidade_alterada(nova_velocidade: float)
 
-var velocidade_atual: float = 300.0:
+var velocidade_atual: float = 200.0:
 	set(valor):
 		velocidade_atual = valor
 		velocidade_alterada.emit(velocidade_atual)
+		
