@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbyh67tt0gi2f"
-path="res://.godot/imported/projetil.svg-7cbfd6d41f84551c691a053116265b0d.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Ovni/projetil.svg"
-dest_files=["res://.godot/imported/projetil.svg-7cbfd6d41f84551c691a053116265b0d.ctex"]
 
 [params]
 

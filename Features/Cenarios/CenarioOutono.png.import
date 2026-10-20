@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbytqo4v6ymts"
-path="res://.godot/imported/CenarioOutono.png-2f466681c3e6ab7c8d97a02c48b73668.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Cenarios/CenarioOutono.png"
-dest_files=["res://.godot/imported/CenarioOutono.png-2f466681c3e6ab7c8d97a02c48b73668.ctex"]
 
 [params]
 
