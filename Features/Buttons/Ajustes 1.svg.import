@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs6wsdpvxjdkm"
-valid=false
+path="res://.godot/imported/Ajustes 1.svg-dd24bf856208825bf212440be8f6ef60.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Features/Buttons/Ajustes 1.svg"
+dest_files=["res://.godot/imported/Ajustes 1.svg-dd24bf856208825bf212440be8f6ef60.ctex"]
 
 [params]
 
