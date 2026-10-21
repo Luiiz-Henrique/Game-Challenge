@@ -16,6 +16,8 @@ const VELOCIDADE_PROJETIL: float = 600.0
 @onready var ovni: Ovni = $Ovni
 @onready var popup: TextureRect = $PopupColisao
 @onready var button_pause: TextureRect = $Pause
+
+
 func _ready() -> void:
 	button_pause.hide()
 	popup.hide()

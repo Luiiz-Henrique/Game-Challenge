@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://blrscng8pmaca" path="res://Features/Player/Player.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cd3igma6id1wr" path="res://Features/Ovni/Ovni.tscn" id="5_ovni"]
 [ext_resource type="PackedScene" uid="uid://bimknq0heglki" path="res://Contexts/Tela_bateu_obstaculo/popup_colisao.tscn" id="6_17kti"]
+[ext_resource type="PackedScene" uid="uid://c72p2etnga6u6" path="res://Contexts/MenuPauseContext/Pause.tscn" id="7_eaqf0"]
 [ext_resource type="PackedScene" uid="uid://tybva3clgqa1" path="res://Features/BarraProgressaoMap/BarraProgressaoMap.tscn" id="7_md41r"]
+[ext_resource type="PackedScene" uid="uid://eag1o6f54wc8" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
 
 [node name="GameContext" type="Node2D" unique_id=1716920165]
 script = ExtResource("1_gamecontext")
@@ -40,6 +42,12 @@ offset_right = 197.0
 offset_bottom = 31.0
 grow_vertical = 2
 
+[node name="Pause" parent="." unique_id=1079135318 instance=ExtResource("7_eaqf0")]
+offset_left = 10.466782
+offset_top = 235.57898
+offset_right = 364.4668
+offset_bottom = 555.579
+
 [node name="PopupColisao" parent="." unique_id=1186763229 instance=ExtResource("6_17kti")]
 z_index = 999
 offset_left = 30.02829
@@ -49,14 +57,12 @@ offset_bottom = 517.0
 expand_mode = 3
 stretch_mode = 3
 
-[node name="ButtonPauseInGame" parent="." unique_id=1313944824 instance=ExtResource("8_xf47c")]
+[node name="ButtonPauseInGame" parent="." unique_id=1313944824 instance=ExtResource("9_strpf")]
 anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 321.0
-offset_top = 30.0
-offset_right = 382.40015
-offset_bottom = 76.000305
+anchor_bottom = 0.386
+offset_left = 320.0
+offset_top = 75.0
+offset_right = 360.97498
+offset_bottom = 112.87201
 
 [connection signal="pressed" from="ButtonPauseInGame" to="." method="_on_pausar_pressed"]
