@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci57fdr4bw2hc"
-path="res://.godot/imported/botaoJogar 1.svg-08670291a99919ec22da4d8e0280f959.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Buttons/botaoJogar 1.svg"
-dest_files=["res://.godot/imported/botaoJogar 1.svg-08670291a99919ec22da4d8e0280f959.ctex"]
 
 [params]
 

@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dktabwygbc0xu"
-path="res://.godot/imported/botaaoSair.svg-0892049b33b7a9b356ac8ef0e07d4724.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Buttons/botaaoSair.svg"
-dest_files=["res://.godot/imported/botaaoSair.svg-0892049b33b7a9b356ac8ef0e07d4724.ctex"]
 
 [params]
 

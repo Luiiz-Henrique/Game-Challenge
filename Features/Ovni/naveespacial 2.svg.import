@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3rco6cksx4er"
-path="res://.godot/imported/naveespacial 2.svg-297652ce8e9808e45615a25384537b74.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Ovni/naveespacial 2.svg"
-dest_files=["res://.godot/imported/naveespacial 2.svg-297652ce8e9808e45615a25384537b74.ctex"]
 
 [params]
 
