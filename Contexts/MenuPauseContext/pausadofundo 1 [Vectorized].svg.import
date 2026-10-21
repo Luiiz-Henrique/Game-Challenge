@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhasvdcgd2ujk"
-path="res://.godot/imported/pausadofundo 1 [Vectorized].svg-a291f36cfc4298fac004029df9d7304c.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Contexts/MenuPauseContext/pausadofundo 1 [Vectorized].svg"
-dest_files=["res://.godot/imported/pausadofundo 1 [Vectorized].svg-a291f36cfc4298fac004029df9d7304c.ctex"]
 
 [params]
 

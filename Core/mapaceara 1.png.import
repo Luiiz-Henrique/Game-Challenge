@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://msx88cnkvsx2"
-path="res://.godot/imported/mapaceara 1.png-6ee71946dad53ad332432a81f1c6c1fd.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Core/mapaceara 1.png"
-dest_files=["res://.godot/imported/mapaceara 1.png-6ee71946dad53ad332432a81f1c6c1fd.ctex"]
 
 [params]
 

@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhw31ja2pt8hs"
-path="res://.godot/imported/tentar novamente 1 [Vectorized]-3.svg-c3c9cc3a6f59f7f543d9df1a0be86e3f.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Buttons/tentar novamente 1 [Vectorized]-3.svg"
-dest_files=["res://.godot/imported/tentar novamente 1 [Vectorized]-3.svg-c3c9cc3a6f59f7f543d9df1a0be86e3f.ctex"]
 
 [params]
 

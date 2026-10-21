@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvtoahh2dno25"
-path="res://.godot/imported/popuptentenovamentefundo 1 [Vectorized].svg-2a570ae6ae4355ad74b2ccbadce8dba5.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Contexts/Tela_bateu_obstaculo/popuptentenovamentefundo 1 [Vectorized].svg"
-dest_files=["res://.godot/imported/popuptentenovamentefundo 1 [Vectorized].svg-2a570ae6ae4355ad74b2ccbadce8dba5.ctex"]
 
 [params]
 

@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjq6yke47v53d"
-path="res://.godot/imported/Tela Inicial.png-acf9a3a16630beab3e163f6bfc9c3746.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Contexts/MenuHomeContext/Tela Inicial.png"
-dest_files=["res://.godot/imported/Tela Inicial.png-acf9a3a16630beab3e163f6bfc9c3746.ctex"]
 
 [params]
 

@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p45p2u7udlbl"
-path="res://.godot/imported/botaoPause2 1.svg-c816c13abd2424c41cbe7a9b979c97d3.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Buttons/botaoPause2 1.svg"
-dest_files=["res://.godot/imported/botaoPause2 1.svg-c816c13abd2424c41cbe7a9b979c97d3.ctex"]
 
 [params]
 

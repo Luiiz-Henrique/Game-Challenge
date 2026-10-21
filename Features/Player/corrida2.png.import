@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cveka8tvy23su"
-path="res://.godot/imported/corrida2.png-61f6b7fe5c1575b04024bf2f6db41e5a.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Features/Player/corrida2.png"
-dest_files=["res://.godot/imported/corrida2.png-61f6b7fe5c1575b04024bf2f6db41e5a.ctex"]
 
 [params]
 
