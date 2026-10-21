@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://y1f4m1vxu583"]
+
+[ext_resource type="Texture2D" uid="uid://brcx2c41noc1r" path="res://Features/Cenarios/CenarioVerão.png" id="1_ot6ic"]
+
+[node name="CenarioVerao" type="Node2D" unique_id=914240406]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=932024125]
+position = Vector2(201, 437)
+texture = ExtResource("1_ot6ic")

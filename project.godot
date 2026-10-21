@@ -11,12 +11,20 @@ config_version=5
 [application]
 
 config/name="Game-Challenge-Project"
+run/main_scene="uid://bt5uvd8i47bsf"
 config/features=PackedStringArray("4.7", "Mobile")
+
+[autoload]
+
+GameState="*res://Core/GameState.gd"
 
 [display]
 
+window/size/viewport_width=393
+window/size/viewport_height=852
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
 
 [physics]
 
@@ -26,3 +34,4 @@ window/stretch/aspect="expand"
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

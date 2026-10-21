@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bsdo7fyicjbcr"]
+
+[ext_resource type="Script" uid="uid://ojosiilu8hqp" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
+[ext_resource type="PackedScene" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
+[ext_resource type="PackedScene" uid="uid://cr5bfyo1tqglm" path="res://Features/Pedra/Pedra.tscn" id="3_pedra"]
+[ext_resource type="PackedScene" uid="uid://blrscng8pmaca" path="res://Features/Player/Player.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://cd3igma6id1wr" path="res://Features/Ovni/Ovni.tscn" id="5_ovni"]
+[ext_resource type="PackedScene" uid="uid://bimknq0heglki" path="res://Contexts/Tela_bateu_obstaculo/popup_colisao.tscn" id="6_17kti"]
+[ext_resource type="PackedScene" uid="uid://tybva3clgqa1" path="res://Features/BarraProgressaoMap/BarraProgressaoMap.tscn" id="7_md41r"]
+
+[node name="GameContext" type="Node2D" unique_id=1716920165]
+script = ExtResource("1_gamecontext")
+metadata/_edit_vertical_guides_ = [410.0]
+
+[node name="CenarioSpawner" parent="." unique_id=170833297 instance=ExtResource("2_cenario")]
+modo_atual = 1
+
+[node name="Pedra" parent="." unique_id=887827451 instance=ExtResource("3_pedra")]
+scale = Vector2(0.7, 0.7)
+
+[node name="Player" parent="." unique_id=1815302287 instance=ExtResource("4_player")]
+scale = Vector2(0.8, 0.8)
+
+[node name="Ovni" parent="." unique_id=735828122 instance=ExtResource("5_ovni")]
+position = Vector2(202, 100)
+
+[node name="Projeteis" type="Node2D" parent="." unique_id=2000000001]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1718007149]
+position = Vector2(197, 426)
+
+[node name="BarraProgressaoMap" parent="." unique_id=1964029799 instance=ExtResource("7_md41r")]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 197.0
+offset_top = 31.0
+offset_right = 197.0
+offset_bottom = 31.0
+grow_vertical = 2
+
+[node name="PopupColisao" parent="." unique_id=1186763229 instance=ExtResource("6_17kti")]
+z_index = 999
+offset_left = 30.02829
+offset_top = 323.0
+offset_right = 353.9717
+offset_bottom = 517.0
+expand_mode = 3
+stretch_mode = 3

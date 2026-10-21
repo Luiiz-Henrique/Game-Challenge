@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cojr1xeaowrr3"]
+
+[ext_resource type="Texture2D" uid="uid://bbyh67tt0gi2f" path="res://Features/Ovni/projetil.svg" id="1_g7rqx"]
+[ext_resource type="Script" uid="uid://fiibrob4sh1u" path="res://Features/Ovni/Projetil.gd" id="2_pdky3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abkkd"]
+radius = 32.0
+height = 114.0
+
+[node name="Projetil" type="Area2D" unique_id=454002053]
+script = ExtResource("2_pdky3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1141551112]
+position = Vector2(7.6293945e-06, 7.6293945e-06)
+scale = Vector2(0.35724038, 0.35724038)
+texture = ExtResource("1_g7rqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=130648954]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_abkkd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
