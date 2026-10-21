@@ -5,7 +5,6 @@ extends TextureRect
 ## seus sinais nativos (signal up); este contexto decide a navegação.
 
 const CENA_JOGO := "res://Core/Root.tscn"
-
 @onready var botao_jogar: TextureButton = $Botao_jogar
 
 

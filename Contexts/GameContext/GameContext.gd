@@ -15,8 +15,11 @@ const VELOCIDADE_PROJETIL: float = 600.0
 @onready var player: Player = $Player
 @onready var ovni: Ovni = $Ovni
 @onready var popup: TextureRect = $PopupColisao
+@onready var button_pause: TextureRect = $Pause
+
 
 func _ready() -> void:
+	button_pause.hide()
 	popup.hide()
 #	ovni.disparar.connect(_on_ovni_disparar)
 	pedra.player_atingido.connect(_reiniciar_corrida)
@@ -66,3 +69,8 @@ func _process(delta: float) -> void:
 func _reiniciar_corrida() -> void:
 	popup.show()
 	get_tree().paused = true
+
+func _on_pausar_pressed() -> void:
+	button_pause.show()
+	get_tree().paused = true 
+	

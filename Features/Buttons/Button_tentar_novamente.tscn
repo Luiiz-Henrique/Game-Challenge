@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://53vbhvc5ugt4" path="res://Features/Buttons/action_button_tentar_novamente.gd" id="2_3owrf"]
 
 [node name="ButtonTentarNovamente" type="TextureButton" unique_id=1523029344]
+anchors_preset = -1
 anchor_left = 0.21900001
 anchor_top = 0.263
 anchor_right = 0.73800004
