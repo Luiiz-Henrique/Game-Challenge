@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://eag1o6f54wc8"]
+
+[ext_resource type="Texture2D" uid="uid://p45p2u7udlbl" path="res://Features/Buttons/botaoPause2 1.svg" id="1_a31ao"]
+[ext_resource type="Script" uid="uid://cdq8akh376k27" path="res://Features/Buttons/action_button_pause_main.gd" id="2_rocaq"]
+
+[node name="ButtonPauseInGame" type="TextureButton" unique_id=1313944824]
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.386
+anchor_right = 0.62100005
+anchor_bottom = 0.46500003
+offset_left = -0.025009155
+offset_top = 0.12799072
+offset_right = -0.053024292
+offset_bottom = -0.1800232
+texture_normal = ExtResource("1_a31ao")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_rocaq")
