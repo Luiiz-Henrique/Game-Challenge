@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blrscng8pmaca"]
 
-[ext_resource type="Script" uid="uid://bidh2t3vgacgu" path="res://Features/Player/Player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://0xlvh6fsufwr" path="res://Features/Player/Player.gd" id="1_player"]
 [ext_resource type="Texture2D" uid="uid://di0l4gl30xvd3" path="res://Features/Player/corrida1.png" id="2_corrida1"]
 [ext_resource type="Texture2D" uid="uid://cveka8tvy23su" path="res://Features/Player/corrida2.png" id="3_corrida2"]
 
