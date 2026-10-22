@@ -25,4 +25,4 @@ func _on_button_retomar_pause_pressed() -> void:
 
 func _on_button_sair_pause_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Contexts/MenuHomeContext/MenuHomeContext.tscn") 
+	get_tree().change_scene_to_file("res://Contexts/MapaContext/MapaContext.tscn") 

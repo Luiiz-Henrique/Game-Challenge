@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bimknq0heglki" path="res://Contexts/Tela_bateu_obstaculo/popup_colisao.tscn" id="6_17kti"]
 [ext_resource type="PackedScene" uid="uid://c72p2etnga6u6" path="res://Contexts/MenuPauseContext/Pause.tscn" id="7_eaqf0"]
 [ext_resource type="PackedScene" uid="uid://tybva3clgqa1" path="res://Features/BarraProgressaoMap/BarraProgressaoMap.tscn" id="7_md41r"]
-[ext_resource type="PackedScene" uid="uid://eag1o6f54wc8" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
+[ext_resource type="PackedScene" uid="uid://bflh1sb5gh774" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
 
 [node name="GameContext" type="Node2D" unique_id=1716920165]
 script = ExtResource("1_gamecontext")
@@ -64,5 +64,6 @@ offset_left = 320.0
 offset_top = 75.0
 offset_right = 360.97498
 offset_bottom = 112.87201
+grow_horizontal = 2
 
 [connection signal="pressed" from="ButtonPauseInGame" to="." method="_on_pausar_pressed"]

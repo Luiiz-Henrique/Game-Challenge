@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dspcub656w6dp"]
+
+[ext_resource type="Script" uid="uid://drehy4gfwdyqq" path="res://Contexts/MapaContext/mapa_context.gd" id="1_a1b1g"]
+[ext_resource type="PackedScene" uid="uid://465rqc535es1" path="res://Features/Buttons/Button_back.tscn" id="1_b0u0s"]
+[ext_resource type="PackedScene" uid="uid://d3rirtbmxlll1" path="res://Features/Buttons/Button_primeira_cidade.tscn" id="2_ao27v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ao27v"]
+load_path = "res://.godot/imported/iPhone 16 - 63.png-10a11f6597feb7ac2d4d792f177623f6.ctex"
+
+[node name="MapaContext" type="TextureRect" unique_id=1168339153]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 395.0
+offset_bottom = 853.0
+texture = SubResource("CompressedTexture2D_ao27v")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("1_a1b1g")
+
+[node name="ButtonBack" parent="." unique_id=684781625 instance=ExtResource("1_b0u0s")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 11.0
+offset_top = 16.0
+offset_right = 69.0
+offset_bottom = 74.0
+
+[node name="ButtonPrimeiraCidade" parent="." unique_id=1930639020 instance=ExtResource("2_ao27v")]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 394.0
+offset_right = 248.0
+offset_bottom = 424.0

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d3rirtbmxlll1"]
+
+[ext_resource type="Script" uid="uid://bt3iu68ojmeah" path="res://Features/Buttons/button_primeira_cidade.gd" id="1_n3i4u"]
+[ext_resource type="Texture2D" uid="uid://bhyy8eum11ld7" path="res://Features/Buttons/PrimeiraCidade 1.svg" id="1_qw6b1"]
+
+[node name="ButtonPrimeiraCidade" type="TextureButton" unique_id=1930639020]
+offset_left = 168.0
+offset_top = 172.0
+offset_right = 198.0
+offset_bottom = 204.0
+texture_normal = ExtResource("1_qw6b1")
+script = ExtResource("1_n3i4u")
