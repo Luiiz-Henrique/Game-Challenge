@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://briat63i37r3u"]
+
+[ext_resource type="Texture2D" uid="uid://u41g5u3gmjow" path="res://Contexts/MapaContext/padrecicero 1 [Vectorized].svg" id="1_33fnx"]
+
+[node name="PadreCicero" type="TextureRect" unique_id=884378774]
+offset_left = 159.0
+offset_top = 157.0
+offset_right = 229.0
+offset_bottom = 203.0
+texture = ExtResource("1_33fnx")

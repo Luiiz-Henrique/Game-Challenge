@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhyy8eum11ld7"
-path="res://.godot/imported/PrimeiraCidade 1.svg-8ffc4296400edd11799a4a62c711eb18.ctex"
+uid="uid://u41g5u3gmjow"
+path="res://.godot/imported/padrecicero 1 [Vectorized].svg-3284a0a2ef64257ea9f6650e47ce873c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Features/Buttons/PrimeiraCidade 1.svg"
-dest_files=["res://.godot/imported/PrimeiraCidade 1.svg-8ffc4296400edd11799a4a62c711eb18.ctex"]
+source_file="res://Contexts/MapaContext/padrecicero 1 [Vectorized].svg"
+dest_files=["res://.godot/imported/padrecicero 1 [Vectorized].svg-3284a0a2ef64257ea9f6650e47ce873c.ctex"]
 
 [params]
 

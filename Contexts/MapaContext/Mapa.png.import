@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmh2hfcgop02n"
-path="res://.godot/imported/iPhone 16 - 63.png-10a11f6597feb7ac2d4d792f177623f6.ctex"
+uid="uid://bqdc415k0gdi"
+path="res://.godot/imported/Mapa.png-5386dc7faf9d5210243f9e5ee565b253.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Contexts/MapaContext/iPhone 16 - 63.png"
-dest_files=["res://.godot/imported/iPhone 16 - 63.png-10a11f6597feb7ac2d4d792f177623f6.ctex"]
+source_file="res://Contexts/MapaContext/Mapa.png"
+dest_files=["res://.godot/imported/Mapa.png-5386dc7faf9d5210243f9e5ee565b253.ctex"]
 
 [params]
 

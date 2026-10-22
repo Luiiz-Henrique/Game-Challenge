@@ -2,17 +2,21 @@
 
 [ext_resource type="Script" uid="uid://drehy4gfwdyqq" path="res://Contexts/MapaContext/mapa_context.gd" id="1_a1b1g"]
 [ext_resource type="PackedScene" uid="uid://465rqc535es1" path="res://Features/Buttons/Button_back.tscn" id="1_b0u0s"]
-[ext_resource type="PackedScene" uid="uid://d3rirtbmxlll1" path="res://Features/Buttons/Button_primeira_cidade.tscn" id="2_ao27v"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ao27v"]
-load_path = "res://.godot/imported/iPhone 16 - 63.png-10a11f6597feb7ac2d4d792f177623f6.ctex"
+[ext_resource type="Texture2D" uid="uid://bqdc415k0gdi" path="res://Contexts/MapaContext/Mapa.png" id="1_p5l5x"]
+[ext_resource type="PackedScene" uid="uid://d3rirtbmxlll1" path="res://Features/Buttons/Ponte_metalica.tscn" id="2_ao27v"]
+[ext_resource type="PackedScene" uid="uid://clehe7vuecxg0" path="res://Contexts/MapaContext/Nuvens.tscn" id="5_4oo3t"]
+[ext_resource type="PackedScene" uid="uid://briat63i37r3u" path="res://Features/Buttons/PadreCicero.tscn" id="6_pk1hh"]
+[ext_resource type="PackedScene" uid="uid://du2nco74a52a7" path="res://Contexts/MapaContext/Nuvens2.tscn" id="7_850qn"]
+[ext_resource type="PackedScene" uid="uid://ldw7uk4musmb" path="res://Contexts/MapaContext/Nuvens3.tscn" id="8_ixxdx"]
+[ext_resource type="PackedScene" uid="uid://h7odhp87rcxw" path="res://Features/Buttons/Galinha_choca.tscn" id="8_n2k0t"]
+[ext_resource type="PackedScene" uid="uid://dj4phn4f3xhec" path="res://Features/Buttons/Sobral.tscn" id="9_vkwfk"]
 
 [node name="MapaContext" type="TextureRect" unique_id=1168339153]
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 395.0
-offset_bottom = 853.0
-texture = SubResource("CompressedTexture2D_ao27v")
+offset_left = -232.0
+offset_top = -270.0
+offset_right = 161.0
+offset_bottom = 582.0
+texture = ExtResource("1_p5l5x")
 expand_mode = 3
 stretch_mode = 5
 script = ExtResource("1_a1b1g")
@@ -31,7 +35,49 @@ offset_bottom = 74.0
 
 [node name="ButtonPrimeiraCidade" parent="." unique_id=1930639020 instance=ExtResource("2_ao27v")]
 layout_mode = 0
-offset_left = 219.0
-offset_top = 394.0
-offset_right = 248.0
-offset_bottom = 424.0
+offset_left = 165.0
+offset_top = 386.0
+offset_right = 225.0
+offset_bottom = 436.0
+
+[node name="Nuvens" parent="." unique_id=939812298 instance=ExtResource("5_4oo3t")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 370.0
+offset_right = 234.0
+offset_bottom = 419.0
+
+[node name="PadreCicero" parent="." unique_id=884378774 instance=ExtResource("6_pk1hh")]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 506.0
+offset_right = 237.0
+offset_bottom = 556.0
+
+[node name="Nuvens2" parent="." unique_id=1618755912 instance=ExtResource("7_850qn")]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 495.0
+offset_right = 241.0
+offset_bottom = 536.0
+
+[node name="GalinhaChoca" parent="." unique_id=830842286 instance=ExtResource("8_n2k0t")]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 323.0
+offset_right = 292.0
+offset_bottom = 373.0
+
+[node name="Sobral" parent="." unique_id=558334716 instance=ExtResource("9_vkwfk")]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 247.0
+offset_right = 145.0
+offset_bottom = 297.0
+
+[node name="Nuvens3" parent="." unique_id=531206928 instance=ExtResource("8_ixxdx")]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 231.0
+offset_right = 158.0
+offset_bottom = 278.0
