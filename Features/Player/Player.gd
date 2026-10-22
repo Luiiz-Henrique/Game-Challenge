@@ -45,7 +45,6 @@ func _input(event: InputEvent) -> void:
 				else:
 					mover_esquerda()
 
-
 ## Método público orquestrado pelo GameContext (call down).
 func atualizar(delta: float) -> void:
 	var alvo_x: float = posicao_centro_x + (pista_atual * largura_pista)
