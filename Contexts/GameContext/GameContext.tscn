@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsdo7fyicjbcr"]
 
 [ext_resource type="Script" uid="uid://ojosiilu8hqp" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
-[ext_resource type="PackedScene" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
+[ext_resource type="PackedScene" uid="uid://deb2l2tgc13v3" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
 [ext_resource type="PackedScene" uid="uid://cr5bfyo1tqglm" path="res://Features/Pedra/Pedra.tscn" id="3_pedra"]
 [ext_resource type="PackedScene" uid="uid://blrscng8pmaca" path="res://Features/Player/Player.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cd3igma6id1wr" path="res://Features/Ovni/Ovni.tscn" id="5_ovni"]
