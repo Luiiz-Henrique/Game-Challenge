@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+#
+# Hook de pre-commit do Game-Challenge.
+#
+# Bloqueia commit de assets binarios que nao estejam no Git LFS, que era a
+# causa dos conflitos falsos de imagem no projeto (o Git tentava mesclar um
+# ponteiro LFS com o arquivo real, injetando marcadores de conflito no asset).
+#
+# Ativacao (uma vez por clone):
+#   git config core.hooksPath .githooks
+#
+set -uo pipefail
+
+fail=0
+
+LFS_POINTER="version https://git-lfs.github.com/spec/v1"
+
+# 1) Assets binarios precisam estar no LFS.
+while IFS= read -r file; do
+    [ -z "$file" ] && continue
+    case "$file" in
+        *.png|*.svg|*.jpg|*.jpeg|*.gif|*.tga|*.webp|*.exr|*.hdr|*.dds|*.mp3|*.wav|*.ogg|*.ttf|*.otf|*.ico)
+            pointer=$(git show ":$file" 2>/dev/null | head -1 || true)
+            if [ "$pointer" != "$LFS_POINTER" ]; then
+                echo "ERRO: '$file' esta fora do Git LFS."
+                echo "      git lfs install && git rm --cached -- '$file' && git add -- '$file'"
+                fail=1
+            fi
+            ;;
+    esac
+done <<< "$(git diff --cached --name-only --diff-filter=ACM)"
+
+# 2) .DS_Store nunca entra no repositorio.
+while IFS= read -r file; do
+    case "$file" in
+        .DS_Store|*/.DS_Store)
+            echo "ERRO: '.DS_Store' staged. Remova-o do repositorio."
+            fail=1
+            ;;
+    esac
+done <<< "$(git diff --cached --name-only)"
+
+# 3) Asset novo sem o .import correspondente (Godot ainda nao importou).
+while IFS= read -r file; do
+    [ -z "$file" ] && continue
+    case "$file" in
+        *.png|*.svg|*.jpg|*.jpeg|*.gif|*.tga|*.webp)
+            if [ -f "$file.import" ] && ! git diff --cached --name-only | grep -qxF "$file.import"; then
+                echo "AVISO: '$file' foi adicionado, mas '$file.import' nao foi staged."
+                echo "        Abra o projeto no Godot e versione o .import no mesmo commit."
+            fi
+            ;;
+    esac
+done <<< "$(git diff --cached --name-only --diff-filter=A)"
+
+exit $fail
