@@ -1,41 +1,53 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
 
-# Git LFS Tracking (Assets)
+# --- Git LFS Tracking (Assets) ---
+#
+# O macro `binary` (= -diff -merge -text) e OBRIGATORIO nas regras de LFS.
+# Sem ele o Git mescla TEXTUALMENTE um ponteiro LFS (3 linhas) com o
+# arquivo real (um SVG de 186 linhas) e injeta marcadores "<<<<<<<"
+# DENTRO do asset -- foi o que aconteceu com os SVGs deste repo.
+#
+# `diff=lfs` e `merge=lfs` nao resolvem: apontam para drivers inexistentes
+# no config (o `git lfs install` so cria filter.lfs.clean/smudge/process).
+# Trade-off: o diff deixa de pre-visualizar a imagem inline.
 
 # 3D Models
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.gltf filter=lfs diff=lfs merge=lfs -text
-*.glb filter=lfs diff=lfs merge=lfs -text
-*.blend filter=lfs diff=lfs merge=lfs -text
-*.obj filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs binary
+*.gltf filter=lfs binary
+*.glb filter=lfs binary
+*.blend filter=lfs binary
+*.obj filter=lfs binary
 
 # Images
-*.png filter=lfs diff=lfs merge=lfs -text
-*.svg filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.tga filter=lfs diff=lfs merge=lfs -text
-*.webp filter=lfs diff=lfs merge=lfs -text
-*.exr filter=lfs diff=lfs merge=lfs -text
-*.hdr filter=lfs diff=lfs merge=lfs -text
-*.dds filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs binary
+*.svg filter=lfs binary
+*.jpg filter=lfs binary
+*.jpeg filter=lfs binary
+*.gif filter=lfs binary
+*.tga filter=lfs binary
+*.webp filter=lfs binary
+*.exr filter=lfs binary
+*.hdr filter=lfs binary
+*.dds filter=lfs binary
 
 # Audio
-*.mp3 filter=lfs diff=lfs merge=lfs -text
-*.wav filter=lfs diff=lfs merge=lfs -text
-*.ogg filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs binary
+*.wav filter=lfs binary
+*.ogg filter=lfs binary
 
 # Font & Icon
-*.ttf filter=lfs diff=lfs merge=lfs -text
-*.otf filter=lfs diff=lfs merge=lfs -text
-*.ico filter=lfs diff=lfs merge=lfs -text
+*.ttf filter=lfs binary
+*.otf filter=lfs binary
+*.ico filter=lfs binary
 
 # Godot LFS Specific
-*.scn filter=lfs diff=lfs merge=lfs -text
-*.res filter=lfs diff=lfs merge=lfs -text
-*.material filter=lfs diff=lfs merge=lfs -text
-*.anim filter=lfs diff=lfs merge=lfs -text
-*.mesh filter=lfs diff=lfs merge=lfs -text
-*.lmbake filter=lfs diff=lfs merge=lfs -text
+# .scn = cena BINARIA do Godot 3 -> pode ir pro LFS.
+# .tscn/.tres sao TEXTO e ficam DE FORA do LFS de proposito: sao os
+# arquivos mais mergeados do projeto e precisam de diff/merge legiveis.
+*.scn filter=lfs binary
+*.res filter=lfs binary
+*.material filter=lfs binary
+*.anim filter=lfs binary
+*.mesh filter=lfs binary
+*.lmbake filter=lfs binary
