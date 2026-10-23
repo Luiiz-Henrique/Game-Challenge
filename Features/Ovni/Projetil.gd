@@ -21,10 +21,11 @@ signal player_atingido
 var velocidade_projetil = GameState.velocidade_atual * 1.2 #Fogo mais rápido que o cenário para chegar no jogador.
 
 func _process(delta: float) -> void:
-	global_position.y += velocidade_projetil * delta # Move o fogo na direção vertical (pra cima)
-	
-	#if global_position.y < -100: #Fogo some ao sair da tela (passar do jogador)
-	#	queue_free()
+	global_position.y += velocidade_projetil * delta
+
+	# Some depois de passar do jogador e sair por baixo da tela.
+	if global_position.y > get_viewport_rect().size.y + 100.0:
+		queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:

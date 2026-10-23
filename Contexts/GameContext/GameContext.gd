@@ -10,7 +10,7 @@ const CENA_PROJETIL := preload("res://Features/Ovni/Projetil.tscn")
 const VELOCIDADE_PROJETIL: float = 600.0
 
 @onready var cenario_spawner: CenarioSpawner = $CenarioSpawner
-@onready var barra_progressao: Control = $BarraProgressaoMap
+@onready var barra_progressao: BarraProgressaoMap = $BarraProgressaoMap
 @onready var pedra: Pedra = $Pedra
 @onready var player: Player = $Player
 @onready var ovni: Ovni = $Ovni
@@ -19,6 +19,7 @@ const VELOCIDADE_PROJETIL: float = 600.0
 
 
 func _ready() -> void:
+	GameState.reiniciar_corrida()
 	button_pause.hide()
 	popup.hide()
 #	ovni.disparar.connect(_on_ovni_disparar)
@@ -41,7 +42,14 @@ func _finalizar_partida() -> void:
 	get_tree().paused = true
 
 func _process(delta: float) -> void:
-	GameState.velocidade_atual = move_toward(GameState.velocidade_atual, 999999.0, 3 * delta)
+	# A velocidade é função do progresso da fase: chega ao máximo exatamente
+	# no fim do tempo, sem estourar e sem carregar estado entre corridas.
+	var progresso: float = barra_progressao.get_progresso()
+	GameState.velocidade_atual = lerpf(
+		GameState.VELOCIDADE_INICIAL,
+		GameState.VELOCIDADE_MAXIMA,
+		progresso
+	)
 	var velocidade_atual = GameState.velocidade_atual
 	cenario_spawner.mover_cenario(delta, velocidade_atual)
 	pedra.mover(delta, velocidade_atual)
