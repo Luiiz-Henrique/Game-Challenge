@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brcx2c41noc1r"
-valid=false
+path="res://.godot/imported/CenarioVerão.png-32360e192683c530c792028dc6f9151e.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Features/Cenarios/CenarioVerão.png"
+dest_files=["res://.godot/imported/CenarioVerão.png-32360e192683c530c792028dc6f9151e.ctex"]
 
 [params]
 

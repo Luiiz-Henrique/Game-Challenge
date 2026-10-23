@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpf4ts85f1ux5"
-valid=false
+path="res://.godot/imported/botaoRetomar 1.svg-9d6ac0efcb40d8d39e13eda4148b4ae8.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Features/Buttons/botaoRetomar 1.svg"
+dest_files=["res://.godot/imported/botaoRetomar 1.svg-9d6ac0efcb40d8d39e13eda4148b4ae8.ctex"]
 
 [params]
 

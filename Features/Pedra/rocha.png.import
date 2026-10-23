@@ -3,11 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqxb1wxrbv6xb"
-valid=false
+path="res://.godot/imported/rocha.png-66cbd15e280065fe375cae84a4c5461f.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Features/Pedra/rocha.png"
+dest_files=["res://.godot/imported/rocha.png-66cbd15e280065fe375cae84a4c5461f.ctex"]
 
 [params]
 

@@ -25,8 +25,10 @@ scale = Vector2(0.8, 0.8)
 
 [node name="Ovni" parent="." unique_id=735828122 instance=ExtResource("5_ovni")]
 position = Vector2(202, 100)
+tempo_deslocamento = 2.0
 
 [node name="Projeteis" type="Node2D" parent="." unique_id=2000000001]
+scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1718007149]
 position = Vector2(197, 426)

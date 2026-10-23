@@ -101,7 +101,7 @@ func _mover_para_pista(pista_x: float, velocidade_atual: float) -> void:
 	await tween_movimento.finished
 
 func disparos_por_segundo(delta: float) -> void:
-	disparo_ovni.wait_time = move_toward(disparo_ovni.wait_time, 0.5, 0.01 * delta)
+	disparo_ovni.wait_time = move_toward(disparo_ovni.wait_time, 1.5, 0.01 * delta)
 	
 func _on_atack_timer_timeout():
 	#var novo_projetil = projetil_ovni.instantiate()

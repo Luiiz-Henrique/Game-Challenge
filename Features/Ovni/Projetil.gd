@@ -18,7 +18,7 @@ signal player_atingido
 	#if body is Player:
 		#atingiu_player.emit()
 
-var velocidade_projetil = GameState.velocidade_atual * 1.2 #Fogo mais rápido que o cenário para chegar no jogador.
+var velocidade_projetil = GameState.velocidade_atual * 2.0 #Fogo mais rápido que o cenário para chegar no jogador.
 
 func _process(delta: float) -> void:
 	global_position.y += velocidade_projetil * delta

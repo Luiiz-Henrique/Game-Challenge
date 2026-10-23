@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4l62jg4c6m1q"]
 
-[ext_resource type="Texture2D" uid="uid://bs6wsdpvxjdkm" path="res://Features/Buttons/Ajustes 1.svg" id="1_l1hbo"]
+[ext_resource type="Texture2D" uid="uid://ci57fdr4bw2hc" path="res://Features/Buttons/botaoJogar 1.svg" id="1_l1hbo"]
 [ext_resource type="Script" uid="uid://20x7xac6y5tb" path="res://Features/Buttons/action_button_play.gd" id="2_2q3o5"]
 
 [node name="Botao_jogar" type="TextureButton" unique_id=711292972]
