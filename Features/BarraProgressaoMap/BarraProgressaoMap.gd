@@ -1,3 +1,4 @@
+class_name BarraProgressaoMap
 extends Control
 
 # Sinal customizado para avisar o Core que o tempo acabou
@@ -8,6 +9,8 @@ signal stage_time_finished
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var timer: Timer = $Timer
+
+
 
 func _ready() -> void:
 	_setup_timer()
@@ -33,3 +36,10 @@ func _setup_progress_bar() -> void:
 func _on_timer_timeout() -> void:
 	# Notifica quem estiver escutando (ex: o Core/GameManager)
 	stage_time_finished.emit()
+
+
+## Progresso da fase: 0.0 no início, 1.0 no fim.
+func get_progresso() -> float:
+	if total_stage_time <= 0.0:
+		return 1.0
+	return 1.0 - clampf(timer.time_left / total_stage_time, 0.0, 1.0)

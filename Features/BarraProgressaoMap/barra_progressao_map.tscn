@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bdt04eoidchq5"]
+
+[ext_resource type="Script" uid="uid://dnsgfsip3rqw" path="res://Features/BarraProgressaoMap/BarraProgressaoMap.gd" id="1_ta72m"]
+
+[node name="BarraProgressaoMap" type="Control" unique_id=1964029799]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("1_ta72m")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1687103888]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.5
+offset_right = 134.5
+offset_bottom = 22.0
+grow_horizontal = 2
+step = 0.1
+fill_mode = 1
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1637219597]
+
+[connection signal="timeout" from="Timer" to="." method="stage_time_finished"]
