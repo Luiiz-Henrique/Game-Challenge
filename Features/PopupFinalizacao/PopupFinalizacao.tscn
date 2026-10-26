@@ -1,91 +1,28 @@
-[gd_scene format=3 uid="uid://pfx9k1m2n3p4q5"]
+[gd_scene format=3 uid="uid://bw0tk4s5ytpyg"]
 
-[ext_resource type="Script" uid="uid://pfx9k1m2n3p4q6" path="res://Features/PopupFinalizacao/PopupFinalizacao.gd" id="1_popup_script"]
+[ext_resource type="Script" uid="uid://ds2lffmrxuuru" path="res://Features/PopupFinalizacao/PopupFinalizacao.gd" id="1_popup_script"]
+[ext_resource type="Texture2D" uid="uid://3q8xmu5rye6t" path="res://Features/PopupFinalizacao/fase1concluida.png" id="2_l2ymd"]
+[ext_resource type="PackedScene" uid="uid://clkgpe7k57e3e" path="res://Features/PopupFinalizacao/ButtonProx.tscn" id="3_6rv4l"]
 
 [node name="PopupFinalizacao" type="CanvasLayer" unique_id=1001]
-layout_anchors_preset = 15
 script = ExtResource("1_popup_script")
 
-[node name="Container" type="Control" parent="." unique_id=1002]
-anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-size_flags_stretch_ratio = 1.0
-
-[node name="Fundo" type="ColorRect" parent="Container" unique_id=1003]
-anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-color = Color(0.0, 0.0, 0.0, 0.65)
-
-[node name="Painel" type="Control" parent="Container" unique_id=1004]
-anchors_preset = 7
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1822208245]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -220.0
-offset_right = 170.0
-offset_bottom = 220.0
-size_flags_stretch_ratio = 1.0
+offset_left = -177.0
+offset_top = -106.0
+offset_right = 177.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l2ymd")
 
-[node name="LabelTitulo" type="Label" parent="Painel" unique_id=1005]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -150.0
-offset_top = -140.0
-offset_right = 150.0
-offset_bottom = -100.0
-text = "Fase Concluída!"
-align = 2
-valign = 1
-custom_colors/font_color = Color(1, 1, 1, 1)
-custom_colors/font_outline_color = Color(0, 0, 0, 1)
-custom_colors/font_outline_size = 2.0
-custom_colors/font_outline_enabled = true
-
-[node name="LabelMensagem" type="Label" parent="Painel" unique_id=1006]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -150.0
-offset_top = -90.0
-offset_right = 150.0
-offset_bottom = -50.0
-text = "Você coletou o item e terminou a fase!"
-align = 2
-valign = 1
-custom_colors/font_color = Color(0.9, 0.9, 0.9, 1)
-
-[node name="ButtonAvancar" type="Button" parent="Painel" unique_id=1007]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = 20.0
-offset_right = 80.0
-offset_bottom = 70.0
-text = "Avançar"
-size_flags_stretch_ratio = 1.0
-
-[connection signal="pressed" from="ButtonAvancar" to="." method="_on_botao_avancar_pressed"]
+[node name="ButtonProx" parent="." unique_id=1340201221 instance=ExtResource("3_6rv4l")]
+offset_left = 275.0
+offset_top = 456.0
+offset_right = 320.0
+offset_bottom = 492.0

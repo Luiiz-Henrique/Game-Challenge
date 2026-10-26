@@ -10,9 +10,9 @@ signal avancar(proxima_cena: String)
 ## Caminho da cena a ser carregada ao clicar no botão avançar.
 @export var proxima_cena_path: String = ""
 
-@onready var container: Control = $Container
-@onready var label_titulo: Label = $Container/LabelTitulo
-@onready var button_avancar: Button = $Container/ButtonAvancar
+#@onready var container: Control = $Container
+#@onready var label_titulo: Label = $Container/LabelTitulo
+@onready var button_avancar: TextureButton = $ButtonProx
 
 
 func _ready() -> void:

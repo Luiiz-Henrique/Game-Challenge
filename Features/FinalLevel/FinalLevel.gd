@@ -7,7 +7,7 @@ extends Node
 
 
 
-const CENA_POPUP: PackedScene = preload("res://Contexts/Tela_bateu_obstaculo/popup_colisao.tscn")
+const CENA_POPUP: PackedScene = preload("res://Features/PopupFinalizacao/PopupFinalizacao.tscn")
 
 ## Referências mantidas durante a sequência de encerramento.
 var _player: Node2D
@@ -97,9 +97,8 @@ func _instanciar_item_no_caminho() -> void:
 	timer_espera.wait_time = 0.8
 	timer_espera.timeout.connect(func():
 		timer_espera.queue_free()
-		#_mostrar_popup("res://Contexts/MenuHomeContext/MenuHomeContext.tscn")
-		add_child(CENA_POPUP.instantiate())
-		get_tree().paused = true
+		_mostrar_popup("res://Contexts/MenuHomeContext/MenuHomeContext.tscn")
+		#add_child(CENA_POPUP.instantiate())
 	)
 	add_child(timer_espera)
 	timer_espera.start()
@@ -111,8 +110,7 @@ func _instanciar_item_no_caminho() -> void:
 func _mostrar_popup(proxima_cena_path: String) -> void:
 	var popup: PopupFinalizacao = CENA_POPUP.instantiate() as PopupFinalizacao
 	popup.configurar(proxima_cena_path)
-	#popup.z_index = 9999
-	get_tree().get_root().add_child(popup)
+	get_tree().current_scene.add_child(popup)
 
 
 ## Remove da cena os projéteis existentes e desativa a pedra. Também passa a
