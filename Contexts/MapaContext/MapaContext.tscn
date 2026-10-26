@@ -5,17 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://bqdc415k0gdi" path="res://Contexts/MapaContext/Mapa.png" id="1_p5l5x"]
 [ext_resource type="PackedScene" uid="uid://d3rirtbmxlll1" path="res://Features/Buttons/Ponte_metalica.tscn" id="2_ao27v"]
 [ext_resource type="PackedScene" uid="uid://clehe7vuecxg0" path="res://Contexts/MapaContext/Nuvens.tscn" id="5_4oo3t"]
-[ext_resource type="PackedScene" uid="uid://briat63i37r3u" path="res://Features/Buttons/PadreCicero.tscn" id="6_pk1hh"]
 [ext_resource type="PackedScene" uid="uid://du2nco74a52a7" path="res://Contexts/MapaContext/Nuvens2.tscn" id="7_850qn"]
 [ext_resource type="PackedScene" uid="uid://ldw7uk4musmb" path="res://Contexts/MapaContext/Nuvens3.tscn" id="8_ixxdx"]
 [ext_resource type="PackedScene" uid="uid://h7odhp87rcxw" path="res://Features/Buttons/Galinha_choca.tscn" id="8_n2k0t"]
 [ext_resource type="PackedScene" uid="uid://dj4phn4f3xhec" path="res://Features/Buttons/Sobral.tscn" id="9_vkwfk"]
 
 [node name="MapaContext" type="TextureRect" unique_id=1168339153]
-offset_left = -232.0
-offset_top = -270.0
-offset_right = 161.0
-offset_bottom = 582.0
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 387.0
+offset_bottom = 847.0
 texture = ExtResource("1_p5l5x")
 expand_mode = 3
 stretch_mode = 5
@@ -47,7 +46,7 @@ offset_top = 370.0
 offset_right = 234.0
 offset_bottom = 419.0
 
-[node name="PadreCicero" parent="." unique_id=884378774 instance=ExtResource("6_pk1hh")]
+[node name="PadreCicero" type="TextureButton" parent="." unique_id=897950514]
 layout_mode = 0
 offset_left = 177.0
 offset_top = 506.0
@@ -81,3 +80,6 @@ offset_left = 62.0
 offset_top = 231.0
 offset_right = 158.0
 offset_bottom = 278.0
+
+[connection signal="pressed" from="PadreCicero" to="." method="_on_padre_cicero_pressed"]
+[connection signal="pressed" from="Sobral" to="Sobral" method="_on_pressed"]

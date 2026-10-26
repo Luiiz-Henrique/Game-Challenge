@@ -31,3 +31,5 @@ offset_top = 445.0
 offset_right = 276.0
 offset_bottom = 533.0
 script = ExtResource("4_ddsf3")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=583139291]

@@ -10,7 +10,7 @@ const CENA_PROJETIL := preload("res://Features/Ovni/Projetil.tscn")
 const VELOCIDADE_PROJETIL: float = 600.0
 
 @onready var cenario_spawner: CenarioSpawner = $CenarioSpawner
-@onready var barra_progressao: Control = $BarraProgressaoMap
+@onready var barra_progressao: BarraProgressaoMap = $BarraProgressaoMap
 @onready var pedra: Pedra = $Pedra
 @onready var player: Player = $Player
 @onready var ovni: Ovni = $Ovni
@@ -19,6 +19,9 @@ const VELOCIDADE_PROJETIL: float = 600.0
 
 
 func _ready() -> void:
+	# Zera a dificuldade a cada corrida. Como o retry recarrega a cena,
+	# a velocidade volta ao início quando o jogador bate (estilo Subway Surfers).
+	GameState.reiniciar_corrida()
 	button_pause.hide()
 	popup.hide()
 #	ovni.disparar.connect(_on_ovni_disparar)
@@ -26,6 +29,7 @@ func _ready() -> void:
 	ovni.player_atingido.connect(_reiniciar_corrida)
 	# O GameContext conecta o sinal emitido pela Feature de Barra de Progressão
 	barra_progressao.stage_time_finished.connect(_on_stage_time_finished)
+	AudioMenu.diminuir_volume()
 
 func _on_stage_time_finished() -> void:
 	_finalizar_partida()
@@ -41,8 +45,9 @@ func _finalizar_partida() -> void:
 	get_tree().paused = true
 
 func _process(delta: float) -> void:
-	GameState.velocidade_atual = move_toward(GameState.velocidade_atual, 999999.0, 3 * delta)
-	var velocidade_atual = GameState.velocidade_atual
+	# A velocidade cresce durante a corrida; zera no _ready ao (re)iniciar.
+	GameState.avancar_dificuldade(delta)
+	var velocidade_atual: float = GameState.velocidade_atual
 	cenario_spawner.mover_cenario(delta, velocidade_atual)
 	pedra.mover(delta, velocidade_atual)
 	player.atualizar(delta)
@@ -70,7 +75,9 @@ func _reiniciar_corrida() -> void:
 	popup.show()
 	get_tree().paused = true
 
-func _on_pausar_pressed() -> void:
+
+
+func _on_button_pause_in_game_pressed() -> void:
 	button_pause.show()
 	get_tree().paused = true 
-	
+	print("Clique no botão de pausa recebido") # Replace with function body.

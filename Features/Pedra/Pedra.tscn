@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://bq7bug1oh1ox3" path="res://Features/Pedra/Pedra.gd" id="1_pedra"]
 [ext_resource type="Texture2D" uid="uid://bqxb1wxrbv6xb" path="res://Features/Pedra/rocha.png" id="2_rocha"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pedra"]
-radius = 45.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bd6kk"]
+radius = 29.0
+height = 60.0
 
 [node name="Pedra" type="Node2D" unique_id=181890474]
 script = ExtResource("1_pedra")
@@ -16,4 +17,5 @@ texture = ExtResource("2_rocha")
 [node name="Area2D" type="Area2D" parent="." unique_id=290517904]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=379489977]
-shape = SubResource("CircleShape2D_pedra")
+position = Vector2(-2, 10)
+shape = SubResource("CapsuleShape2D_bd6kk")
