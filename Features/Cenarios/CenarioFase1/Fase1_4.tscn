@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://lv1v5iif5hux"]
+
+[ext_resource type="Texture2D" uid="uid://bpj0dxye6kebm" path="res://Features/Cenarios/CenarioFase1/Fase1_4.png" id="1_w3x0j"]
+
+[node name="Fase14" type="Node2D" unique_id=928135477]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=118289736]
+position = Vector2(201, 437)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_w3x0j")
