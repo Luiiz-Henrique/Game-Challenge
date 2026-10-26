@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://do2d5mrwlg8sl"]
+
+[ext_resource type="Script" path="res://Features/Ovni/Projetil.gd" id="1_e138m"]
+[ext_resource type="Texture2D" path="res://Features/Ovni/projetil.svg" id="2_d76vc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2sbe"]
+radius = 8.0
+
+[node name="Projetil" type="Area2D" unique_id=1545486678]
+script = ExtResource("1_e138m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1754226477]
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(0.149, 0.15)
+texture = ExtResource("2_d76vc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=167884361]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_q2sbe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

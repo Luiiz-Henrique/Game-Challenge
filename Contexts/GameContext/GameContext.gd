@@ -19,6 +19,8 @@ const VELOCIDADE_PROJETIL: float = 600.0
 
 
 func _ready() -> void:
+	# Zera a dificuldade a cada corrida. Como o retry recarrega a cena,
+	# a velocidade volta ao início quando o jogador bate (estilo Subway Surfers).
 	GameState.reiniciar_corrida()
 	button_pause.hide()
 	popup.hide()
@@ -42,15 +44,9 @@ func _finalizar_partida() -> void:
 	get_tree().paused = true
 
 func _process(delta: float) -> void:
-	# A velocidade é função do progresso da fase: chega ao máximo exatamente
-	# no fim do tempo, sem estourar e sem carregar estado entre corridas.
-	var progresso: float = barra_progressao.get_progresso()
-	GameState.velocidade_atual = lerpf(
-		GameState.VELOCIDADE_INICIAL,
-		GameState.VELOCIDADE_MAXIMA,
-		progresso
-	)
-	var velocidade_atual = GameState.velocidade_atual
+	# A velocidade cresce durante a corrida; zera no _ready ao (re)iniciar.
+	GameState.avancar_dificuldade(delta)
+	var velocidade_atual: float = GameState.velocidade_atual
 	cenario_spawner.mover_cenario(delta, velocidade_atual)
 	pedra.mover(delta, velocidade_atual)
 	player.atualizar(delta)

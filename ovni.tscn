@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ccu1w3ith58fj"]
+
+[ext_resource type="Script" path="res://Features/Ovni/Ovni.gd" id="1_gnc3e"]
+[ext_resource type="Texture2D" path="res://Features/Ovni/naveespacial 2.svg" id="2_03xwg"]
+
+[node name="Ovni" type="Node2D" unique_id=735828122]
+physics_interpolation_mode = 1
+script = ExtResource("1_gnc3e")
+metadata/_edit_vertical_guides_ = [-40.0, 41.0, 1.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540491839]
+scale = Vector2(0.127686, 0.127686)
+texture = ExtResource("2_03xwg")

@@ -10,6 +10,8 @@ signal stage_time_finished
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var timer: Timer = $Timer
 
+
+
 func _ready() -> void:
 	_setup_timer()
 	_setup_progress_bar()

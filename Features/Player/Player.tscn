@@ -18,8 +18,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
-size = Vector2(71, 86)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eaqf0"]
+radius = 17.0
+height = 45.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1870082046]
 position = Vector2(201, 740)
@@ -33,5 +34,5 @@ animation = &"correr"
 autoplay = "correr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736100201]
-position = Vector2(0.5, 8)
-shape = SubResource("RectangleShape2D_player")
+position = Vector2(0, 14.5)
+shape = SubResource("CapsuleShape2D_eaqf0")
