@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dj4phn4f3xhec"]
+
+[ext_resource type="Texture2D" uid="uid://dsivx3eumuxn7" path="res://Contexts/MapaContext/arcodotriunfo 1 [Vectorized].svg" id="1_h1bbf"]
+[ext_resource type="Script" uid="uid://rn4eghurxukb" path="res://Features/Buttons/sobral.gd" id="2_0efxa"]
+
+[node name="Sobral" type="TextureButton" unique_id=558334716]
+offset_left = 153.0
+offset_top = 183.0
+offset_right = 213.0
+offset_bottom = 233.0
+texture_normal = ExtResource("1_h1bbf")
+script = ExtResource("2_0efxa")

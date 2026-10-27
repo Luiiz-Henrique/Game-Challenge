@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://du2nco74a52a7"]
+
+[ext_resource type="Texture2D" uid="uid://cky7si10khyym" path="res://Contexts/MapaContext/Nuvens1.png" id="1_70hge"]
+
+[node name="Nuvens2" type="TextureRect" unique_id=1618755912]
+offset_left = 145.0
+offset_top = 202.0
+offset_right = 221.0
+offset_bottom = 243.0
+texture = ExtResource("1_70hge")
