@@ -5,7 +5,7 @@ extends Control
 signal stage_time_finished
 
 # Tempo configurável pela aba Inspetor (240 segundos)
-@export var total_stage_time: float = 10.0
+@export var total_stage_time: float = 240.0
 @onready var icone: TextureRect = $ProgressBar/IconeBar
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var timer: Timer = $Timer
@@ -49,5 +49,4 @@ func _on_timer_timeout() -> void:
 func get_progresso() -> float:
 	if total_stage_time <= 0.0:
 		return 1.0
-	print(1.0 - clampf(timer.time_left / total_stage_time, 0.0, 1.0))
 	return 1.0 - clampf(timer.time_left / total_stage_time, 0.0, 1.0)
