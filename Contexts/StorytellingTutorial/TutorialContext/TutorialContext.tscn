@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dx4sm4i6cip78"]
+
+[ext_resource type="Script" uid="uid://b27bnrn5bh0ed" path="res://Contexts/StorytellingTutorial/TutorialContext/TutorialContext.gd" id="1_contexto"]
+[ext_resource type="PackedScene" path="res://Contexts/StorytellingTutorial/TelaOvni/TelaOvni.tscn" id="2_ovni"]
+[ext_resource type="PackedScene" path="res://Contexts/StorytellingTutorial/TelaXico/TelaXico.tscn" id="3_xico"]
+
+[node name="TutorialContext" type="Control" unique_id=234873178]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_contexto")
+
+[node name="TelaOvni" parent="." unique_id=1739976364 instance=ExtResource("2_ovni")]
+layout_mode = 1
+
+[node name="TelaXico" parent="." unique_id=187020206 instance=ExtResource("3_xico")]
+visible = false
+layout_mode = 1
