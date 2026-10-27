@@ -15,7 +15,7 @@ const VELOCIDADE_MAXIMA: float = 650.0
 
 ## Velocidade do projétil do Ovni (px/s). Cresce junto com a dificuldade,
 ## mas tem escala própria: 400 no início e 900 no máximo.
-const VELOCIDADE_PROJETIL_INICIAL: float = 400.0
+const VELOCIDADE_PROJETIL_INICIAL: float = 401.0
 const VELOCIDADE_PROJETIL_MAXIMA: float = 900.0
 
 ## Tempo (s) que a velocidade leva para ir do início ao máximo dentro de uma
