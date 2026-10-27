@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://qgrj51bwmb1p"]
+
+[ext_resource type="PackedScene" uid="uid://bsdo7fyicjbcr" path="res://Contexts/GameContext/GameContext.tscn" id="1_base"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_1.tscn" id="b1"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_2.tscn" id="b2"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_3.tscn" id="b3"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_4.tscn" id="b4"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_5.tscn" id="b5"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_6.tscn" id="b6"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_7.tscn" id="b7"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_8.tscn" id="b8"]
+[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase2/Fase2_9.tscn" id="b9"]
+
+[node name="GameContext" instance=ExtResource("1_base")]
+
+[node name="CenarioSpawner" parent="." index="0"]
+lista_de_blocos = Array[PackedScene]([ExtResource("b1"), ExtResource("b2"), ExtResource("b3"), ExtResource("b4"), ExtResource("b5"), ExtResource("b6"), ExtResource("b7"), ExtResource("b8"), ExtResource("b9")])
