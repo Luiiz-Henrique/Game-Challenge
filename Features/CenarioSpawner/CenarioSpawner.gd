@@ -11,19 +11,19 @@ signal bloco_reciclado
 enum ModoGeracao { SEQUENCIAL, ALEATORIO }
 @export var modo_atual: ModoGeracao = ModoGeracao.SEQUENCIAL
 
-var bloco_1 = preload("res://Features/Cenarios/CenarioInverno.tscn")
-var bloco_2 = preload("res://Features/Cenarios/CenarioOutono.tscn")
-var bloco_3 = preload("res://Features/Cenarios/CenarioVerao.tscn")
+# ARRAY EXPORTADO: Receberá as cenas (.tscn) específicas de cada fase via Inspector
+@export var lista_de_blocos: Array[PackedScene]
 
-
-var lista_de_blocos: Array
 var blocos_ativos: Array = []
-var altura_do_bloco: float = 874.0
+var altura_do_bloco: float = 874.0 # Mantido conforme a lógica vertical do projeto
 var indice_sequencia: int = 0
 
 
 func _ready() -> void:
-	lista_de_blocos = [bloco_1, bloco_2, bloco_3]
+	if lista_de_blocos.is_empty():
+		push_warning("A lista_de_blocos do CenarioSpawner está vazia!")
+		return
+
 	criar_novo_bloco(0.0)
 	criar_novo_bloco(-altura_do_bloco)
 	criar_novo_bloco(-altura_do_bloco * 2)

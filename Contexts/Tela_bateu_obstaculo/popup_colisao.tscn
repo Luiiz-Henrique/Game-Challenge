@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvtoahh2dno25" path="res://Contexts/Tela_bateu_obstaculo/popuptentenovamentefundo 1 [Vectorized].svg" id="1_0dwnu"]
 [ext_resource type="PackedScene" uid="uid://cwyfvpbe72n53" path="res://Features/Buttons/Button_tentar_novamente.tscn" id="2_ruh1n"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="3_ruh1n"]
 
 [node name="PopupColisao" type="TextureRect" unique_id=1186763229]
 process_mode = 3
@@ -24,3 +25,6 @@ offset_left = 11.473999
 offset_top = 49.243996
 offset_right = 9.747986
 offset_bottom = 87.827995
+
+[node name="Audio_botoes" type="AudioStreamPlayer" parent="." unique_id=2003939320]
+stream = ExtResource("3_ruh1n")
