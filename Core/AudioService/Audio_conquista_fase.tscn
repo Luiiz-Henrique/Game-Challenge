@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dcq14qckctgh"]
+
+[node name="AudioConquistaFase" type="AudioStreamPlayer2D" unique_id=1149898905]
+bus = &"SFX"

@@ -82,6 +82,8 @@ func _ready() -> void:
 	# Vai para a primeira pista já no início. O primeiro disparo só acontece
 	# quando o Timer completar o tempo de espera, já parado no alvo.
 	_mover_para_pista(GameState.PISTAS_X.pick_random(), GameState.velocidade_atual * 1.2)
+	$Audio_nave.play()
+
 
 
 func _mover_para_pista(pista_x: float, velocidade_atual: float) -> void:
@@ -98,11 +100,13 @@ func _mover_para_pista(pista_x: float, velocidade_atual: float) -> void:
 		
 	# Tempo (s) = Distância (px) / Velocidade (px/s)
 	var duracao_movimento: float = distancia / velocidade_atual
+
 	
 	tween_movimento = create_tween()
 	tween_movimento.tween_property(self, "global_position:x", pista_x, duracao_movimento)\
 		.set_trans(Tween.TRANS_QUAD)\
 		.set_ease(Tween.EASE_OUT)
+		
 
 func disparos_por_segundo(delta: float) -> void:
 	disparo_ovni.wait_time = move_toward(disparo_ovni.wait_time, 1.5, 0.01 * delta)
@@ -117,11 +121,14 @@ func _on_atack_timer_timeout() -> void:
 	
 func _disparar_projetil() -> void:
 	var novo_projetil = projetil_ovni.instantiate()
-	
-	# Relay de Sinal para o GameContext
-	novo_projetil.player_atingido.connect(func(): player_atingido.emit())
-	
+
+	# Repassa a colisão para o GameContext.
+	novo_projetil.player_atingido.connect(
+		func(): player_atingido.emit()
+	)
+
 	get_tree().current_scene.add_child(novo_projetil)
-	
-	# O projétil nasce exatamente na posição X atual da nave (já reposicionada)
-	novo_projetil.global_position = self.global_position
+
+	# Posiciona o projétil na nave.
+	novo_projetil.global_position = global_position
+	$Audio_tiros.play()

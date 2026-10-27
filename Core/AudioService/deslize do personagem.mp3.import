@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhgd7v1oi3ko7"
+path="res://.godot/imported/deslize do personagem.mp3-f972542c62dcbc124a20b0f078cb5963.mp3str"
+
+[deps]
+
+source_file="res://Core/AudioService/deslize do personagem.mp3"
+dest_files=["res://.godot/imported/deslize do personagem.mp3-f972542c62dcbc124a20b0f078cb5963.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://do2d5mrwlg8sl"]
 
-[ext_resource type="Script" path="res://Features/Ovni/Projetil.gd" id="1_e138m"]
-[ext_resource type="Texture2D" path="res://Features/Ovni/projetil.svg" id="2_d76vc"]
+[ext_resource type="Script" uid="uid://fiibrob4sh1u" path="res://Features/Ovni/Projetil.gd" id="1_e138m"]
+[ext_resource type="Texture2D" uid="uid://bbyh67tt0gi2f" path="res://Features/Ovni/projetil.svg" id="2_d76vc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q2sbe"]
 radius = 8.0

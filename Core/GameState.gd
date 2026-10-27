@@ -18,8 +18,7 @@ const VELOCIDADE_MAXIMA: float = 650.0
 const VELOCIDADE_PROJETIL_INICIAL: float = 401.0
 const VELOCIDADE_PROJETIL_MAXIMA: float = 900.0
 
-## Tempo (s) que a velocidade leva para ir do início ao máximo dentro de uma
-## corrida. Quanto menor, mais rápido a dificuldade sobe.
+
 const TEMPO_ATE_VELOCIDADE_MAXIMA: float = 180.0
 
 signal velocidade_alterada(nova_velocidade: float)

@@ -18,6 +18,7 @@ func _ready() -> void:
 	_reposicionar()
 
 
+
 ## Método público orquestrado pelo GameContext (call down).
 func mover(delta: float, velocidade_atual: float) -> void:
 	position.y += velocidade_atual * delta
@@ -28,12 +29,6 @@ func mover(delta: float, velocidade_atual: float) -> void:
 func _reposicionar() -> void:
 	position.y = -100.0
 	position.x = float(GameState.PISTAS_X.pick_random())
-
-
-
-
-
-
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

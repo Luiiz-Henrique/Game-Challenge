@@ -31,6 +31,7 @@ func _ready() -> void:
 	ovni.player_atingido.connect(_reiniciar_corrida)
 	# O GameContext conecta o sinal emitido pela Feature de Barra de Progressão
 	barra_progressao.stage_time_finished.connect(_on_stage_time_finished)
+	AudioMenu.diminuir_volume()
 
 func _on_stage_time_finished() -> void:
 	#_finalizar_partida()
@@ -79,10 +80,15 @@ func _process(delta: float) -> void:
 
 	
 func _reiniciar_corrida() -> void:
+	$Colisao_audio.play()
+	
 	popup.show()
 	get_tree().paused = true
 
-func _on_pausar_pressed() -> void:
+
+
+func _on_button_pause_in_game_pressed() -> void:
+	$AudioBotoes.play()
 	button_pause.show()
 	get_tree().paused = true 
-	
+	print("Clique no botão de pausa recebido") # Replace with function body.

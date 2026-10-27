@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sejnxnnqgwpj"]
 
-[ext_resource type="Texture2D" uid="uid://cbbinepgeverh" path="res://Features/Cenarios/CenarioFase3/Inicio/Fase3_2.png" id="1_06bkr"]
+[ext_resource type="Texture2D" uid="uid://c8ct41vt5d2ya" path="res://Features/Cenarios/CenarioFase3/Inicio/Fase3_5.png" id="1_06bkr"]
 
 [node name="Fase31" type="Node2D" unique_id=1661287752]
 

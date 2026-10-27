@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dp4rsbvjibbj1"]
+
+[ext_resource type="Texture2D" uid="uid://1tnypnr884ny" path="res://Features/Buttons/reiniciarfase 1 [Vectorized].svg" id="1_24r53"]
+[ext_resource type="Script" uid="uid://cw2usi6sekq51" path="res://Features/Buttons/button_recomecar_fase.gd" id="2_evwdd"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="3_mtiws"]
+
+[node name="ButtonRecomecarFase" type="TextureButton" unique_id=283594588]
+offset_left = 88.0
+offset_top = 232.0
+offset_right = 276.0
+offset_bottom = 270.0
+texture_normal = ExtResource("1_24r53")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_evwdd")
+
+[node name="Audio_botoes" type="AudioStreamPlayer" parent="." unique_id=673625538]
+stream = ExtResource("3_mtiws")
+bus = &"SFX"

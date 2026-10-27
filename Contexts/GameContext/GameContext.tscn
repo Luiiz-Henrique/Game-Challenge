@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bimknq0heglki" path="res://Contexts/Tela_bateu_obstaculo/popup_colisao.tscn" id="6_17kti"]
 [ext_resource type="PackedScene" uid="uid://c72p2etnga6u6" path="res://Contexts/MenuPauseContext/Pause.tscn" id="7_eaqf0"]
 [ext_resource type="PackedScene" uid="uid://tybva3clgqa1" path="res://Features/BarraProgressaoMap/BarraProgressaoMap.tscn" id="7_md41r"]
-[ext_resource type="PackedScene" uid="uid://eag1o6f54wc8" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
+[ext_resource type="PackedScene" uid="uid://bflh1sb5gh774" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
+[ext_resource type="AudioStream" uid="uid://bxhq6jsr3rxng" path="res://Core/AudioService/Audio_colidir.mp3" id="10_mv5ba"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="11_rfog6"]
 
 [node name="GameContext" type="Node2D" unique_id=1716920165]
 script = ExtResource("1_gamecontext")
@@ -65,6 +67,16 @@ offset_left = 4.0
 offset_top = 77.0
 offset_right = 44.974976
 offset_bottom = 114.87201
+grow_horizontal = 2
 scale = Vector2(1.3, 1.3)
 
-[connection signal="pressed" from="ButtonPauseInGame" to="." method="_on_pausar_pressed"]
+[node name="Colisao_audio" type="AudioStreamPlayer" parent="." unique_id=16673554]
+process_mode = 3
+stream = ExtResource("10_mv5ba")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="AudioBotoes" type="AudioStreamPlayer" parent="." unique_id=1064297910]
+stream = ExtResource("11_rfog6")
+
+[connection signal="pressed" from="ButtonPauseInGame" to="." method="_on_button_pause_in_game_pressed"]
