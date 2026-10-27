@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bmx03r24xkln7"]
+
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="1_i0h6u"]
+
+[node name="Audio_botao" type="AudioStreamPlayer2D" unique_id=1200835980]
+stream = ExtResource("1_i0h6u")
+bus = &"SFX"

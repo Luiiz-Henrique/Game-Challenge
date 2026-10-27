@@ -9,3 +9,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _pressioned_button() -> void:
 	get_tree().paused = true	
+	$Audio_botao.play()

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dwlmdungen51j"]
+
+[ext_resource type="AudioStream" uid="uid://c1qubmnrjgpnl" path="res://Core/AudioService/the_mountain-retro-game-593063.mp3" id="1_o5b6r"]
+[ext_resource type="Script" uid="uid://b7ychsa20dmbd" path="res://Core/AudioService/audioManager.gd" id="2_l1u6e"]
+
+[node name="AudioManager" type="AudioStreamPlayer" unique_id=1959537867]
+stream = ExtResource("1_o5b6r")
+volume_db = -33.285
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_l1u6e")
