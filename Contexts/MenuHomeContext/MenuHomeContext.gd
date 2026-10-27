@@ -5,6 +5,8 @@ extends TextureRect
 ## seus sinais nativos (signal up); este contexto decide a navegação.
 
 const CENA_JOGO := "res://Core/Root.tscn"
+const CENA_TUTORIAL := "res://Contexts/StorytellingTutorial/TutorialContext/TutorialContext.tscn"
+const CENA_MAPA := "res://Contexts/MapaContext/MapaContext.tscn"
 @onready var botao_jogar: TextureButton = $Botao_jogar
 
 
@@ -19,6 +21,5 @@ func _on_botao_jogar_pressed() -> void:
 	som.reparent(get_tree().root)
 	som.finished.connect(som.queue_free)
 	som.play()
-	get_tree().change_scene_to_file(
-        "res://Contexts/MapaContext/MapaContext.tscn"
-	)
+	var destino := CENA_TUTORIAL if TutorialProgresso.deve_exibir() else CENA_MAPA
+	TransicaoTela.trocar_cena(get_tree(), destino)

@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://bdwns5gjmjgso" path="res://Features/Tutorial/botao-proxima-fala.png" id="1_textura"]
+
+[node name="BotaoProximaFala" type="TextureButton"]
+offset_right = 52.0
+offset_bottom = 52.0
+texture_normal = ExtResource("1_textura")
+ignore_texture_size = true
+stretch_mode = 5
