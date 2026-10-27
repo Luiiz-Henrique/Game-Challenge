@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://qgqj51bwmb1p"]
 
 [ext_resource type="PackedScene" uid="uid://bsdo7fyicjbcr" path="res://Contexts/GameContext/GameContext.tscn" id="1_base"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_1.tscn" id="b1"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_10.tscn" id="b2"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_2.tscn" id="b3"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_3.tscn" id="b4"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_4.tscn" id="b5"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_5.tscn" id="b6"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_6.tscn" id="b7"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_7.tscn" id="b8"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_8.tscn" id="b9"]
-[ext_resource type="PackedScene" path="res://Features/Cenarios/CenarioFase1/Fase1_9.tscn" id="b10"]
+[ext_resource type="PackedScene" uid="uid://0nlen2g7nv6u" path="res://Features/Cenarios/CenarioFase1/Fase1_1.tscn" id="b1"]
+[ext_resource type="PackedScene" uid="uid://cehpko4hp5m46" path="res://Features/Cenarios/CenarioFase1/Fase1_10.tscn" id="b2"]
+[ext_resource type="PackedScene" uid="uid://dqorghu827xy1" path="res://Features/Cenarios/CenarioFase1/Fase1_2.tscn" id="b3"]
+[ext_resource type="PackedScene" uid="uid://dbxk5xul0lyfk" path="res://Features/Cenarios/CenarioFase1/Fase1_3.tscn" id="b4"]
+[ext_resource type="PackedScene" uid="uid://lv1v5iif5hux" path="res://Features/Cenarios/CenarioFase1/Fase1_4.tscn" id="b5"]
+[ext_resource type="PackedScene" uid="uid://rkbk8ftexuw6" path="res://Features/Cenarios/CenarioFase1/Fase1_5.tscn" id="b6"]
+[ext_resource type="PackedScene" uid="uid://bbi7uq7dimvni" path="res://Features/Cenarios/CenarioFase1/Fase1_6.tscn" id="b7"]
+[ext_resource type="PackedScene" uid="uid://b8isa1hb8tfaf" path="res://Features/Cenarios/CenarioFase1/Fase1_7.tscn" id="b8"]
+[ext_resource type="PackedScene" uid="uid://cip8hvdo2bu20" path="res://Features/Cenarios/CenarioFase1/Fase1_8.tscn" id="b9"]
+[ext_resource type="PackedScene" uid="uid://cx5ly08xl6o8w" path="res://Features/Cenarios/CenarioFase1/Fase1_9.tscn" id="b10"]
 
-[node name="GameContext" instance=ExtResource("1_base")]
+[node name="GameContext" unique_id=1449875499 instance=ExtResource("1_base")]
 
-[node name="CenarioSpawner" parent="." index="0"]
+[node name="CenarioSpawner" parent="." index="0" unique_id=170833297]
 lista_de_blocos = Array[PackedScene]([ExtResource("b1"), ExtResource("b2"), ExtResource("b3"), ExtResource("b4"), ExtResource("b5"), ExtResource("b6"), ExtResource("b7"), ExtResource("b8"), ExtResource("b9"), ExtResource("b10")])
+
+[node name="Camera2D" parent="." index="5" unique_id=1718007149]
+position = Vector2(201, 437)
