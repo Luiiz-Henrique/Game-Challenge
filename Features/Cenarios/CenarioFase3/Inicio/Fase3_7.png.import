@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://60ef3f15fjh5"
-path="res://.godot/imported/cacto.png-21faa3c86bdb338b91f9d1bec40c7847.ctex"
+uid="uid://blwy7e2no11kq"
+path="res://.godot/imported/Fase3_7.png-dd177162e496abe0db6050c00236f166.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Contexts/GameContext/cacto.png"
-dest_files=["res://.godot/imported/cacto.png-21faa3c86bdb338b91f9d1bec40c7847.ctex"]
+source_file="res://Features/Cenarios/CenarioFase3/Inicio/Fase3_7.png"
+dest_files=["res://.godot/imported/Fase3_7.png-dd177162e496abe0db6050c00236f166.ctex"]
 
 [params]
 
