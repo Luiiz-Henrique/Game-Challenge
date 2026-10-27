@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cht3l5hf3jr8v" path="res://Contexts/StorytellingTutorial/TelaFala/TelaFala.gd" id="1_tela"]
+[ext_resource type="Texture2D" uid="uid://doskmfbbrrnk8" path="res://Features/Tutorial/background-tela-ovni.png" id="2_bg"]
+[ext_resource type="PackedScene" path="res://Features/Tutorial/BalaoFala.tscn" id="3_balao"]
+[ext_resource type="Texture2D" uid="uid://dnwq5vlp7xgxa" path="res://Features/Tutorial/balao-fala-ovni.png" id="4_balao_tex"]
+[ext_resource type="PackedScene" path="res://Features/Tutorial/BotaoProximaFala.tscn" id="5_proxima"]
+
+[node name="TelaOvni" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tela")
+falas = PackedStringArray("Tenho visitado o\nplaneta Terra a\ncada década e\nnessa última\nviagem descobri\num talento\npromissor nessa\nregião!", "O mecânico Xicó me\nsurpreendeu com\nsuas noções de\nEngenharia reversa.", "Preciso dele para\nampliar minha\ncaptura de fósseis\ne logo após,\ndominar essa nação!")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BalaoFala" parent="." instance=ExtResource("3_balao")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0458
+anchor_top = 0.6608
+anchor_right = 0.9593
+anchor_bottom = 0.9707
+offset_right = 0.0
+offset_bottom = 0.0
+textura_balao = ExtResource("4_balao_tex")
+tamanho_fonte = 17
+cor_texto = Color(1, 0.97, 0.91, 1)
+espacamento_linhas = 2
+margem_esquerda = 22.0
+margem_topo = 43.0
+margem_direita = 5.0
+margem_baixo = 60.0
+
+[node name="BotaoProximaFala" parent="." instance=ExtResource("5_proxima")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7735
+anchor_top = 0.892
+anchor_right = 0.9059
+anchor_bottom = 0.9531
+offset_right = 0.0
+offset_bottom = 0.0
