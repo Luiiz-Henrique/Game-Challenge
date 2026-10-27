@@ -24,7 +24,8 @@ var _tocando: bool = false
 
 
 func _ready() -> void:
-	animacao.play("correr")
+	$AudioCorrida.play()
+	animacao.play("correr")	
 
 
 func _input(event: InputEvent) -> void:
@@ -54,10 +55,12 @@ func atualizar(delta: float) -> void:
 func mover_esquerda() -> void:
 	if pista_atual > PISTA_MIN:
 		pista_atual -= 1
+		$SomSwipe.play()
 		mudou_pista.emit(pista_atual)
 
 
 func mover_direita() -> void:
 	if pista_atual < PISTA_MAX:
 		pista_atual += 1
+		$SomSwipe.play()	
 		mudou_pista.emit(pista_atual)

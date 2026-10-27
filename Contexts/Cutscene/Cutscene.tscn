@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://m653bgpowyq5"]
+
+[node name="Cutscene" type="Node2D" unique_id=1054515917]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1963939381]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1425823593]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1208979323]
+format = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhasvdcgd2ujk"
-path="res://.godot/imported/pausadofundo 1 [Vectorized].svg-a291f36cfc4298fac004029df9d7304c.ctex"
+uid="uid://cr7pjggfk107p"
+path="res://.godot/imported/VigesimaPrimeira.png-34eb96ec7f6711f158b5ad6e6a450b40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Contexts/MenuPauseContext/pausadofundo 1 [Vectorized].svg"
-dest_files=["res://.godot/imported/pausadofundo 1 [Vectorized].svg-a291f36cfc4298fac004029df9d7304c.ctex"]
+source_file="res://Assets_cutscene/VigesimaPrimeira.png"
+dest_files=["res://.godot/imported/VigesimaPrimeira.png-34eb96ec7f6711f158b5ad6e6a450b40.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

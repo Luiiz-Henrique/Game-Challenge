@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dpejrm65ji5eh" path="res://Features/Buttons/Button_Ajustes.tscn" id="4_5fdye"]
 [ext_resource type="Script" uid="uid://cdgkywy5ddwow" path="res://Features/Buttons/action_button_ajustes.gd" id="4_ddsf3"]
 [ext_resource type="Script" uid="uid://dbrlre4knh1ej" path="res://Contexts/MenuHomeContext/MenuHomeContext.gd" id="5_home"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="6_8w77r"]
 
 [node name="MenuHomeContext" type="TextureRect" unique_id=359420042]
 anchors_preset = 15
@@ -33,3 +34,8 @@ offset_bottom = 533.0
 script = ExtResource("4_ddsf3")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=583139291]
+
+[node name="Audio_botoes" type="AudioStreamPlayer" parent="." unique_id=1778502252]
+stream = ExtResource("6_8w77r")
+volume_db = -10.0
+bus = &"SFX"

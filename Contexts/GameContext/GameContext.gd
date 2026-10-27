@@ -72,12 +72,15 @@ func _process(delta: float) -> void:
 
 	
 func _reiniciar_corrida() -> void:
+	$Colisao_audio.play()
+	
 	popup.show()
 	get_tree().paused = true
 
 
 
 func _on_button_pause_in_game_pressed() -> void:
+	$AudioBotoes.play()
 	button_pause.show()
 	get_tree().paused = true 
 	print("Clique no botão de pausa recebido") # Replace with function body.

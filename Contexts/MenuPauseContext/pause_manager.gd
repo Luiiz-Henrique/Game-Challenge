@@ -22,7 +22,16 @@ func _on_button_retomar_pause_pressed() -> void:
 	get_tree().paused = false
 	hide()
 
-
 func _on_button_sair_pause_pressed() -> void:
+	$ButtonSairPause.disabled = true
+
+	var som: AudioStreamPlayer = $ButtonSairPause/Audio_botoes
+	som.process_mode = Node.PROCESS_MODE_ALWAYS
+	som.reparent(get_tree().root)
+	som.finished.connect(som.queue_free)
+	som.play()
+
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Contexts/MapaContext/MapaContext.tscn") 
+	get_tree().change_scene_to_file(
+        "res://Contexts/MapaContext/MapaContext.tscn"
+	)

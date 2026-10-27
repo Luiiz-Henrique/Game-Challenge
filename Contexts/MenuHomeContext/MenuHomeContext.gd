@@ -13,4 +13,12 @@ func _ready() -> void:
 
 
 func _on_botao_jogar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Contexts/MapaContext/MapaContext.tscn")
+	botao_jogar.disabled = true
+
+	var som: AudioStreamPlayer = $Audio_botoes
+	som.reparent(get_tree().root)
+	som.finished.connect(som.queue_free)
+	som.play()
+	get_tree().change_scene_to_file(
+        "res://Contexts/MapaContext/MapaContext.tscn"
+	)

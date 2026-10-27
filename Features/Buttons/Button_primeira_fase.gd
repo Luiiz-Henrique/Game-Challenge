@@ -7,3 +7,4 @@ func _ready() -> void:
 		
 func change_phase() -> void:
 	get_tree().change_scene_to_file("res://Core/Root.tscn")
+  
