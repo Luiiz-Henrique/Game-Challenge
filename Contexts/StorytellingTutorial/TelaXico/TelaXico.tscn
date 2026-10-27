@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cht3l5hf3jr8v" path="res://Contexts/StorytellingTutorial/TelaFala/TelaFala.gd" id="1_tela"]
+[ext_resource type="Texture2D" uid="uid://b5syjrhp4egju" path="res://Features/Tutorial/background-tela-xico.png" id="2_bg"]
+[ext_resource type="PackedScene" path="res://Features/Tutorial/BalaoFala.tscn" id="3_balao"]
+[ext_resource type="Texture2D" uid="uid://c1q0am8xwnche" path="res://Features/Tutorial/balao-fala-xico.png" id="4_balao_tex"]
+[ext_resource type="PackedScene" path="res://Features/Tutorial/BotaoProximaFala.tscn" id="5_proxima"]
+[ext_resource type="PackedScene" path="res://Features/Tutorial/BotaoMapa.tscn" id="6_mapa"]
+
+[node name="TelaXico" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tela")
+falas = PackedStringArray("Detectei a\npresença de\ninvasores\nalienígenas\naqui, eles já\ncostumam\nbuscar rochas\ncom fósseis\nmilenares...", "De forma\nestratégica,\ndividi três\npartes de uma\narma de alta\nfrequência que\nos levará para\nlonge...", "Ao percorrer\nos diferentes\ntipos de\nambiente, eles\ndesperdiçarão\nsuas energias\ne o confronto\nfinal será\npossível!", "Bem, vejamos o\nmapa...")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BalaoFala" parent="." instance=ExtResource("3_balao")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1018
+anchor_top = 0.1678
+anchor_right = 0.8957
+anchor_bottom = 0.4613
+offset_right = 0.0
+offset_bottom = 0.0
+textura_balao = ExtResource("4_balao_tex")
+tamanho_fonte = 18
+cor_texto = Color(0.08, 0.08, 0.08, 1)
+espacamento_linhas = 2
+margem_esquerda = 23.0
+margem_topo = 27.0
+margem_direita = 12.0
+margem_baixo = 30.0
+
+[node name="BotaoProximaFala" parent="." instance=ExtResource("5_proxima")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7761
+anchor_top = 0.8991
+anchor_right = 0.9084
+anchor_bottom = 0.9601
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="BotaoMapa" parent="." instance=ExtResource("6_mapa")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5522
+anchor_top = 0.8967
+anchor_right = 0.9466
+anchor_bottom = 0.9613
+offset_right = 0.0
+offset_bottom = 0.0

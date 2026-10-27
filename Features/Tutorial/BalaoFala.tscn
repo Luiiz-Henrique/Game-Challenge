@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cr7102l8moxr0" path="res://Features/Tutorial/BalaoFala.gd" id="1_balao"]
+[ext_resource type="FontFile" uid="uid://da6d1ii87xrnv" path="res://Features/Tutorial/PressStart2P-Regular.ttf" id="2_fonte"]
+
+[node name="BalaoFala" type="TextureRect"]
+offset_right = 312.0
+offset_bottom = 250.0
+mouse_filter = 2
+expand_mode = 1
+script = ExtResource("1_balao")
+fonte = ExtResource("2_fonte")
+
+[node name="Texto" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+autowrap_mode = 3
+visible_characters_behavior = 1

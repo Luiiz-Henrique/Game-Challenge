@@ -49,5 +49,4 @@ func _on_timer_timeout() -> void:
 func get_progresso() -> float:
 	if total_stage_time <= 0.0:
 		return 1.0
-	print(1.0 - clampf(timer.time_left / total_stage_time, 0.0, 1.0))
 	return 1.0 - clampf(timer.time_left / total_stage_time, 0.0, 1.0)
