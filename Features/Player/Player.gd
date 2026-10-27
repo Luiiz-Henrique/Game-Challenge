@@ -20,6 +20,10 @@ var pista_atual: int = 0
 var _posicao_inicial_toque: Vector2
 var _tocando: bool = false
 
+# Quando verdadeiro, desativa input manual e a interpolação de pista em
+# atualizar(), permitindo que o FinalLevel assuma o controle via Tween.
+var _controles_bloqueados: bool = false
+
 @onready var animacao: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -28,6 +32,8 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if _controles_bloqueados:
+		return
 	if event.is_action_pressed("ui_left"):
 		mover_esquerda()
 	elif event.is_action_pressed("ui_right"):
@@ -47,6 +53,8 @@ func _input(event: InputEvent) -> void:
 
 ## Método público orquestrado pelo GameContext (call down).
 func atualizar(delta: float) -> void:
+	if _controles_bloqueados:
+		return
 	var alvo_x: float = posicao_centro_x + (pista_atual * largura_pista)
 	position.x = lerp(position.x, alvo_x, suavidade * delta)
 
@@ -61,3 +69,10 @@ func mover_direita() -> void:
 	if pista_atual < PISTA_MAX:
 		pista_atual += 1
 		mudou_pista.emit(pista_atual)
+
+
+## Bloqueia ou desbloqueia os controles manuais do jogador.
+## Quando bloqueado, _input e atualizar() são ignorados, permitindo que um
+## orquestrador externo (ex: FinalLevel) assuma o controle da posição via Tween.
+func bloquear_controles(bloqueado: bool) -> void:
+	_controles_bloqueados = bloqueado

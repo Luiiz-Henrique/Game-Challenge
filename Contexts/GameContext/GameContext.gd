@@ -18,6 +18,8 @@ const VELOCIDADE_PROJETIL: float = 600.0
 @onready var button_pause: TextureRect = $Pause
 
 
+var FinalLevelScript= preload("res://Features/FinalLevel/FinalLevel.gd")
+
 func _ready() -> void:
 	# Zera a dificuldade a cada corrida. Como o retry recarrega a cena,
 	# a velocidade volta ao início quando o jogador bate (estilo Subway Surfers).
@@ -31,8 +33,14 @@ func _ready() -> void:
 	barra_progressao.stage_time_finished.connect(_on_stage_time_finished)
 
 func _on_stage_time_finished() -> void:
-	_finalizar_partida()
-	_reiniciar_corrida()
+	#_finalizar_partida()
+	#_reiniciar_corrida()
+	var final_level = Node.new()
+	final_level.set_script(FinalLevelScript)
+	add_child(final_level)
+	var hud: Array[CanvasItem] = [barra_progressao, $ButtonPauseInGame]
+	final_level.iniciar_finalizacao(player, ovni, "res://Contexts/MenuHomeContext/MenuHomeContext.tscn", hud)
+	
 
 func _finalizar_partida() -> void:
 	print("[GameContext] O tempo da fase acabou!")

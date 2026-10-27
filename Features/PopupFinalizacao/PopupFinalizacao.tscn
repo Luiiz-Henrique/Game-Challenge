@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bw0tk4s5ytpyg"]
+
+[ext_resource type="Script" uid="uid://ds2lffmrxuuru" path="res://Features/PopupFinalizacao/PopupFinalizacao.gd" id="1_popup_script"]
+[ext_resource type="Texture2D" uid="uid://3q8xmu5rye6t" path="res://Features/PopupFinalizacao/fase1concluida.png" id="2_l2ymd"]
+[ext_resource type="PackedScene" uid="uid://clkgpe7k57e3e" path="res://Features/PopupFinalizacao/ButtonProx.tscn" id="3_6rv4l"]
+
+[node name="PopupFinalizacao" type="CanvasLayer" unique_id=1001]
+script = ExtResource("1_popup_script")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1822208245]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -106.0
+offset_right = 177.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l2ymd")
+
+[node name="ButtonProx" parent="." unique_id=1340201221 instance=ExtResource("3_6rv4l")]
+offset_left = 275.0
+offset_top = 456.0
+offset_right = 320.0
+offset_bottom = 492.0
