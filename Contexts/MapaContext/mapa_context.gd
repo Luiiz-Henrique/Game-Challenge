@@ -25,6 +25,9 @@ func _ready() -> void:
 	for indice in botoes_fases.size():
 		var numero_fase := indice + 1
 		var liberada := ProgressoFases.esta_desbloqueada(numero_fase)
+		# [PedacosDispositivo] A fase final (Sobral) só libera com todos os pedaços.
+		if numero_fase == ProgressoFases.TOTAL_FASES:  # [PedacosDispositivo]
+			liberada = liberada and PedacosDispositivo.esta_completo()  # [PedacosDispositivo]
 		var botao := botoes_fases[indice]
 		botao.disabled = not liberada
 		if nuvens_fases[indice]:

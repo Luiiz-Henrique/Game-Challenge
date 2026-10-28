@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://h7odhp87rcxw" path="res://Features/Buttons/Galinha_choca.tscn" id="8_n2k0t"]
 [ext_resource type="Texture2D" uid="uid://n83yf3gs4age" path="res://Contexts/MapaContext/galinhachoca 1 .png" id="9_crgm5"]
 [ext_resource type="PackedScene" uid="uid://dj4phn4f3xhec" path="res://Features/Buttons/Sobral.tscn" id="9_vkwfk"]
+[ext_resource type="PackedScene" path="res://Features/PedacosDispositivo/ContadorPedacos.tscn" id="10_pedacos"]
 
 [node name="MapaContext" type="TextureRect" unique_id=1168339153]
 offset_left = -6.0
@@ -91,3 +92,10 @@ offset_left = 70.0
 offset_top = 255.0
 offset_right = 166.0
 offset_bottom = 302.0
+
+[node name="ContadorPedacos" parent="." instance=ExtResource("10_pedacos")]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 33.0
+offset_right = 395.0
+offset_bottom = 57.0
