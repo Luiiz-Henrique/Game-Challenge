@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PhaseConfig" format=3 uid="uid://cgt32fgdo342b"]
+
+[ext_resource type="Script" uid="uid://bkdhgv17efjax" path="res://Core/Resources/PhaseConfig.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+velocidade_inicial = 250.0
+velocidade_maxima = 700.0
+tempo_ate_velocidade_maxima = 240.0
+velocidade_projetil_inicial = 450.0
+velocidade_projetil_maxima = 1000.0
+intervalo_disparo = 1.0
+intervalo_minimo = 0.6
+tem_pedra = false
+tempo_fase = 240.0

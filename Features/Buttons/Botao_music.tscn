@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bm5c1ilrejy11"]
+
+[ext_resource type="Texture2D" uid="uid://n6oxxnp2dkyp" path="res://Features/Buttons/Musica.svg" id="1_5gpih"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="4_wx22k"]
+
+[node name="Music" type="TextureButton" unique_id=1597482901]
+anchors_preset = -1
+anchor_left = 0.558
+anchor_top = 0.209
+anchor_right = 0.558
+anchor_bottom = 0.209
+offset_left = -26.31601
+offset_top = -12.666
+offset_right = 36.68399
+offset_bottom = 38.334
+texture_normal = ExtResource("1_5gpih")
+ignore_texture_size = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1298053198]
+stream = ExtResource("4_wx22k")

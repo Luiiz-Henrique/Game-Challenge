@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://465rqc535es1"]
+
+[ext_resource type="Texture2D" uid="uid://cmfp6sycq1yeb" path="res://Features/Buttons/botaoVoltarSymbol 2.svg" id="1_hb0p1"]
+[ext_resource type="Script" uid="uid://bfdei0pkxf1rp" path="res://Features/Buttons/Button_back.gd" id="2_2ajfr"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="3_dns6f"]
+
+[node name="ButtonBack" type="TextureButton" unique_id=684781625]
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.32000002
+anchor_right = 0.5
+anchor_bottom = 0.388
+offset_left = -0.12199402
+offset_top = 0.35998535
+offset_right = 0.5
+offset_bottom = 0.4239807
+texture_normal = ExtResource("1_hb0p1")
+script = ExtResource("2_2ajfr")
+
+[node name="Audio_botoes" type="AudioStreamPlayer" parent="." unique_id=283590259]
+stream = ExtResource("3_dns6f")
+bus = &"SFX"

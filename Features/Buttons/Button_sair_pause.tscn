@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://dphw5p02i367k"]
+[gd_scene format=3 uid="uid://bjpmc4ajld3m5"]
 
 [ext_resource type="Texture2D" uid="uid://dktabwygbc0xu" path="res://Features/Buttons/botaaoSair.svg" id="1_7wd24"]
 
 [node name="ButtonSairPause" type="TextureButton" unique_id=1002595391]
-anchors_preset = -1
 anchor_left = 0.305
 anchor_top = 0.30900002
 anchor_right = 0.57000005

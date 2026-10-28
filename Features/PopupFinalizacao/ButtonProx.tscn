@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://clkgpe7k57e3e"]
+
+[ext_resource type="Texture2D" uid="uid://cccrisyrq2ssb" path="res://Features/PopupFinalizacao/ButtonProxImg.png" id="1_y5ncc"]
+
+[node name="ButtonProx" type="TextureButton" unique_id=1340201221]
+custom_minimum_size = Vector2(45, 36)
+offset_left = 118.0
+offset_top = 214.0
+offset_right = 163.0
+offset_bottom = 250.0
+texture_normal = ExtResource("1_y5ncc")

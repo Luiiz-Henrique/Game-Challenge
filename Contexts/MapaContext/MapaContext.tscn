@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dspcub656w6dp"]
+
+[ext_resource type="Script" uid="uid://drehy4gfwdyqq" path="res://Contexts/MapaContext/mapa_context.gd" id="1_a1b1g"]
+[ext_resource type="PackedScene" uid="uid://465rqc535es1" path="res://Features/Buttons/Button_back.tscn" id="1_b0u0s"]
+[ext_resource type="Texture2D" uid="uid://dx4wxcsveyg86" path="res://Contexts/MapaContext/Frame 43.png" id="1_yhwjw"]
+[ext_resource type="PackedScene" uid="uid://d3rirtbmxlll1" path="res://Features/Buttons/Ponte_metalica.tscn" id="2_ao27v"]
+[ext_resource type="PackedScene" uid="uid://clehe7vuecxg0" path="res://Contexts/MapaContext/Nuvens.tscn" id="5_4oo3t"]
+[ext_resource type="Texture2D" uid="uid://cdql2mqu2sr4v" path="res://Contexts/MapaContext/pontevermelha 1 .png" id="5_yhwjw"]
+[ext_resource type="PackedScene" uid="uid://briat63i37r3u" path="res://Features/Buttons/PadreCicero.tscn" id="6_n2k0t"]
+[ext_resource type="PackedScene" uid="uid://du2nco74a52a7" path="res://Contexts/MapaContext/Nuvens2.tscn" id="7_850qn"]
+[ext_resource type="Texture2D" uid="uid://bgvygxesuc0e1" path="res://Contexts/MapaContext/padrecicero 1 .png" id="8_i0lpq"]
+[ext_resource type="PackedScene" uid="uid://ldw7uk4musmb" path="res://Contexts/MapaContext/Nuvens3.tscn" id="8_ixxdx"]
+[ext_resource type="PackedScene" uid="uid://h7odhp87rcxw" path="res://Features/Buttons/Galinha_choca.tscn" id="8_n2k0t"]
+[ext_resource type="Texture2D" uid="uid://n83yf3gs4age" path="res://Contexts/MapaContext/galinhachoca 1 .png" id="9_crgm5"]
+[ext_resource type="PackedScene" uid="uid://dj4phn4f3xhec" path="res://Features/Buttons/Sobral.tscn" id="9_vkwfk"]
+[ext_resource type="PackedScene" path="res://Features/PedacosDispositivo/ContadorPedacos.tscn" id="10_pedacos"]
+
+[node name="MapaContext" type="TextureRect" unique_id=1168339153]
+offset_left = -6.0
+offset_top = -3.0
+offset_right = 405.4507
+offset_bottom = 889.0
+texture = ExtResource("1_yhwjw")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("1_a1b1g")
+
+[node name="ButtonBack" parent="." unique_id=684781625 instance=ExtResource("1_b0u0s")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 11.0
+offset_top = 16.0
+offset_right = 69.0
+offset_bottom = 74.0
+
+[node name="ButtonPrimeiraCidade" parent="." unique_id=1930639020 instance=ExtResource("2_ao27v")]
+layout_mode = 0
+offset_left = 181.00002
+offset_top = 390.0
+offset_right = 1777.0
+offset_bottom = 1986.0
+scale = Vector2(0.044, 0.044)
+texture_normal = ExtResource("5_yhwjw")
+
+[node name="Nuvens" parent="." unique_id=939812298 instance=ExtResource("5_4oo3t")]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 380.0
+offset_right = 259.0
+offset_bottom = 429.0
+
+[node name="PadreCicero2" parent="." unique_id=902601303 instance=ExtResource("6_n2k0t")]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 540.00006
+offset_right = 1776.0
+offset_bottom = 2136.0
+scale = Vector2(0.044, 0.044)
+texture_normal = ExtResource("8_i0lpq")
+
+[node name="Nuvens2" parent="." unique_id=1618755912 instance=ExtResource("7_850qn")]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 525.0
+offset_right = 249.0
+offset_bottom = 566.0
+
+[node name="GalinhaChoca" parent="." unique_id=830842286 instance=ExtResource("8_n2k0t")]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 349.00003
+offset_right = 1841.0
+offset_bottom = 1945.0
+scale = Vector2(0.044, 0.044)
+texture_normal = ExtResource("9_crgm5")
+
+[node name="Sobral" parent="." unique_id=558334716 instance=ExtResource("9_vkwfk")]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 259.0
+offset_right = 1757.0
+offset_bottom = 1935.0
+scale = Vector2(0.05, 0.05)
+
+[node name="Nuvens3" parent="." unique_id=531206928 instance=ExtResource("8_ixxdx")]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 255.0
+offset_right = 166.0
+offset_bottom = 302.0
+
+[node name="ContadorPedacos" parent="." instance=ExtResource("10_pedacos")]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 33.0
+offset_right = 395.0
+offset_bottom = 57.0

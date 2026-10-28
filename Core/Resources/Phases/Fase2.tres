@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PhaseConfig" format=3]
+
+[ext_resource type="Script" uid="uid://bkdhgv17efjax" path="res://Core/Resources/PhaseConfig.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bqxb1wxrbv6xb" path="res://Features/Pedra/rocha.png" id="2_obstaculo"]
+
+[resource]
+script = ExtResource("1")
+velocidade_inicial = 220.0
+velocidade_maxima = 650.0
+tempo_ate_velocidade_maxima = 210.0
+velocidade_projetil_inicial = 420.0
+velocidade_projetil_maxima = 950.0
+intervalo_disparo = 3.0
+intervalo_minimo = 1.5
+tem_pedra = true
+textura_obstaculo = ExtResource("2_obstaculo")
+tempo_fase = 210.0

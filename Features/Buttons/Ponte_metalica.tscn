@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d3rirtbmxlll1"]
+
+[ext_resource type="Texture2D" uid="uid://r42j340ygwf8" path="res://Features/Buttons/pontevermelha 1 [Vectorized]-2.svg" id="1_2e2c8"]
+
+[node name="Ponte_metalica" type="TextureButton" unique_id=1930639020]
+offset_left = 167.0
+offset_top = 227.0
+offset_right = 213.0
+offset_bottom = 273.0
+texture_normal = ExtResource("1_2e2c8")

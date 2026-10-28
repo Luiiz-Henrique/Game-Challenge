@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwyfvpbe72n53"]
 
-[ext_resource type="Texture2D" uid="uid://bhw31ja2pt8hs" path="res://Features/Buttons/tentar novamente 1 [Vectorized]-3.svg" id="1_xdvlp"]
+[ext_resource type="Texture2D" uid="uid://dm0m60ju2cnqb" path="res://Features/Buttons/tentar novamente 1 [Vectorized]-4.svg" id="1_xdvlp"]
 [ext_resource type="Script" uid="uid://53vbhvc5ugt4" path="res://Features/Buttons/action_button_tentar_novamente.gd" id="2_3owrf"]
 
 [node name="ButtonTentarNovamente" type="TextureButton" unique_id=1523029344]
@@ -16,3 +16,7 @@ offset_bottom = 23.987976
 texture_normal = ExtResource("1_xdvlp")
 stretch_mode = 5
 script = ExtResource("2_3owrf")
+
+[node name="Audio_botoes" type="AudioStreamPlayer" parent="." unique_id=1700315091]
+process_mode = 3
+bus = &"SFX"

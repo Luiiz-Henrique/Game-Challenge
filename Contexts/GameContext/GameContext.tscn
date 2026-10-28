@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://bsdo7fyicjbcr"]
 
 [ext_resource type="Script" uid="uid://ojosiilu8hqp" path="res://Contexts/GameContext/GameContext.gd" id="1_gamecontext"]
-[ext_resource type="PackedScene" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
+[ext_resource type="PackedScene" uid="uid://deb2l2tgc13v3" path="res://Features/CenarioSpawner/CenarioSpawner.tscn" id="2_cenario"]
 [ext_resource type="PackedScene" uid="uid://cr5bfyo1tqglm" path="res://Features/Pedra/Pedra.tscn" id="3_pedra"]
 [ext_resource type="PackedScene" uid="uid://blrscng8pmaca" path="res://Features/Player/Player.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cd3igma6id1wr" path="res://Features/Ovni/Ovni.tscn" id="5_ovni"]
 [ext_resource type="PackedScene" uid="uid://bimknq0heglki" path="res://Contexts/Tela_bateu_obstaculo/popup_colisao.tscn" id="6_17kti"]
 [ext_resource type="PackedScene" uid="uid://c72p2etnga6u6" path="res://Contexts/MenuPauseContext/Pause.tscn" id="7_eaqf0"]
 [ext_resource type="PackedScene" uid="uid://tybva3clgqa1" path="res://Features/BarraProgressaoMap/BarraProgressaoMap.tscn" id="7_md41r"]
-[ext_resource type="PackedScene" uid="uid://eag1o6f54wc8" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
+[ext_resource type="PackedScene" uid="uid://bflh1sb5gh774" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
+[ext_resource type="AudioStream" uid="uid://bxhq6jsr3rxng" path="res://Core/AudioService/Audio_colidir.mp3" id="10_mv5ba"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="11_rfog6"]
+[ext_resource type="AudioStream" uid="uid://dddog7vnoqth4" path="res://Core/AudioService/fase concuida.mp3" id="12_rfog6"]
 
 [node name="GameContext" type="Node2D" unique_id=1716920165]
 script = ExtResource("1_gamecontext")
@@ -24,12 +27,13 @@ scale = Vector2(0.7, 0.7)
 scale = Vector2(0.8, 0.8)
 
 [node name="Ovni" parent="." unique_id=735828122 instance=ExtResource("5_ovni")]
-position = Vector2(202, 100)
+position = Vector2(202, 121)
 
 [node name="Projeteis" type="Node2D" parent="." unique_id=2000000001]
+scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1718007149]
-position = Vector2(197, 426)
+position = Vector2(201, 437)
 
 [node name="BarraProgressaoMap" parent="." unique_id=1964029799 instance=ExtResource("7_md41r")]
 anchors_preset = 15
@@ -37,22 +41,22 @@ anchor_left = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 197.0
-offset_top = 31.0
+offset_top = 55.0
 offset_right = 197.0
-offset_bottom = 31.0
+offset_bottom = 55.0
 grow_vertical = 2
 
 [node name="Pause" parent="." unique_id=1079135318 instance=ExtResource("7_eaqf0")]
-offset_left = 10.466782
+offset_left = 18.466782
 offset_top = 235.57898
-offset_right = 364.4668
+offset_right = 372.4668
 offset_bottom = 555.579
 
 [node name="PopupColisao" parent="." unique_id=1186763229 instance=ExtResource("6_17kti")]
 z_index = 999
-offset_left = 30.02829
+offset_left = 31.02829
 offset_top = 323.0
-offset_right = 353.9717
+offset_right = 354.9717
 offset_bottom = 517.0
 expand_mode = 3
 stretch_mode = 3
@@ -60,9 +64,23 @@ stretch_mode = 3
 [node name="ButtonPauseInGame" parent="." unique_id=1313944824 instance=ExtResource("9_strpf")]
 anchor_left = 0.0
 anchor_bottom = 0.386
-offset_left = 320.0
-offset_top = 75.0
-offset_right = 360.97498
-offset_bottom = 112.87201
+offset_left = 4.0
+offset_top = 77.0
+offset_right = 44.974976
+offset_bottom = 114.87201
+grow_horizontal = 2
+scale = Vector2(1.3, 1.3)
 
-[connection signal="pressed" from="ButtonPauseInGame" to="." method="_on_pausar_pressed"]
+[node name="Colisao_audio" type="AudioStreamPlayer" parent="." unique_id=16673554]
+process_mode = 3
+stream = ExtResource("10_mv5ba")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="AudioBotoes" type="AudioStreamPlayer" parent="." unique_id=1064297910]
+stream = ExtResource("11_rfog6")
+
+[node name="Finalizacao_cena_audio" type="AudioStreamPlayer" parent="." unique_id=1869344704]
+stream = ExtResource("12_rfog6")
+
+[connection signal="pressed" from="ButtonPauseInGame" to="." method="_on_button_pause_in_game_pressed"]

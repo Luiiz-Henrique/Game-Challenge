@@ -20,19 +20,27 @@ var pista_atual: int = 0
 var _posicao_inicial_toque: Vector2
 var _tocando: bool = false
 
+# Quando verdadeiro, desativa input manual e a interpolação de pista em
+# atualizar(), permitindo que o FinalLevel assuma o controle via Tween.
+var _controles_bloqueados: bool = false
+
 @onready var animacao: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready() -> void:
-	animacao.play("correr")
+	$AudioCorrida.play()
+	animacao.play("correr")	
 
 
 func _input(event: InputEvent) -> void:
+	if _controles_bloqueados:
+		return
 	if event.is_action_pressed("ui_left"):
 		mover_esquerda()
 	elif event.is_action_pressed("ui_right"):
 		mover_direita()
-	elif event is InputEventScreenTouch or event is InputEventMouseButton:
+	# [ToqueTela] Só toque: o mouse emulado do iPhone movia duas pistas por toque.
+	elif event is InputEventScreenTouch:  # [ToqueTela] era: or event is InputEventMouseButton
 		if event.pressed:
 			_posicao_inicial_toque = event.position
 			_tocando = true
@@ -44,9 +52,13 @@ func _input(event: InputEvent) -> void:
 					mover_direita()
 				else:
 					mover_esquerda()
+			else:  # [ToqueTela]
+				_tocar_lado(event.position)  # [ToqueTela]
 
 ## Método público orquestrado pelo GameContext (call down).
 func atualizar(delta: float) -> void:
+	if _controles_bloqueados:
+		return
 	var alvo_x: float = posicao_centro_x + (pista_atual * largura_pista)
 	position.x = lerp(position.x, alvo_x, suavidade * delta)
 
@@ -54,10 +66,30 @@ func atualizar(delta: float) -> void:
 func mover_esquerda() -> void:
 	if pista_atual > PISTA_MIN:
 		pista_atual -= 1
+		$SomSwipe.play()
 		mudou_pista.emit(pista_atual)
 
 
 func mover_direita() -> void:
 	if pista_atual < PISTA_MAX:
 		pista_atual += 1
+		$SomSwipe.play()	
 		mudou_pista.emit(pista_atual)
+
+
+## Bloqueia ou desbloqueia os controles manuais do jogador.
+## Quando bloqueado, _input e atualizar() são ignorados, permitindo que um
+## orquestrador externo (ex: FinalLevel) assuma o controle da posição via Tween.
+func bloquear_controles(bloqueado: bool) -> void:
+	_controles_bloqueados = bloqueado
+
+
+## [ToqueTela] Toque na metade de baixo da tela: lado esquerdo/direito do meio escolhe a pista.
+func _tocar_lado(posicao: Vector2) -> void:  # [ToqueTela]
+	var tela: Vector2 = get_viewport_rect().size  # [ToqueTela]
+	if posicao.y < tela.y / 2.0:  # [ToqueTela]
+		return  # [ToqueTela]
+	if posicao.x < tela.x / 2.0:  # [ToqueTela]
+		mover_esquerda()  # [ToqueTela]
+	else:  # [ToqueTela]
+		mover_direita()  # [ToqueTela]
