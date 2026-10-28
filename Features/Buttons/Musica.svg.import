@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y7twhln4wlvq"
-path="res://.godot/imported/Group 3.svg-016e57220b140bba8bf10906dfe2f5ea.ctex"
+uid="uid://n6oxxnp2dkyp"
+path="res://.godot/imported/Musica.svg-5b3031f2c987b8982674ff7fe0e9ef68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Features/Buttons/Group 3.svg"
-dest_files=["res://.godot/imported/Group 3.svg-016e57220b140bba8bf10906dfe2f5ea.ctex"]
+source_file="res://Features/Buttons/Musica.svg"
+dest_files=["res://.godot/imported/Musica.svg-5b3031f2c987b8982674ff7fe0e9ef68.ctex"]
 
 [params]
 
