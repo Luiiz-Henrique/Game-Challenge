@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b7ychsa20dmbd" path="res://Core/AudioService/audioManager.gd" id="2_l1u6e"]
 
 [node name="AudioManager" type="AudioStreamPlayer" unique_id=1959537867]
+process_mode = 3
 stream = ExtResource("1_o5b6r")
 volume_db = -33.285
 autoplay = true
