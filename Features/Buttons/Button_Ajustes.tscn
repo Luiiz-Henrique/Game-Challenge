@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bs6wsdpvxjdkm" path="res://Features/Buttons/Ajustes 1.svg" id="1_ptb6p"]
 [ext_resource type="AudioStream" uid="uid://bxhq6jsr3rxng" path="res://Core/AudioService/Audio_colidir.mp3" id="2_gfvjv"]
 
-[node name="TextureButton" type="TextureButton" unique_id=980787844]
+[node name="Botao_ajustes" type="TextureButton" unique_id=980787844]
 offset_left = 79.0
 offset_top = 142.0
 offset_right = 249.0
