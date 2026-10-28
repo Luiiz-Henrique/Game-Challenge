@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://ck3k4a3iu3ubk"]
+
+[ext_resource type="Texture2D" uid="uid://bjq6yke47v53d" path="res://Contexts/MenuHomeContext/Tela Inicial.png" id="1_pfbpt"]
+[ext_resource type="Script" uid="uid://cdgkywy5ddwow" path="res://Features/Buttons/action_button_ajustes.gd" id="1_pvre5"]
+[ext_resource type="PackedScene" uid="uid://465rqc535es1" path="res://Features/Buttons/Button_back.tscn" id="3_f1h8y"]
+[ext_resource type="Texture2D" uid="uid://bdjgggqcmfu1m" path="res://Contexts/MenuHomeContext/Musica.png" id="4_f10gx"]
+[ext_resource type="Texture2D" uid="uid://nnm7pry2xd1a" path="res://Contexts/MenuHomeContext/Som.png" id="5_lyxm7"]
+[ext_resource type="Texture2D" uid="uid://bsytutl25c45a" path="res://Contexts/MenuHomeContext/moldura_de_madeira.svg" id="6_lyxm7"]
+[ext_resource type="PackedScene" uid="uid://c52c3i6mjcw1q" path="res://Features/Buttons/Botao_som.tscn" id="7_xcyci"]
+[ext_resource type="PackedScene" uid="uid://bm5c1ilrejy11" path="res://Features/Buttons/Botao_music.tscn" id="8_3yin7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcyci"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.44705883, 0.22352941, 0.2, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsebw"]
+bg_color = Color(1, 0.85882354, 0.6666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3un3h"]
+bg_color = Color(1, 0.85882354, 0.6666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yin7"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.44705883, 0.22352941, 0.2, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eendf"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 0.85882354, 0.6666667, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 29
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgnhd"]
+bg_color = Color(1, 0.85882354, 0.6666667, 1)
+
+[node name="MenuAjustes" type="TextureRect" unique_id=1820738737 node_paths=PackedStringArray("volume_do_jogo", "volume_da_musica", "silenciar", "silenciar_musica")]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 429.0
+offset_bottom = 888.0
+texture = ExtResource("1_pfbpt")
+script = ExtResource("1_pvre5")
+volume_do_jogo = NodePath("Moldura/Som do jogo")
+volume_da_musica = NodePath("Moldura2/Musica do jogo")
+silenciar = NodePath("Botao_music_som")
+silenciar_musica = NodePath("Botao_music_ajustes")
+
+[node name="ButtonBack" parent="." unique_id=684781625 instance=ExtResource("3_f1h8y")]
+layout_mode = 1
+offset_left = -124.92799
+offset_top = -235.12003
+offset_right = -124.306
+offset_bottom = -235.05603
+
+[node name="Musica" type="Sprite2D" parent="." unique_id=1274271330]
+position = Vector2(116, 335)
+texture = ExtResource("4_f10gx")
+
+[node name="Som" type="Sprite2D" parent="." unique_id=1404897832]
+position = Vector2(77, 193)
+texture = ExtResource("5_lyxm7")
+
+[node name="Moldura" type="TextureRect" parent="." unique_id=1283422774]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17600001
+anchor_top = 0.411
+anchor_right = 0.73600006
+anchor_bottom = 0.47900003
+offset_left = -53.032005
+offset_top = -147.20102
+offset_right = -25.952026
+offset_bottom = -146.78903
+texture = ExtResource("6_lyxm7")
+
+[node name="Som do jogo" type="HSlider" parent="Moldura" unique_id=40102401]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 14.0
+offset_right = 246.0
+offset_bottom = 35.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_xcyci")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_jsebw")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3un3h")
+value = 100.0
+
+[node name="Moldura2" type="TextureRect" parent="." unique_id=1500374871]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.40600002
+anchor_right = 0.70400006
+anchor_bottom = 0.47500002
+offset_left = -4.9440002
+offset_top = 1.2539978
+offset_right = -11.128021
+offset_bottom = 0.7749939
+texture = ExtResource("6_lyxm7")
+
+[node name="Musica do jogo" type="HSlider" parent="Moldura2" unique_id=48994572]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 18.0
+offset_right = 250.0
+offset_bottom = 34.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_3yin7")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_eendf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pgnhd")
+value = 1.0
+
+[node name="Botao_music_ajustes" parent="." unique_id=1992347792 instance=ExtResource("7_xcyci")]
+layout_mode = 1
+anchor_left = 0.72200006
+anchor_top = 0.409
+anchor_right = 0.88100004
+anchor_bottom = 0.469
+offset_left = 11.095978
+offset_top = 0.58099365
+offset_right = 11.207977
+offset_bottom = 1.1409912
+
+[node name="Botao_music_som" parent="." unique_id=1597482901 instance=ExtResource("8_3yin7")]
+layout_mode = 1
+anchor_left = 0.73600006
+anchor_top = 0.24800001
+anchor_right = 0.89800006
+anchor_bottom = 0.312
+offset_left = 0.047973633
+offset_top = 1.0319977
+offset_right = 0.063964844
+offset_bottom = 0.0079956055

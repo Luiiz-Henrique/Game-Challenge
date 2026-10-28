@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qgsj51bwmb1p"]
 
 [ext_resource type="PackedScene" uid="uid://bsdo7fyicjbcr" path="res://Contexts/GameContext/GameContext.tscn" id="1_base"]
+[ext_resource type="Resource" path="res://Core/Resources/Phases/Fase3.tres" id="2_config"]
 [ext_resource type="PackedScene" uid="uid://bxwvgmj0qseiy" path="res://Features/Cenarios/CenarioFase3/Final/Fase3_12.tscn" id="f1"]
 [ext_resource type="PackedScene" uid="uid://cpk54q7ooftns" path="res://Features/Cenarios/CenarioFase3/Final/Fase3_13.tscn" id="f2"]
 [ext_resource type="PackedScene" uid="uid://byegae43xwe43" path="res://Features/Cenarios/CenarioFase3/Final/Fase3_14.tscn" id="f3"]
@@ -23,6 +24,7 @@
 
 [node name="GameContext" unique_id=2018901145 instance=ExtResource("1_base")]
 numero_fase = 3
+config_fase = ExtResource("2_config")
 
 [node name="CenarioSpawner" parent="." index="0" unique_id=170833297]
 usar_transicao = true

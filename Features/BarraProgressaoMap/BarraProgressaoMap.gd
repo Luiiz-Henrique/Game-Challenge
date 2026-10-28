@@ -33,6 +33,14 @@ func _setup_timer() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
+## Redefine a duração da fase e reinicia a contagem (call down do GameContext).
+func configurar_tempo(segundos: float) -> void:
+	total_stage_time = segundos
+	timer.wait_time = total_stage_time
+	timer.start()
+	progress_bar.value = 0
+	_atualizar_icone()
+
 func _setup_progress_bar() -> void:
 	progress_bar.min_value = 0.0
 	progress_bar.max_value = 1

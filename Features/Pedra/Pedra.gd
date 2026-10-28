@@ -10,6 +10,7 @@ extends Node2D
 signal player_atingido
 
 @onready var area_detecao: Area2D = $Area2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 const tela_morte = preload("res://Features/Pedra/Pedra.tscn")
 
@@ -17,6 +18,21 @@ func _ready() -> void:
 	area_detecao.body_entered.connect(_on_area_2d_body_entered)
 	_reposicionar()
 
+
+
+## Troca a arte do obstáculo (cacto, pedra...) mantendo a largura na tela.
+func configurar_textura(textura: Texture2D) -> void:
+	if textura == null or textura == sprite.texture:
+		return
+	var largura_na_tela: float = sprite.texture.get_size().x * sprite.scale.x
+	sprite.texture = textura
+	sprite.scale = Vector2.ONE * (largura_na_tela / textura.get_size().x)
+
+
+## Tira o obstáculo da fase: some da tela e deixa de colidir.
+func desativar() -> void:
+	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 
 ## Método público orquestrado pelo GameContext (call down).
