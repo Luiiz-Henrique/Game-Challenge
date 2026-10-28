@@ -61,26 +61,25 @@ offset_bottom = 30.40152
 
 [node name="BotaoMusic" parent="." unique_id=175633221 instance=ExtResource("6_o1pdh")]
 layout_mode = 1
-anchor_left = 0.33600003
-anchor_top = 0.47900003
-anchor_right = 0.4
-anchor_bottom = 0.527
-offset_left = -1.5760193
-offset_top = 2.3309937
-offset_right = 11.599991
-offset_bottom = 16.00299
+anchor_left = 0.509
+anchor_top = 0.47800002
+anchor_right = 0.63500005
+anchor_bottom = 0.555
+offset_left = 10.181
+offset_top = -1.0580139
+offset_right = -10.285034
+offset_bottom = -1.105011
 
 [node name="BotaoSom" parent="." unique_id=1236868214 instance=ExtResource("7_rvv53")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.61800003
-anchor_top = 0.52900004
-anchor_right = 0.61800003
+anchor_left = 0.34
+anchor_top = 0.527
+anchor_right = 0.40300003
 anchor_bottom = 0.52900004
-offset_left = -22.238007
-offset_top = -18.219025
-offset_right = 21.761993
-offset_bottom = 17.780975
+offset_left = -14.940002
+offset_top = -16.99701
+offset_right = 4.8269806
+offset_bottom = 31.780975
 
 [connection signal="pressed" from="ButtonRetomarPause" to="." method="_on_button_retomar_pause_pressed"]
 [connection signal="pressed" from="ButtonSairPause" to="." method="_on_button_sair_pause_pressed"]

@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bjq6yke47v53d" path="res://Contexts/MenuHomeContext/Tela Inicial.png" id="1_5fdye"]
 [ext_resource type="PackedScene" uid="uid://c4l62jg4c6m1q" path="res://Features/Buttons/Button_jogar.tscn" id="2_5a3en"]
 [ext_resource type="PackedScene" uid="uid://dpejrm65ji5eh" path="res://Features/Buttons/Button_Ajustes.tscn" id="4_5fdye"]
-[ext_resource type="Script" uid="uid://cdgkywy5ddwow" path="res://Features/Buttons/action_button_ajustes.gd" id="4_ddsf3"]
 [ext_resource type="Script" uid="uid://dbrlre4knh1ej" path="res://Contexts/MenuHomeContext/MenuHomeContext.gd" id="5_home"]
 [ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="6_8w77r"]
 
@@ -24,14 +23,14 @@ offset_left = 115.0
 offset_top = 352.0
 offset_right = 293.0
 offset_bottom = 428.0
+script = null
 
-[node name="TextureButton2" parent="." unique_id=1976419141 instance=ExtResource("4_5fdye")]
+[node name="Botao_ajustes" parent="." unique_id=1976419141 instance=ExtResource("4_5fdye")]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 445.0
 offset_right = 276.0
 offset_bottom = 533.0
-script = ExtResource("4_ddsf3")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=583139291]
 
@@ -39,3 +38,5 @@ script = ExtResource("4_ddsf3")
 stream = ExtResource("6_8w77r")
 volume_db = -10.0
 bus = &"SFX"
+
+[connection signal="pressed" from="Botao_ajustes" to="." method="_on_botao_ajustes_pressed"]
