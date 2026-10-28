@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PhaseConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Core/Resources/PhaseConfig.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+velocidade_inicial = 250.0
+velocidade_maxima = 700.0
+tempo_ate_velocidade_maxima = 160.0
+velocidade_projetil_inicial = 450.0
+velocidade_projetil_maxima = 950.0
+intervalo_disparo = 0.8
+intervalo_minimo = 0.35
+disparos_aceleram_com_dificuldade = true
+tem_pedra = true
+tem_ovni = true
+modo_barra = 0
+tempo_fase = 60.0
+vida_ovni_max = 100
+energia_para_municao = 1
+usar_transicao_cenario = true
+progresso_transicao = 0.5

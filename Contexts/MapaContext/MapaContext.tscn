@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dj4phn4f3xhec" path="res://Features/Buttons/Sobral.tscn" id="9_vkwfk"]
 
 [node name="MapaContext" type="TextureRect" unique_id=1168339153]
-offset_left = -6.0
-offset_top = -5.0
-offset_right = 387.0
-offset_bottom = 847.0
+offset_left = 7.0
+offset_top = 21.0
+offset_right = 400.0
+offset_bottom = 873.0
 texture = ExtResource("1_p5l5x")
 expand_mode = 3
 stretch_mode = 5
