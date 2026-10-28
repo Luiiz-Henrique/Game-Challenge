@@ -14,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tela")
-falas = PackedStringArray("Tenho visitado o\nplaneta Terra a\ncada década e\nnessa última\nviagem descobri\num talento\npromissor nessa\nregião!", "O mecânico Xicó me\nsurpreendeu com\nsuas noções de\nEngenharia reversa.", "Preciso dele para\nampliar minha\ncaptura de fósseis\ne logo após,\ndominar essa nação!")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
