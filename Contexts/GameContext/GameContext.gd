@@ -91,4 +91,4 @@ func _on_button_pause_in_game_pressed() -> void:
 	$AudioBotoes.play()
 	button_pause.show()
 	get_tree().paused = true 
-	print("Clique no botão de pausa recebido") # Replace with function body.
+	print("Clique no botão de pausa recebido") 

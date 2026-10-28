@@ -5,6 +5,6 @@
 [node name="Fase15" type="Node2D" unique_id=928135477]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=118289736]
-position = Vector2(203, 437)
-scale = Vector2(0.25, 0.25)
+position = Vector2(202, 437)
+scale = Vector2(0.25124377, 0.25)
 texture = ExtResource("1_ccxyv")

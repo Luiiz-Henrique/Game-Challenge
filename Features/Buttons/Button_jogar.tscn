@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ci57fdr4bw2hc" path="res://Features/Buttons/botaoJogar 1.svg" id="1_l1hbo"]
 [ext_resource type="Script" uid="uid://20x7xac6y5tb" path="res://Features/Buttons/action_button_play.gd" id="2_2q3o5"]
-[ext_resource type="AudioStream" uid="uid://bxhq6jsr3rxng" path="res://Core/AudioService/Audio_colidir.mp3" id="3_fajgn"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="3_fajgn"]
 
 [node name="Botao_jogar" type="TextureButton" unique_id=711292972]
 offset_left = 131.0

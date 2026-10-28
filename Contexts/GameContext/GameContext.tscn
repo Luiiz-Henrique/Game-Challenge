@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bflh1sb5gh774" path="res://Features/Buttons/Button_pause_inGame.tscn" id="9_strpf"]
 [ext_resource type="AudioStream" uid="uid://bxhq6jsr3rxng" path="res://Core/AudioService/Audio_colidir.mp3" id="10_mv5ba"]
 [ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="11_rfog6"]
+[ext_resource type="AudioStream" uid="uid://dddog7vnoqth4" path="res://Core/AudioService/fase concuida.mp3" id="12_rfog6"]
 
 [node name="GameContext" type="Node2D" unique_id=1716920165]
 script = ExtResource("1_gamecontext")
@@ -78,5 +79,8 @@ bus = &"SFX"
 
 [node name="AudioBotoes" type="AudioStreamPlayer" parent="." unique_id=1064297910]
 stream = ExtResource("11_rfog6")
+
+[node name="Finalizacao_cena_audio" type="AudioStreamPlayer" parent="." unique_id=1869344704]
+stream = ExtResource("12_rfog6")
 
 [connection signal="pressed" from="ButtonPauseInGame" to="." method="_on_button_pause_in_game_pressed"]
