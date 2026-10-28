@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bm5c1ilrejy11"]
+
+[ext_resource type="Texture2D" uid="uid://xa5yfxd77fbl" path="res://Features/Buttons/Group 2-2.svg" id="1_5gpih"]
+[ext_resource type="Texture2D" uid="uid://bb2nh8g6df006" path="res://Features/Buttons/Group 6.svg" id="2_wx22k"]
+[ext_resource type="Script" uid="uid://fuslg0yi77vn" path="res://Features/Buttons/botao_music.gd" id="2_x2eoe"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="4_wx22k"]
+
+[node name="BotaoMusic" type="TextureButton" unique_id=175633221]
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.33400002
+anchor_right = 0.60400003
+anchor_bottom = 0.36800003
+offset_left = -2.4120178
+offset_top = -2.9160156
+offset_right = 2.191986
+offset_bottom = 3.367981
+texture_normal = ExtResource("1_5gpih")
+texture_pressed = ExtResource("2_wx22k")
+script = ExtResource("2_x2eoe")
+
+[node name="Audio_botoes" type="AudioStreamPlayer" parent="." unique_id=502803218]
+stream = ExtResource("4_wx22k")

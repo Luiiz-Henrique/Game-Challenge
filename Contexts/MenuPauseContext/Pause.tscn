@@ -5,18 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://s4auvutxs6xl" path="res://Features/Buttons/Button_retomar_pause.tscn" id="2_nlc3n"]
 [ext_resource type="PackedScene" uid="uid://dphw5p02i367k" path="res://Features/Buttons/Button_voltar_menu.tscn" id="3_hjwh1"]
 [ext_resource type="PackedScene" uid="uid://dp4rsbvjibbj1" path="res://Features/Buttons/Button_recomecar_fase.tscn" id="5_hjwh1"]
+[ext_resource type="PackedScene" uid="uid://bm5c1ilrejy11" path="res://Features/Buttons/Botao_music.tscn" id="6_o1pdh"]
+[ext_resource type="PackedScene" uid="uid://c52c3i6mjcw1q" path="res://Features/Buttons/Botao_som.tscn" id="7_rvv53"]
 
 [node name="Pause" type="TextureRect" unique_id=1079135318]
 process_mode = 3
 anchors_preset = -1
-anchor_left = 0.036000002
-anchor_top = 0.187
-anchor_right = 0.93600005
-anchor_bottom = 0.56200004
-offset_left = -53.148003
-offset_top = 18.675995
-offset_right = 96.15198
-offset_bottom = 219.17596
+anchor_left = -0.007
+anchor_top = 0.388
+anchor_right = 1.0270001
+anchor_bottom = 0.89800006
+offset_left = -91.186
+offset_top = -98.112
+offset_right = 84.145966
+offset_bottom = 67.14795
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_nlc3n")
@@ -26,36 +28,59 @@ script = ExtResource("2_hjwh1")
 [node name="ButtonRetomarPause" parent="." unique_id=1659592714 instance=ExtResource("2_nlc3n")]
 layout_mode = 1
 anchor_left = 0.323
-anchor_top = 0.263
-anchor_right = 0.72700006
-anchor_bottom = 0.39400002
-offset_left = -11.673004
-offset_top = 4.117996
-offset_right = -0.6810303
-offset_bottom = 9.12001
+anchor_top = 0.34600002
+anchor_right = 0.69200003
+anchor_bottom = 0.411
+offset_left = -9.368011
+offset_top = -22.315994
+offset_right = 6.0279846
+offset_bottom = -6.1210175
 
 [node name="ButtonSairPause" parent="." unique_id=1002595391 instance=ExtResource("3_hjwh1")]
 layout_mode = 1
-anchor_left = 0.26500002
-anchor_top = 0.734
-anchor_right = 0.772
-anchor_bottom = 0.81200004
-offset_left = -9.515007
-offset_top = -10.876007
-offset_right = 8.828003
-offset_bottom = 14.83197
+anchor_left = 0.246
+anchor_top = 0.67300004
+anchor_right = 0.776
+anchor_bottom = 0.753
+offset_left = -9.386002
+offset_top = 23.647064
+offset_right = 3.802063
+offset_bottom = 34.916992
 
 [node name="ButtonRecomecarFase" parent="." unique_id=283594588 instance=ExtResource("5_hjwh1")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25500003
 anchor_top = 0.592
-anchor_right = 0.81100005
-anchor_bottom = 0.68500006
-offset_left = -14.0050125
-offset_top = -9.087997
-offset_right = 8.238983
-offset_bottom = 13.409973
+anchor_right = 0.73300004
+anchor_bottom = 0.66300005
+offset_left = 1.7130737
+offset_top = 16.288025
+offset_right = 5.1645813
+offset_bottom = 30.40152
+
+[node name="BotaoMusic" parent="." unique_id=175633221 instance=ExtResource("6_o1pdh")]
+layout_mode = 1
+anchor_left = 0.33600003
+anchor_top = 0.47900003
+anchor_right = 0.4
+anchor_bottom = 0.527
+offset_left = -1.5760193
+offset_top = 2.3309937
+offset_right = 11.599991
+offset_bottom = 16.00299
+
+[node name="BotaoSom" parent="." unique_id=1236868214 instance=ExtResource("7_rvv53")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.61800003
+anchor_top = 0.52900004
+anchor_right = 0.61800003
+anchor_bottom = 0.52900004
+offset_left = -22.238007
+offset_top = -18.219025
+offset_right = 21.761993
+offset_bottom = 17.780975
 
 [connection signal="pressed" from="ButtonRetomarPause" to="." method="_on_button_retomar_pause_pressed"]
 [connection signal="pressed" from="ButtonSairPause" to="." method="_on_button_sair_pause_pressed"]
