@@ -8,6 +8,11 @@ extends Node2D
 
 const CENA_PROJETIL := preload("res://Features/Ovni/Projetil.tscn")
 const VELOCIDADE_PROJETIL: float = 600.0
+const CENA_MAPA := "res://Contexts/MapaContext/MapaContext.tscn"
+
+## Número desta fase no mapa (1 a ProgressoFases.TOTAL_FASES). Cada cena de
+## fase (Fase1.tscn, Fase2.tscn...) sobrescreve este valor.
+@export var numero_fase: int = 1
 
 @onready var cenario_spawner: CenarioSpawner = $CenarioSpawner
 @onready var barra_progressao: BarraProgressaoMap = $BarraProgressaoMap
@@ -36,11 +41,14 @@ func _ready() -> void:
 func _on_stage_time_finished() -> void:
 	#_finalizar_partida()
 	#_reiniciar_corrida()
+	# Libera a próxima fase já aqui: se o jogador sair durante a animação,
+	# o progresso não se perde.
+	ProgressoFases.concluir(numero_fase)
 	var final_level = Node.new()
 	final_level.set_script(FinalLevelScript)
 	add_child(final_level)
 	var hud: Array[CanvasItem] = [barra_progressao, $ButtonPauseInGame]
-	final_level.iniciar_finalizacao(player, ovni, "res://Contexts/MenuHomeContext/MenuHomeContext.tscn", hud)
+	final_level.iniciar_finalizacao(player, ovni, CENA_MAPA, numero_fase, hud)
 	
 
 #func _finalizar_partida() -> void:

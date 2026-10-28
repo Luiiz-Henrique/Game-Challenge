@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://ds2lffmrxuuru" path="res://Features/PopupFinalizacao/PopupFinalizacao.gd" id="1_popup_script"]
 [ext_resource type="Texture2D" uid="uid://3q8xmu5rye6t" path="res://Features/PopupFinalizacao/fase1concluida.png" id="2_l2ymd"]
 [ext_resource type="PackedScene" uid="uid://clkgpe7k57e3e" path="res://Features/PopupFinalizacao/ButtonProx.tscn" id="3_6rv4l"]
+[ext_resource type="Texture2D" uid="uid://dlb2c4o4720f8" path="res://Features/PopupFinalizacao/fase2concluida.png" id="4_fase2"]
+[ext_resource type="Texture2D" uid="uid://b6bjuwkj0ky0n" path="res://Features/PopupFinalizacao/fase3concluida.png" id="5_fase3"]
 
 [node name="PopupFinalizacao" type="CanvasLayer" unique_id=1001]
 script = ExtResource("1_popup_script")
+texturas_fase = Array[Texture2D]([ExtResource("2_l2ymd"), ExtResource("4_fase2"), ExtResource("5_fase3")])
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1822208245]
 anchors_preset = 8

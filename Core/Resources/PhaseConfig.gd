@@ -11,7 +11,7 @@ extends Resource
 @export var projetil_textura: Texture2D
 @export var velocidade_projetil_inicial: float = 401.0
 @export var velocidade_projetil_maxima: float = 900.0
-@export var intervalo_disparo: float = 1.0  # tempo entre disparos
+@export var intervalo_disparo: float = 1.0 
 @export var intervalo_minimo: float = 0.4
 @export var disparos_aceleram_com_dificuldade: bool = true
 

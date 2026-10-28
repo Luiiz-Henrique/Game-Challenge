@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://h7odhp87rcxw"]
 
 [ext_resource type="Texture2D" uid="uid://dcgnu28lswtwi" path="res://Contexts/MapaContext/galinhachoca 1 [Vectorized].svg" id="1_g47uv"]
-[ext_resource type="Script" uid="uid://cq3tjhaa1mn2u" path="res://Features/Buttons/galinha_choca.gd" id="2_2n7b5"]
 
 [node name="GalinhaChoca" type="TextureButton" unique_id=830842286]
 offset_left = 131.0
@@ -9,4 +8,3 @@ offset_top = 145.0
 offset_right = 189.0
 offset_bottom = 183.0
 texture_normal = ExtResource("1_g47uv")
-script = ExtResource("2_2n7b5")
