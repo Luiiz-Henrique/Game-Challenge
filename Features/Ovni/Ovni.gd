@@ -111,6 +111,9 @@ func _mover_para_pista(pista_x: float, velocidade_atual: float) -> void:
 func disparos_por_segundo(delta: float) -> void:
 	disparo_ovni.wait_time = move_toward(disparo_ovni.wait_time, 1.5, 0.01 * delta)
 	
+func cessar_disparos() -> void:
+	disparo_ovni.set_block_signals(true)
+
 func _on_atack_timer_timeout() -> void:
 	# A nave passou a espera parada na pista alvo: dispara daqui mesmo.
 	_disparar_projetil()
