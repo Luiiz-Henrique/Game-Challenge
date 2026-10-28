@@ -7,11 +7,14 @@ extends TextureRect
 const CENA_JOGO := "res://Core/Root.tscn"
 const CENA_TUTORIAL := "res://Contexts/StorytellingTutorial/TutorialContext/TutorialContext.tscn"
 const CENA_MAPA := "res://Contexts/MapaContext/MapaContext.tscn"
+const CENA_AJUSTES:= "res://Contexts/MenuHomeContext/Menu_ajustes.tscn"
 @onready var botao_jogar: TextureButton = $Botao_jogar
+@onready var botao_ajustes: TextureButton = $Botao_ajustes
 
 
 func _ready() -> void:
 	botao_jogar.pressed.connect(_on_botao_jogar_pressed)
+	botao_ajustes.pressed.connect(_on_botao_ajustes_pressed)
 
 
 func _on_botao_jogar_pressed() -> void:
@@ -23,3 +26,8 @@ func _on_botao_jogar_pressed() -> void:
 	som.play()
 	var destino := CENA_TUTORIAL if TutorialProgresso.deve_exibir() else CENA_MAPA
 	TransicaoTela.trocar_cena(get_tree(), destino)
+
+
+func _on_botao_ajustes_pressed() -> void:
+	botao_ajustes.disabled = true
+	TransicaoTela.trocar_cena(get_tree(), CENA_AJUSTES)
