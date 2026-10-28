@@ -14,6 +14,9 @@ const CENA_MAPA := "res://Contexts/MapaContext/MapaContext.tscn"
 ## fase (Fase1.tscn, Fase2.tscn...) sobrescreve este valor.
 @export var numero_fase: int = 1
 
+## Duração, velocidades, obstáculo e cadência de tiro desta fase.
+@export var config_fase: PhaseConfig
+
 @onready var cenario_spawner: CenarioSpawner = $CenarioSpawner
 @onready var barra_progressao: BarraProgressaoMap = $BarraProgressaoMap
 @onready var pedra: Pedra = $Pedra
@@ -28,7 +31,8 @@ var FinalLevelScript= preload("res://Features/FinalLevel/FinalLevel.gd")
 func _ready() -> void:
 	# Zera a dificuldade a cada corrida. Como o retry recarrega a cena,
 	# a velocidade volta ao início quando o jogador bate (estilo Subway Surfers).
-	GameState.reiniciar_corrida()
+	GameState.reiniciar_corrida(config_fase)
+	_aplicar_config_fase()
 	button_pause.hide()
 	popup.hide()
 #	ovni.disparar.connect(_on_ovni_disparar)
@@ -37,6 +41,17 @@ func _ready() -> void:
 	# O GameContext conecta o sinal emitido pela Feature de Barra de Progressão
 	barra_progressao.stage_time_finished.connect(_on_stage_time_finished)
 	AudioMenu.diminuir_volume()
+
+func _aplicar_config_fase() -> void:
+	if config_fase == null:
+		return
+	barra_progressao.configurar_tempo(config_fase.tempo_fase)
+	ovni.configurar_disparos(config_fase.intervalo_disparo, config_fase.intervalo_minimo, config_fase.disparos_aceleram_com_dificuldade)
+	if config_fase.tem_pedra:
+		pedra.configurar_textura(config_fase.textura_obstaculo)
+	else:
+		pedra.desativar()
+
 
 func _on_stage_time_finished() -> void:
 	#_finalizar_partida()
@@ -69,7 +84,8 @@ func _process(delta: float) -> void:
 	GameState.avancar_dificuldade(delta)
 	var velocidade_atual: float = GameState.velocidade_atual
 	cenario_spawner.mover_cenario(delta, velocidade_atual)
-	pedra.mover(delta, velocidade_atual)
+	if pedra.visible:
+		pedra.mover(delta, velocidade_atual)
 	player.atualizar(delta)
 	#ovni.atualizar(delta)
 	#_atualizar_projeteis(delta)

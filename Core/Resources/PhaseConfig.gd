@@ -17,6 +17,8 @@ extends Resource
 
 @export_group("Obstáculos")
 @export var tem_pedra: bool = true
+## Arte do obstáculo da fase (cacto, pedra...). Vazio mantém a da cena Pedra.
+@export var textura_obstaculo: Texture2D
 @export var tem_ovni: bool = true
 
 @export_group("Barra / Objetivo")

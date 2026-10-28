@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qgrj51bwmb1p"]
 
 [ext_resource type="PackedScene" uid="uid://bsdo7fyicjbcr" path="res://Contexts/GameContext/GameContext.tscn" id="1_base"]
+[ext_resource type="Resource" path="res://Core/Resources/Phases/Fase2.tres" id="2_config"]
 [ext_resource type="PackedScene" uid="uid://bi6rl3xq65ssv" path="res://Features/Cenarios/CenarioFase2/Fase2_1.tscn" id="b1"]
 [ext_resource type="PackedScene" uid="uid://dplaktai2lmt1" path="res://Features/Cenarios/CenarioFase2/Fase2_2.tscn" id="b2"]
 [ext_resource type="PackedScene" uid="uid://csq1roewn7yuf" path="res://Features/Cenarios/CenarioFase2/Fase2_3.tscn" id="b3"]
@@ -13,6 +14,7 @@
 
 [node name="GameContext2" unique_id=1702649200 instance=ExtResource("1_base")]
 numero_fase = 2
+config_fase = ExtResource("2_config")
 
 [node name="CenarioSpawner" parent="." index="0" unique_id=170833297]
 lista_de_blocos = Array[PackedScene]([ExtResource("b1"), ExtResource("b2"), ExtResource("b3"), ExtResource("b4"), ExtResource("b5"), ExtResource("b6"), ExtResource("b7"), ExtResource("b8"), ExtResource("b9")])
