@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PhaseConfig" format=3 uid="uid://cgt32fgdo342b"]
+
+[ext_resource type="Script" uid="uid://bkdhgv17efjax" path="res://Core/Resources/PhaseConfig.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cojr1xeaowrr3" path="res://Features/Ovni/Projetil.tscn" id="1_0cnlg"]
+
+[resource]
+script = ExtResource("1")
+velocidade_inicial = 280.0
+velocidade_maxima = 730.0
+tempo_ate_velocidade_maxima = 150.0
+velocidade_projetil_inicial = 480.0
+velocidade_projetil_maxima = 980.0
+intervalo_disparo = 0.7
+intervalo_minimo = 0.32
+tem_pedra = false

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cx5ly08xl6o8w" path="res://Features/Cenarios/CenarioFase1/Fase1_9.tscn" id="b10"]
 
 [node name="GameContext" unique_id=1449875499 instance=ExtResource("1_base")]
+numero_fase = 1
 
 [node name="CenarioSpawner" parent="." index="0" unique_id=170833297]
 lista_de_blocos = Array[PackedScene]([ExtResource("b1"), ExtResource("b2"), ExtResource("b3"), ExtResource("b4"), ExtResource("b5"), ExtResource("b6"), ExtResource("b7"), ExtResource("b8"), ExtResource("b9"), ExtResource("b10")])

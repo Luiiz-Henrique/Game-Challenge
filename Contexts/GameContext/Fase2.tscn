@@ -12,9 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b6qhiaffvl6eb" path="res://Features/Cenarios/CenarioFase2/Fase2_9.tscn" id="b9"]
 
 [node name="GameContext2" unique_id=1702649200 instance=ExtResource("1_base")]
+numero_fase = 2
 
 [node name="CenarioSpawner" parent="." index="0" unique_id=170833297]
 lista_de_blocos = Array[PackedScene]([ExtResource("b1"), ExtResource("b2"), ExtResource("b3"), ExtResource("b4"), ExtResource("b5"), ExtResource("b6"), ExtResource("b7"), ExtResource("b8"), ExtResource("b9")])
-
-[node name="Camera2D" parent="." index="5" unique_id=1718007149]
-position = Vector2(201, 437)

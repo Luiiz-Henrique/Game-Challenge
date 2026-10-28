@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://qgtj51bwmb1p"]
+
+[ext_resource type="PackedScene" uid="uid://bsdo7fyicjbcr" path="res://Contexts/GameContext/GameContext.tscn" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://blcrnow10qide" path="res://Features/Cenarios/CenarioFaseFinal/FaseFinal1.tscn" id="b1"]
+[ext_resource type="PackedScene" uid="uid://dd8a0qvhqxu3w" path="res://Features/Cenarios/CenarioFaseFinal/FaseFinal2.tscn" id="b2"]
+[ext_resource type="PackedScene" uid="uid://c4tw68ll80l7m" path="res://Features/Cenarios/CenarioFaseFinal/FaseFinal3.tscn" id="b3"]
+
+[node name="GameContext4" unique_id=1873064512 instance=ExtResource("1_base")]
+numero_fase = 4
+
+[node name="CenarioSpawner" parent="." index="0" unique_id=170833297]
+lista_de_blocos = Array[PackedScene]([ExtResource("b1"), ExtResource("b2"), ExtResource("b3")])
+
+[node name="Camera2D" parent="." index="5" unique_id=1718007149]
+position = Vector2(201, 437)

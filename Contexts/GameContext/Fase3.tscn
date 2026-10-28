@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dewy5ghs4vj4m" path="res://Features/Cenarios/CenarioFase3/Inicio/Fase3_9.tscn" id="i10"]
 
 [node name="GameContext" unique_id=2018901145 instance=ExtResource("1_base")]
+numero_fase = 3
 
 [node name="CenarioSpawner" parent="." index="0" unique_id=170833297]
 usar_transicao = true
