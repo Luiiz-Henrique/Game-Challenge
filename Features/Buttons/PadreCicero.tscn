@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://briat63i37r3u"]
 
+[ext_resource type="Texture2D" uid="uid://u41g5u3gmjow" path="res://Contexts/MapaContext/padrecicero 1 [Vectorized].svg" id="1_52yo3"]
+
 [node name="PadreCicero" type="TextureButton" unique_id=902601303]
 offset_left = 159.0
 offset_top = 157.0
 offset_right = 229.0
 offset_bottom = 207.0
+texture_normal = ExtResource("1_52yo3")
