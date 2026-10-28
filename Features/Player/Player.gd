@@ -39,7 +39,8 @@ func _input(event: InputEvent) -> void:
 		mover_esquerda()
 	elif event.is_action_pressed("ui_right"):
 		mover_direita()
-	elif event is InputEventScreenTouch or event is InputEventMouseButton:
+	# [ToqueTela] Só toque: o mouse emulado do iPhone movia duas pistas por toque.
+	elif event is InputEventScreenTouch:  # [ToqueTela] era: or event is InputEventMouseButton
 		if event.pressed:
 			_posicao_inicial_toque = event.position
 			_tocando = true
@@ -51,6 +52,8 @@ func _input(event: InputEvent) -> void:
 					mover_direita()
 				else:
 					mover_esquerda()
+			else:  # [ToqueTela]
+				_tocar_lado(event.position)  # [ToqueTela]
 
 ## Método público orquestrado pelo GameContext (call down).
 func atualizar(delta: float) -> void:
@@ -79,3 +82,14 @@ func mover_direita() -> void:
 ## orquestrador externo (ex: FinalLevel) assuma o controle da posição via Tween.
 func bloquear_controles(bloqueado: bool) -> void:
 	_controles_bloqueados = bloqueado
+
+
+## [ToqueTela] Toque na metade de baixo da tela: lado esquerdo/direito do meio escolhe a pista.
+func _tocar_lado(posicao: Vector2) -> void:  # [ToqueTela]
+	var tela: Vector2 = get_viewport_rect().size  # [ToqueTela]
+	if posicao.y < tela.y / 2.0:  # [ToqueTela]
+		return  # [ToqueTela]
+	if posicao.x < tela.x / 2.0:  # [ToqueTela]
+		mover_esquerda()  # [ToqueTela]
+	else:  # [ToqueTela]
+		mover_direita()  # [ToqueTela]
