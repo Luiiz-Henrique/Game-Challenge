@@ -49,6 +49,10 @@ func _on_stage_time_finished() -> void:
 	add_child(final_level)
 	var hud: Array[CanvasItem] = [barra_progressao, $ButtonPauseInGame]
 	final_level.iniciar_finalizacao(player, ovni, CENA_MAPA, numero_fase, hud)
+	# [PedacosDispositivo] Coloca o pedaço desta fase no caminho do Xicó.
+	var coleta_pedaco := ColetaPedaco.new()  # [PedacosDispositivo]
+	add_child(coleta_pedaco)  # [PedacosDispositivo]
+	coleta_pedaco.iniciar(player, numero_fase)  # [PedacosDispositivo]
 	
 
 #func _finalizar_partida() -> void:
