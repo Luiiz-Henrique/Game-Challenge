@@ -117,6 +117,7 @@ func _mostrar_popup(proxima_cena_path: String) -> void:
 ## observar a árvore para descartar projéteis que ainda nasçam depois disso
 ## (o Ovni pode estar no meio do deslocamento quando isAttack vira false).
 func _remover_obstaculos() -> void:
+	_ovni.cessar_disparos()
 	var cena: Node = get_tree().current_scene
 	# Busca recursiva: a pedra é filha do GameContext, que pode não ser a raiz.
 	for no in cena.find_children("*", "", true, false):

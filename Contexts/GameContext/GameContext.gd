@@ -43,14 +43,14 @@ func _on_stage_time_finished() -> void:
 	final_level.iniciar_finalizacao(player, ovni, "res://Contexts/MenuHomeContext/MenuHomeContext.tscn", hud)
 	
 
-func _finalizar_partida() -> void:
-	print("[GameContext] O tempo da fase acabou!")
-	
-	# 1. Notifica sistemas do Core (ex: GameManager, SaveSystem, etc.)
-	# CoreManager.on_game_over(reason: "time_out")
-	
-	# 2. Executa fluxo de encerramento do contexto (ex: pausar jogo ou chamar tela de resultados)
-	get_tree().paused = true
+#func _finalizar_partida() -> void:
+	#print("[GameContext] O tempo da fase acabou!")
+	#
+	## 1. Notifica sistemas do Core (ex: GameManager, SaveSystem, etc.)
+	## CoreManager.on_game_over(reason: "time_out")
+	#
+	## 2. Executa fluxo de encerramento do contexto (ex: pausar jogo ou chamar tela de resultados)
+	#get_tree().paused = true
 
 func _process(delta: float) -> void:
 	# A velocidade cresce durante a corrida; zera no _ready ao (re)iniciar.
