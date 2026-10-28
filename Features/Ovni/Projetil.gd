@@ -18,12 +18,8 @@ signal player_atingido
 	#if body is Player:
 		#atingiu_player.emit()
 
-# Escala própria do projétil (400 -> 900), seguindo o progresso da dificuldade.
-var velocidade_projetil = lerpf(
-	GameState.VELOCIDADE_PROJETIL_INICIAL,
-	GameState.VELOCIDADE_PROJETIL_MAXIMA,
-	GameState.progresso_dificuldade
-)
+# Escala própria do projétil (definida pela fase), seguindo o progresso da dificuldade.
+var velocidade_projetil: float = GameState.velocidade_projetil_atual()
 
 func _process(delta: float) -> void:
 	global_position.y += velocidade_projetil * delta
