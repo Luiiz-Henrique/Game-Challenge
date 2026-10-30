@@ -77,6 +77,10 @@ signal player_atingido
 var projetil_ovni = preload("res://Features/Ovni/Projetil.tscn")
 var tween_movimento: Tween
 
+## Intervalo entre disparos vai caindo até este piso durante a fase.
+var intervalo_minimo: float = 1.5
+var disparos_aceleram: bool = true
+
 
 func _ready() -> void:
 	# Vai para a primeira pista já no início. O primeiro disparo só acontece
@@ -108,9 +112,22 @@ func _mover_para_pista(pista_x: float, velocidade_atual: float) -> void:
 		.set_ease(Tween.EASE_OUT)
 		
 
+## Define a cadência de tiro da fase (call down do GameContext).
+func configurar_disparos(intervalo_inicial: float, minimo: float, aceleram: bool) -> void:
+	intervalo_minimo = minimo
+	disparos_aceleram = aceleram
+	disparo_ovni.wait_time = intervalo_inicial
+	disparo_ovni.start()
+
+
 func disparos_por_segundo(delta: float) -> void:
-	disparo_ovni.wait_time = move_toward(disparo_ovni.wait_time, 1.5, 0.01 * delta)
+	if not disparos_aceleram:
+		return
+	disparo_ovni.wait_time = move_toward(disparo_ovni.wait_time, intervalo_minimo, 0.01 * delta)
 	
+func cessar_disparos() -> void:
+	disparo_ovni.set_block_signals(true)
+
 func _on_atack_timer_timeout() -> void:
 	# A nave passou a espera parada na pista alvo: dispara daqui mesmo.
 	_disparar_projetil()

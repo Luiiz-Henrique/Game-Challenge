@@ -15,7 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tela")
-falas = PackedStringArray("Detectei a\npresença de\ninvasores\nalienígenas\naqui, eles já\ncostumam\nbuscar rochas\ncom fósseis\nmilenares...", "De forma\nestratégica,\ndividi três\npartes de uma\narma de alta\nfrequência que\nos levará para\nlonge...", "Ao percorrer\nos diferentes\ntipos de\nambiente, eles\ndesperdiçarão\nsuas energias\ne o confronto\nfinal será\npossível!", "Bem, vejamos o\nmapa...")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

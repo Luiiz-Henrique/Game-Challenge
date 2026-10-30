@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dpejrm65ji5eh" path="res://Features/Buttons/Button_Ajustes.tscn" id="4_5fdye"]
 [ext_resource type="Script" uid="uid://dbrlre4knh1ej" path="res://Contexts/MenuHomeContext/MenuHomeContext.gd" id="5_home"]
 [ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="6_8w77r"]
+[ext_resource type="Texture2D" uid="uid://b2yrq6y4f1oad" path="res://Contexts/MenuHomeContext/TitleGame.png" id="7_0ixya"]
 
 [node name="MenuHomeContext" type="TextureRect" unique_id=359420042]
 anchors_preset = 15
@@ -39,4 +40,14 @@ stream = ExtResource("6_8w77r")
 volume_db = -10.0
 bus = &"SFX"
 
-[connection signal="pressed" from="Botao_ajustes" to="." method="_on_botao_ajustes_pressed"]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=296016385]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 181.0
+offset_right = 180.0
+offset_bottom = 275.0
+grow_horizontal = 2
+texture = ExtResource("7_0ixya")

@@ -14,6 +14,7 @@ var _player: Node2D
 var _ovni: Node2D
 var _item_scene: PackedScene
 var _proxima_cena_path: String
+var _numero_fase: int
 var _tween_atual: Tween
 
 
@@ -24,9 +25,10 @@ var _tween_atual: Tween
 ##   - ovni: nó do OVNI (Node2D) que será removido da vista.
 ##   - item_scene: PackedScene do item a ser instanciado no caminho do Player.
 ##   - proxima_cena_path: caminho da cena a ser carregada no PopupFinalizacao.
+##   - numero_fase: fase concluída, usada para escolher a arte do popup.
 ##   - elementos_hud: elementos de interface (ex: barra de progresso, botão de
 ##     pause) que devem sumir assim que a animação começar.
-func iniciar_finalizacao(player: CharacterBody2D, ovni: Node2D, proxima_cena_path: String, elementos_hud: Array[CanvasItem] = []) -> void: #item_scene: PackedScene
+func iniciar_finalizacao(player: CharacterBody2D, ovni: Node2D, proxima_cena_path: String, numero_fase: int, elementos_hud: Array[CanvasItem] = []) -> void: #item_scene: PackedScene
 	if not is_inside_tree():
 		return
 
@@ -34,6 +36,7 @@ func iniciar_finalizacao(player: CharacterBody2D, ovni: Node2D, proxima_cena_pat
 	_ovni = ovni
 	#_item_scene = item_scene
 	_proxima_cena_path = proxima_cena_path
+	_numero_fase = numero_fase
 
 	# 1. Bloquear os controles manuais do Player e interromper atualização de pista.
 	_bloquear_controles_player(player, true)
@@ -97,7 +100,7 @@ func _instanciar_item_no_caminho() -> void:
 	timer_espera.wait_time = 0.8
 	timer_espera.timeout.connect(func():
 		timer_espera.queue_free()
-		_mostrar_popup("res://Contexts/MenuHomeContext/MenuHomeContext.tscn")
+		_mostrar_popup(_proxima_cena_path, _numero_fase)
 		#add_child(CENA_POPUP.instantiate())
 	)
 	add_child(timer_espera)
@@ -106,10 +109,10 @@ func _instanciar_item_no_caminho() -> void:
 
 
 ## Etapa 5: quando o Player saiu totalmente da tela, exibe o PopupFinalizacao
-## injetando a proxima_cena_path.
-func _mostrar_popup(proxima_cena_path: String) -> void:
+## injetando a proxima_cena_path e a fase concluída.
+func _mostrar_popup(proxima_cena_path: String, numero_fase: int) -> void:
 	var popup: PopupFinalizacao = CENA_POPUP.instantiate() as PopupFinalizacao
-	popup.configurar(proxima_cena_path)
+	popup.configurar(proxima_cena_path, numero_fase)
 	get_tree().current_scene.add_child(popup)
 
 
@@ -117,6 +120,7 @@ func _mostrar_popup(proxima_cena_path: String) -> void:
 ## observar a árvore para descartar projéteis que ainda nasçam depois disso
 ## (o Ovni pode estar no meio do deslocamento quando isAttack vira false).
 func _remover_obstaculos() -> void:
+	_ovni.cessar_disparos()
 	var cena: Node = get_tree().current_scene
 	# Busca recursiva: a pedra é filha do GameContext, que pode não ser a raiz.
 	for no in cena.find_children("*", "", true, false):

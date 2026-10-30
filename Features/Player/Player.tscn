@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://blrscng8pmaca"]
 
 [ext_resource type="Script" uid="uid://0xlvh6fsufwr" path="res://Features/Player/Player.gd" id="1_player"]
-[ext_resource type="Texture2D" uid="uid://di0l4gl30xvd3" path="res://Features/Player/corrida1.png" id="2_corrida1"]
-[ext_resource type="Texture2D" uid="uid://cveka8tvy23su" path="res://Features/Player/corrida2.png" id="3_corrida2"]
+[ext_resource type="Texture2D" uid="uid://bgqoncufvchn" path="res://Features/Player/Propriedade 111.png" id="2_corrida1"]
+[ext_resource type="Texture2D" uid="uid://dyi25nud1pxca" path="res://Features/Player/Propriedade 112.png" id="3_corrida2"]
 [ext_resource type="AudioStream" uid="uid://dhgd7v1oi3ko7" path="res://Core/AudioService/deslize do personagem.mp3" id="4_6ejaw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_player"]
@@ -29,7 +29,7 @@ disable_mode = 1
 script = ExtResource("1_player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=193645008]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.044, 0.044)
 sprite_frames = SubResource("SpriteFrames_player")
 animation = &"correr"
 autoplay = "correr"

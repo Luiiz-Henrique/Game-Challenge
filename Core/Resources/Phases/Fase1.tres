@@ -1,22 +1,13 @@
-[gd_resource type="Resource" script_class="PhaseConfig" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PhaseConfig" format=3 uid="uid://chsp2cot4m7xv"]
 
-[ext_resource type="Script" path="res://Core/Resources/PhaseConfig.gd" id="1"]
+[ext_resource type="Script" uid="uid://bkdhgv17efjax" path="res://Core/Resources/PhaseConfig.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cojr1xeaowrr3" path="res://Features/Ovni/Projetil.tscn" id="1_nkchx"]
+[ext_resource type="Texture2D" uid="uid://d30sqoshnve3y" path="res://Features/Pedra/cacto.png" id="2_obstaculo"]
 
 [resource]
 script = ExtResource("1")
-velocidade_inicial = 200.0
-velocidade_maxima = 650.0
-tempo_ate_velocidade_maxima = 180.0
-velocidade_projetil_inicial = 401.0
-velocidade_projetil_maxima = 900.0
-intervalo_disparo = 1.0
-intervalo_minimo = 0.4
-disparos_aceleram_com_dificuldade = true
-tem_pedra = true
-tem_ovni = true
-modo_barra = 0
-tempo_fase = 60.0
-vida_ovni_max = 100
-energia_para_municao = 1
-usar_transicao_cenario = false
-progresso_transicao = 0.5
+velocidade_maxima = 600.0
+intervalo_disparo = 3.0
+intervalo_minimo = 1.5
+textura_obstaculo = ExtResource("2_obstaculo")
+tempo_fase = 180.0
