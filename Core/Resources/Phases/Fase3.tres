@@ -2,17 +2,64 @@
 
 [ext_resource type="Script" uid="uid://bkdhgv17efjax" path="res://Core/Resources/PhaseConfig.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://d30sqoshnve3y" path="res://Features/Pedra/cacto.png" id="2_obstaculo"]
+[ext_resource type="PackedScene" uid="uid://cojr1xeaowrr3" path="res://Features/Ovni/Projetil.tscn" id="2_wjv1y"]
+[ext_resource type="Script" uid="uid://ce8hptbjqm6v4" path="res://Core/Resources/OndaConfig.gd" id="3_onda"]
+
+[sub_resource type="Resource" id="Onda_1"]
+script = ExtResource("3_onda")
+padroes = 15
+duracao_pressao = 25.0
+duracao_calma = 3.0
+intervalo_padroes = 1.3
+
+[sub_resource type="Resource" id="Onda_2"]
+script = ExtResource("3_onda")
+padroes = 31
+duracao_pressao = 25.0
+duracao_calma = 3.0
+intervalo_padroes = 1.2
+
+[sub_resource type="Resource" id="Onda_3"]
+script = ExtResource("3_onda")
+padroes = 63
+duracao_pressao = 25.0
+duracao_calma = 3.0
+intervalo_padroes = 1.25
+
+[sub_resource type="Resource" id="Onda_4"]
+script = ExtResource("3_onda")
+duracao_pressao = 6.0
+duracao_calma = 0.0
+intervalo_padroes = 1.6
+
+[sub_resource type="Resource" id="Onda_5"]
+script = ExtResource("3_onda")
+padroes = 54
+duracao_pressao = 25.0
+duracao_calma = 4.0
+intervalo_padroes = 1.0
+
+[sub_resource type="Resource" id="Onda_6"]
+script = ExtResource("3_onda")
+padroes = 63
+duracao_pressao = 25.0
+duracao_calma = 3.0
+intervalo_padroes = 1.05
+
+[sub_resource type="Resource" id="Onda_7"]
+script = ExtResource("3_onda")
+padroes = 63
+duracao_pressao = 33.0
+duracao_calma = 0.0
+intervalo_padroes = 0.95
 
 [resource]
 script = ExtResource("1")
-velocidade_inicial = 250.0
+velocidade_inicial = 350.0
 velocidade_maxima = 700.0
-tempo_ate_velocidade_maxima = 240.0
-velocidade_projetil_inicial = 450.0
+velocidade_projetil_inicial = 550.0
 velocidade_projetil_maxima = 1000.0
-intervalo_disparo = 3.0
-intervalo_minimo = 1.5
-tem_pedra = true
 textura_obstaculo = ExtResource("2_obstaculo")
-tempo_fase = 240.0
+ondas = Array[ExtResource("3_onda")]([SubResource("Onda_1"), SubResource("Onda_2"), SubResource("Onda_3"), SubResource("Onda_4"), SubResource("Onda_5"), SubResource("Onda_6"), SubResource("Onda_7")])
+tempo_fase = 180.0
 usar_transicao_cenario = true

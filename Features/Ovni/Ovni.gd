@@ -77,6 +77,27 @@ signal player_atingido
 var projetil_ovni = preload("res://Features/Ovni/Projetil.tscn")
 var tween_movimento: Tween
 
+## A nave troca de pista a esta fração acima da velocidade do cenário.
+## O DiretorPadroes usa o mesmo fator para calcular o preparo do tiro.
+const FATOR_VELOCIDADE: float = 1.2
+
+## Cor do piscar que avisa que o tiro vai sair.
+const COR_AVISO := Color(1.0, 0.35, 0.35)
+
+## Duração (s) do piscar antes de cada tiro ordenado pelo diretor.
+var tempo_aviso: float = 0.3
+var _tween_aviso: Tween
+
+## Tiros ordenados pelo diretor, em ordem: x = pista, y = instante do disparo
+## no relógio da nave. Executados um de cada vez.
+var _ordens: Array[Vector2] = []
+var _executando_ordem: bool = false
+var _relogio: float = 0.0
+
+## Nó onde os projéteis são criados. O GameContext injeta um nó desenhado
+## abaixo da nave e dos pop-ups; sem ele, vão para a raiz da cena.
+var container_projeteis: Node
+
 ## Intervalo entre disparos vai caindo até este piso durante a fase.
 var intervalo_minimo: float = 1.5
 var disparos_aceleram: bool = true
@@ -85,8 +106,12 @@ var disparos_aceleram: bool = true
 func _ready() -> void:
 	# Vai para a primeira pista já no início. O primeiro disparo só acontece
 	# quando o Timer completar o tempo de espera, já parado no alvo.
-	_mover_para_pista(GameState.PISTAS_X.pick_random(), GameState.velocidade_atual * 1.2)
+	_mover_para_pista(GameState.PISTAS_X.pick_random(), GameState.velocidade_atual * FATOR_VELOCIDADE)
 	$Audio_nave.play()
+
+
+func _process(delta: float) -> void:
+	_relogio += delta
 
 
 
@@ -127,6 +152,69 @@ func disparos_por_segundo(delta: float) -> void:
 	
 func cessar_disparos() -> void:
 	disparo_ovni.set_block_signals(true)
+	_ordens.clear()
+	_executando_ordem = false
+	if tween_movimento and tween_movimento.is_running():
+		tween_movimento.kill()
+	if _tween_aviso and _tween_aviso.is_running():
+		_tween_aviso.kill()
+	modulate = Color.WHITE
+
+
+## Passa a atirar só quando o DiretorPadroes mandar (call down do
+## GameContext): desliga o Timer de tiros sorteados.
+func aguardar_ordens(aviso: float) -> void:
+	tempo_aviso = aviso
+	disparo_ovni.stop()
+
+
+## Ordem do diretor: ir até a pista, piscar e atirar daqui a `atraso` segundos.
+func agendar_tiro(pista_x: float, atraso: float) -> void:
+	_ordens.append(Vector2(pista_x, _relogio + atraso))
+	if not _executando_ordem:
+		_executar_proxima_ordem()
+
+
+func _executar_proxima_ordem() -> void:
+	if _ordens.is_empty():
+		_executando_ordem = false
+		return
+	_executando_ordem = true
+	var ordem: Vector2 = _ordens.pop_front()
+	var atraso: float = maxf(ordem.y - _relogio, 0.0)
+	var aviso: float = minf(tempo_aviso, atraso)
+
+	# Vai até a pista o quanto antes e espera lá: a posição já é um aviso.
+	var velocidade: float = maxf(GameState.velocidade_atual * FATOR_VELOCIDADE, 1.0)
+	var deslocamento: float = minf(absf(ordem.x - global_position.x) / velocidade, atraso - aviso)
+
+	if tween_movimento and tween_movimento.is_running():
+		tween_movimento.kill()
+	tween_movimento = create_tween()
+	if deslocamento > 0.0:
+		tween_movimento.tween_property(self, "global_position:x", ordem.x, deslocamento)\
+			.set_trans(Tween.TRANS_QUAD)\
+			.set_ease(Tween.EASE_OUT)
+	else:
+		global_position.x = ordem.x
+	tween_movimento.tween_interval(maxf(atraso - aviso - deslocamento, 0.0))
+	tween_movimento.tween_callback(_piscar.bind(aviso))
+	tween_movimento.tween_interval(aviso)
+	tween_movimento.tween_callback(_disparar_projetil)
+	tween_movimento.tween_callback(_executar_proxima_ordem)
+
+
+## Pisca duas vezes na cor de aviso durante `duracao` segundos.
+func _piscar(duracao: float) -> void:
+	if duracao <= 0.0:
+		return
+	if _tween_aviso and _tween_aviso.is_running():
+		_tween_aviso.kill()
+	var etapa: float = duracao / 4.0
+	_tween_aviso = create_tween()
+	for i in 2:
+		_tween_aviso.tween_property(self, "modulate", COR_AVISO, etapa)
+		_tween_aviso.tween_property(self, "modulate", Color.WHITE, etapa)
 
 func _on_atack_timer_timeout() -> void:
 	# A nave passou a espera parada na pista alvo: dispara daqui mesmo.
@@ -134,7 +222,7 @@ func _on_atack_timer_timeout() -> void:
 
 	# Só então escolhe a próxima pista e se desloca. Assim o tempo de espera
 	# até o próximo tiro acontece já no local onde ele vai atirar.
-	_mover_para_pista(GameState.PISTAS_X.pick_random(), GameState.velocidade_atual * 1.2)
+	_mover_para_pista(GameState.PISTAS_X.pick_random(), GameState.velocidade_atual * FATOR_VELOCIDADE)
 	
 func _disparar_projetil() -> void:
 	var novo_projetil = projetil_ovni.instantiate()
@@ -144,7 +232,8 @@ func _disparar_projetil() -> void:
 		func(): player_atingido.emit()
 	)
 
-	get_tree().current_scene.add_child(novo_projetil)
+	var destino: Node = container_projeteis if container_projeteis else get_tree().current_scene
+	destino.add_child(novo_projetil)
 
 	# Posiciona o projétil na nave.
 	novo_projetil.global_position = global_position

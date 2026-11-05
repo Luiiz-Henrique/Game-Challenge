@@ -3,11 +3,44 @@
 [ext_resource type="Script" uid="uid://bkdhgv17efjax" path="res://Core/Resources/PhaseConfig.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cojr1xeaowrr3" path="res://Features/Ovni/Projetil.tscn" id="1_nkchx"]
 [ext_resource type="Texture2D" uid="uid://d30sqoshnve3y" path="res://Features/Pedra/cacto.png" id="2_obstaculo"]
+[ext_resource type="Script" uid="uid://ce8hptbjqm6v4" path="res://Core/Resources/OndaConfig.gd" id="3_onda"]
+
+[sub_resource type="Resource" id="Onda_1"]
+script = ExtResource("3_onda")
+duracao_pressao = 15.0
+duracao_calma = 3.0
+intervalo_padroes = 1.6
+
+[sub_resource type="Resource" id="Onda_2"]
+script = ExtResource("3_onda")
+padroes = 3
+
+[sub_resource type="Resource" id="Onda_3"]
+script = ExtResource("3_onda")
+padroes = 3
+intervalo_padroes = 1.35
+
+[sub_resource type="Resource" id="Onda_4"]
+script = ExtResource("3_onda")
+padroes = 3
+intervalo_padroes = 1.2
+
+[sub_resource type="Resource" id="Onda_5"]
+script = ExtResource("3_onda")
+padroes = 7
+duracao_pressao = 27.0
+duracao_calma = 0.0
+intervalo_padroes = 1.1
 
 [resource]
 script = ExtResource("1")
+velocidade_inicial = 300.0
 velocidade_maxima = 600.0
+tempo_ate_velocidade_maxima = 120.0
+velocidade_projetil_inicial = 500.0
 intervalo_disparo = 3.0
 intervalo_minimo = 1.5
 textura_obstaculo = ExtResource("2_obstaculo")
-tempo_fase = 180.0
+ondas = Array[ExtResource("3_onda")]([SubResource("Onda_1"), SubResource("Onda_2"), SubResource("Onda_3"), SubResource("Onda_4"), SubResource("Onda_5")])
+tempo_fase = 120.0
+usar_transicao_cenario = true

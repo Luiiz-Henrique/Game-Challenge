@@ -19,24 +19,35 @@ const CENA_MAPA := "res://Contexts/MapaContext/MapaContext.tscn"
 
 @onready var cenario_spawner: CenarioSpawner = $CenarioSpawner
 @onready var barra_progressao: BarraProgressaoMap = $BarraProgressaoMap
-@onready var pedra: Pedra = $Pedra
+@onready var obstaculos: Obstaculos = $Obstaculos
 @onready var player: Player = $Player
 @onready var ovni: Ovni = $Ovni
+@onready var projeteis: Node2D = $Projeteis
 @onready var popup: TextureRect = $PopupColisao
 @onready var button_pause: TextureRect = $Pause
 
 
 var FinalLevelScript= preload("res://Features/FinalLevel/FinalLevel.gd")
 
+## Decide padrões e ondas de obstáculos e tiros (fases com ondas no config).
+var diretor := DiretorPadroes.new()
+var _fase_encerrada: bool = false
+
 func _ready() -> void:
 	# Zera a dificuldade a cada corrida. Como o retry recarrega a cena,
-	# a velocidade volta ao início quando o jogador bate (estilo Subway Surfers).
 	GameState.reiniciar_corrida(config_fase)
+	add_child(diretor)
+	# Os tiros nascem em Projeteis, desenhado logo abaixo do Ovni. Os pop-ups
+	# vêm depois na árvore, então ficam por cima dos tiros.
+	move_child(projeteis, ovni.get_index())
+	ovni.container_projeteis = projeteis
+	diretor.criar_obstaculo.connect(_on_diretor_criar_obstaculo)
+	diretor.agendar_tiro.connect(_on_diretor_agendar_tiro)
 	_aplicar_config_fase()
 	button_pause.hide()
 	popup.hide()
 #	ovni.disparar.connect(_on_ovni_disparar)
-	pedra.player_atingido.connect(_reiniciar_corrida)
+	obstaculos.player_atingido.connect(_reiniciar_corrida)
 	ovni.player_atingido.connect(_reiniciar_corrida)
 	# O GameContext conecta o sinal emitido pela Feature de Barra de Progressão
 	barra_progressao.stage_time_finished.connect(_on_stage_time_finished)
@@ -46,11 +57,23 @@ func _aplicar_config_fase() -> void:
 	if config_fase == null:
 		return
 	barra_progressao.configurar_tempo(config_fase.tempo_fase)
-	ovni.configurar_disparos(config_fase.intervalo_disparo, config_fase.intervalo_minimo, config_fase.disparos_aceleram_com_dificuldade)
 	if config_fase.tem_pedra:
-		pedra.configurar_textura(config_fase.textura_obstaculo)
+		obstaculos.configurar_textura(config_fase.textura_obstaculo)
 	else:
-		pedra.desativar()
+		obstaculos.desativar()
+	diretor.configurar(config_fase, player.position.y, ovni.position.y, Obstaculos.Y_SURGIMENTO)
+	if diretor.esta_ativo():
+		ovni.aguardar_ordens(config_fase.aviso_tiro)
+	else:
+		ovni.configurar_disparos(config_fase.intervalo_disparo, config_fase.intervalo_minimo, config_fase.disparos_aceleram_com_dificuldade)
+
+
+func _on_diretor_criar_obstaculo(pista: int) -> void:
+	obstaculos.criar(GameState.PISTAS_X[pista])
+
+
+func _on_diretor_agendar_tiro(pista: int, atraso: float) -> void:
+	ovni.agendar_tiro(GameState.PISTAS_X[pista], atraso)
 
 
 func _on_stage_time_finished() -> void:
@@ -59,6 +82,8 @@ func _on_stage_time_finished() -> void:
 	# Libera a próxima fase já aqui: se o jogador sair durante a animação,
 	# o progresso não se perde.
 	ProgressoFases.concluir(numero_fase)
+	_fase_encerrada = true
+	diretor.parar()
 	var final_level = Node.new()
 	final_level.set_script(FinalLevelScript)
 	add_child(final_level)
@@ -84,12 +109,17 @@ func _process(delta: float) -> void:
 	GameState.avancar_dificuldade(delta)
 	var velocidade_atual: float = GameState.velocidade_atual
 	cenario_spawner.mover_cenario(delta, velocidade_atual)
-	if pedra.visible:
-		pedra.mover(delta, velocidade_atual)
+	obstaculos.mover(delta, velocidade_atual)
+	if diretor.esta_ativo():
+		diretor.atualizar(delta)
+	elif not _fase_encerrada and obstaculos.esta_vazio():
+		# Comportamento antigo (fase sem ondas): um obstáculo por vez.
+		obstaculos.criar(GameState.PISTAS_X.pick_random())
 	player.atualizar(delta)
 	#ovni.atualizar(delta)
 	#_atualizar_projeteis(delta)
-	ovni.disparos_por_segundo(delta)
+	if not diretor.esta_ativo():
+		ovni.disparos_por_segundo(delta)
 
 
 #func _on_ovni_disparar(pista_x: float) -> void:
