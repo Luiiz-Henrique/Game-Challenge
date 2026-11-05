@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpejrm65ji5eh"]
 
 [ext_resource type="Texture2D" uid="uid://bs6wsdpvxjdkm" path="res://Features/Buttons/Ajustes 1.svg" id="1_ptb6p"]
-[ext_resource type="AudioStream" uid="uid://bxhq6jsr3rxng" path="res://Core/AudioService/Audio_colidir.mp3" id="2_gfvjv"]
+[ext_resource type="AudioStream" uid="uid://cxgdcymymiyoj" path="res://Core/AudioService/Audio_botoes.mp3" id="2_gfvjv"]
 
 [node name="Botao_ajustes" type="TextureButton" unique_id=980787844]
 offset_left = 79.0
@@ -13,5 +13,5 @@ texture_normal = ExtResource("1_ptb6p")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Audio_botao" type="AudioStreamPlayer" parent="." unique_id=1746622816]
+[node name="Audio_botao" type="AudioStreamPlayer" parent="." unique_id=718868483]
 stream = ExtResource("2_gfvjv")
