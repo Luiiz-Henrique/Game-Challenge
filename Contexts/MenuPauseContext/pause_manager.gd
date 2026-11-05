@@ -8,60 +8,58 @@ var som_mutado := false
 var musica_mutada := false
 
 # Índices dos barramentos
-var bus_master: int
 var bus_music: int
-var bus_ambience: int
 var bus_sfx: int
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-	# Localiza os barramentos
-	bus_master = AudioServer.get_bus_index("Master")
-	bus_music = AudioServer.get_bus_index("Music")
-	bus_ambience = AudioServer.get_bus_index("Ambience")
-	bus_sfx = AudioServer.get_bus_index("SFX")
+	_configurar_barramentos()
 
-	if bus_master == -1 or bus_music == -1 \
-	or bus_ambience == -1 or bus_sfx == -1:
-		push_error("Confira os barramentos de áudio.")
+	if bus_music == -1 or bus_sfx == -1:
+		push_error("Confira os barramentos Music e SFX no painel Áudio.")
 		return
 
-	# Configura os botões
-	_configurar_botao($BotaoSom, false)
-	_configurar_botao($BotaoMusic, false)
+	_configurar_botoes_audio()
+	_recuperar_estado_audio()
+	_conectar_sinais()
 
-	# Recupera os estados atuais
-	som_mutado = (
-		AudioServer.is_bus_mute(bus_ambience)
-		and AudioServer.is_bus_mute(bus_sfx)
-	)
 
+
+
+func _configurar_barramentos() -> void:
+	bus_music = AudioServer.get_bus_index("Music")
+	bus_sfx = AudioServer.get_bus_index("SFX")
+
+
+
+func _configurar_botoes_audio() -> void:
+	$BotaoSom.toggle_mode = true
+	$BotaoMusic.toggle_mode = true
+
+
+func _recuperar_estado_audio() -> void:
+	som_mutado = AudioServer.is_bus_mute(bus_sfx)
 	musica_mutada = AudioServer.is_bus_mute(bus_music)
 
-	# Atualiza o estado visual
 	$BotaoSom.set_pressed_no_signal(som_mutado)
 	$BotaoMusic.set_pressed_no_signal(musica_mutada)
 
-	# Conecta os sinais
-	$BotaoSom.toggled.connect(_on_botao_som_toggled)
-	$BotaoMusic.toggled.connect(_on_botao_music_toggled)
+
+func _conectar_sinais() -> void:
+	if not $BotaoSom.toggled.is_connected(_on_botao_som_toggled):
+		$BotaoSom.toggled.connect(_on_botao_som_toggled)
+
+	if not $BotaoMusic.toggled.is_connected(_on_botao_music_toggled):
+		$BotaoMusic.toggled.connect(_on_botao_music_toggled)
 
 
-func _configurar_botao(botao: TextureButton, estado: bool) -> void:
-	botao.toggle_mode = true
-	botao.set_pressed_no_signal(estado)
 
-
-# ==================================
-# PAUSE
-# ==================================
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") and not event.is_echo():
 		is_paused = !is_paused
-
 		get_tree().paused = is_paused
 
 		if is_paused:
@@ -70,9 +68,6 @@ func _input(event: InputEvent) -> void:
 			hide()
 
 
-# ==================================
-# RETOMAR
-# ==================================
 
 func _on_button_retomar_pause_pressed() -> void:
 	is_paused = false
@@ -80,14 +75,12 @@ func _on_button_retomar_pause_pressed() -> void:
 	hide()
 
 
-# ==================================
-# SAIR
-# ==================================
 
 func _on_button_sair_pause_pressed() -> void:
 	$ButtonSairPause.disabled = true
 
 	var som: AudioStreamPlayer = $ButtonSairPause/Audio_botoes
+
 	som.process_mode = Node.PROCESS_MODE_ALWAYS
 	som.reparent(get_tree().root)
 	som.finished.connect(som.queue_free)
@@ -100,20 +93,13 @@ func _on_button_sair_pause_pressed() -> void:
 	)
 
 
-# ==================================
-# BOTÃO SOM
-# ==================================
 
 func _on_botao_som_toggled(ativado: bool) -> void:
 	som_mutado = ativado
 
-	AudioServer.set_bus_mute(bus_ambience, ativado)
+
 	AudioServer.set_bus_mute(bus_sfx, ativado)
 
-
-# ==================================
-# BOTÃO MUSIC
-# ==================================
 
 func _on_botao_music_toggled(ativado: bool) -> void:
 	musica_mutada = ativado
