@@ -1,42 +1,33 @@
-[gd_resource type="Resource" script_class="PhaseConfig" format=3]
+[gd_resource type="Resource" script_class="PhaseConfig" format=3 uid="uid://bgqq18expjee4"]
 
 [ext_resource type="Script" uid="uid://bkdhgv17efjax" path="res://Core/Resources/PhaseConfig.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cojr1xeaowrr3" path="res://Features/Ovni/Projetil.tscn" id="2_jfe2r"]
 [ext_resource type="Texture2D" uid="uid://bqxb1wxrbv6xb" path="res://Features/Pedra/rocha.png" id="2_obstaculo"]
-[ext_resource type="Script" path="res://Core/Resources/OndaConfig.gd" id="3_onda"]
+[ext_resource type="Script" uid="uid://ce8hptbjqm6v4" path="res://Core/Resources/OndaConfig.gd" id="3_onda"]
 
 [sub_resource type="Resource" id="Onda_1"]
 script = ExtResource("3_onda")
 padroes = 3
-duracao_pressao = 20.0
-duracao_calma = 5.0
 intervalo_padroes = 1.4
 
 [sub_resource type="Resource" id="Onda_2"]
 script = ExtResource("3_onda")
 padroes = 9
-duracao_pressao = 20.0
-duracao_calma = 5.0
 intervalo_padroes = 1.6
 
 [sub_resource type="Resource" id="Onda_3"]
 script = ExtResource("3_onda")
 padroes = 15
-duracao_pressao = 20.0
-duracao_calma = 5.0
 intervalo_padroes = 1.35
 
 [sub_resource type="Resource" id="Onda_4"]
 script = ExtResource("3_onda")
 padroes = 14
-duracao_pressao = 20.0
-duracao_calma = 5.0
 intervalo_padroes = 1.25
 
 [sub_resource type="Resource" id="Onda_5"]
 script = ExtResource("3_onda")
 padroes = 25
-duracao_pressao = 20.0
-duracao_calma = 5.0
 intervalo_padroes = 1.4
 
 [sub_resource type="Resource" id="Onda_6"]
@@ -49,11 +40,9 @@ intervalo_padroes = 1.1
 [resource]
 script = ExtResource("1")
 velocidade_inicial = 320.0
-velocidade_maxima = 650.0
 tempo_ate_velocidade_maxima = 150.0
 velocidade_projetil_inicial = 520.0
 velocidade_projetil_maxima = 950.0
-tem_pedra = true
 textura_obstaculo = ExtResource("2_obstaculo")
-tempo_fase = 150.0
 ondas = Array[ExtResource("3_onda")]([SubResource("Onda_1"), SubResource("Onda_2"), SubResource("Onda_3"), SubResource("Onda_4"), SubResource("Onda_5"), SubResource("Onda_6")])
+tempo_fase = 150.0

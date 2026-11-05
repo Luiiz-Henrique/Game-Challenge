@@ -94,6 +94,10 @@ var _ordens: Array[Vector2] = []
 var _executando_ordem: bool = false
 var _relogio: float = 0.0
 
+## Nó onde os projéteis são criados. O GameContext injeta um nó desenhado
+## abaixo da nave e dos pop-ups; sem ele, vão para a raiz da cena.
+var container_projeteis: Node
+
 ## Intervalo entre disparos vai caindo até este piso durante a fase.
 var intervalo_minimo: float = 1.5
 var disparos_aceleram: bool = true
@@ -228,7 +232,8 @@ func _disparar_projetil() -> void:
 		func(): player_atingido.emit()
 	)
 
-	get_tree().current_scene.add_child(novo_projetil)
+	var destino: Node = container_projeteis if container_projeteis else get_tree().current_scene
+	destino.add_child(novo_projetil)
 
 	# Posiciona o projétil na nave.
 	novo_projetil.global_position = global_position

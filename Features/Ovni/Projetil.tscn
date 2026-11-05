@@ -13,7 +13,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_proj2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 8.0
 }]
@@ -31,6 +31,8 @@ sprite_frames = SubResource("SpriteFrames_projetil")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=130648954]
+light_mask = 0
+visibility_layer = 0
 position = Vector2(0, 12)
 shape = SubResource("CapsuleShape2D_abkkd")
 

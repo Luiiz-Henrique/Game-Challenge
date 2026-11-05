@@ -22,6 +22,7 @@ const CENA_MAPA := "res://Contexts/MapaContext/MapaContext.tscn"
 @onready var obstaculos: Obstaculos = $Obstaculos
 @onready var player: Player = $Player
 @onready var ovni: Ovni = $Ovni
+@onready var projeteis: Node2D = $Projeteis
 @onready var popup: TextureRect = $PopupColisao
 @onready var button_pause: TextureRect = $Pause
 
@@ -34,9 +35,12 @@ var _fase_encerrada: bool = false
 
 func _ready() -> void:
 	# Zera a dificuldade a cada corrida. Como o retry recarrega a cena,
-	# a velocidade volta ao início quando o jogador bate (estilo Subway Surfers).
 	GameState.reiniciar_corrida(config_fase)
 	add_child(diretor)
+	# Os tiros nascem em Projeteis, desenhado logo abaixo do Ovni. Os pop-ups
+	# vêm depois na árvore, então ficam por cima dos tiros.
+	move_child(projeteis, ovni.get_index())
+	ovni.container_projeteis = projeteis
 	diretor.criar_obstaculo.connect(_on_diretor_criar_obstaculo)
 	diretor.agendar_tiro.connect(_on_diretor_agendar_tiro)
 	_aplicar_config_fase()

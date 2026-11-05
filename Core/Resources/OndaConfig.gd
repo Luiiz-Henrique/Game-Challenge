@@ -6,7 +6,7 @@ extends Resource
 ## ondas na ordem em que acontecem; a última se repete se a fase durar mais.
 
 ## Padrões que o DiretorPadroes pode sortear nesta onda.
-@export_flags("Simples", "Tiro", "Combo", "Dupla", "Dupla + tiro") var padroes: int = 1
+@export_flags("Simples", "Tiro", "Combo", "Dupla", "Dupla + tiro", "Sequência") var padroes: int = 1
 
 ## Segundos de pressão, com padrões chegando ao jogador.
 @export var duracao_pressao: float = 20.0

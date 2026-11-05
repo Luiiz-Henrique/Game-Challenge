@@ -3,7 +3,7 @@ extends Node
 
 ## Feature que decide o que vem pela pista: obstáculos e tiros do Ovni.
 ## Em vez de sortear objetos soltos, sorteia padrões (Simples, Tiro, Combo,
-## Dupla...) dentro das ondas de pressão e calma do PhaseConfig. Não cria
+## Dupla, Sequência...) dentro das ondas de pressão e calma do PhaseConfig. Não cria
 ## nada: apenas emite pedidos (signal up) e o GameContext instancia os
 ## obstáculos e dá as ordens ao Ovni (call down).
 ##
@@ -22,6 +22,13 @@ const TIRO := 2
 const COMBO := 4
 const DUPLA := 8
 const DUPLA_TIRO := 16
+const SEQUENCIA := 32
+
+## Linhas de uma Sequência (sorteado entre os dois valores).
+const LINHAS_SEQUENCIA_MIN := 2
+const LINHAS_SEQUENCIA_MAX := 3
+## Pressão restante mínima (s) para começar uma Sequência sem invadir a calma.
+const FOLGA_SEQUENCIA := 3.0
 
 
 ## Um padrão sorteado: o que aparece em cada pista e quando chega ao jogador.
@@ -43,6 +50,8 @@ var _distancia_tiro: float = 0.0
 
 ## Próximo padrão já sorteado, esperando a hora de ser lançado.
 var _proximo: Padrao = null
+## Linhas restantes de uma Sequência em andamento, na ordem.
+var _fila_sequencia: Array[Padrao] = []
 ## Pistas livres do último padrão lançado e quando ele chega ao jogador.
 var _seguras_anteriores: Array[int] = [0, 1, 2]
 var _chegada_anterior: float = 1.0
@@ -67,6 +76,7 @@ func esta_ativo() -> bool:
 func parar() -> void:
 	_ativo = false
 	_proximo = null
+	_fila_sequencia.clear()
 
 
 ## Método público orquestrado pelo GameContext a cada frame (call down).
@@ -97,6 +107,11 @@ func _lancar(padrao: Padrao) -> void:
 
 
 func _sortear_padrao() -> Padrao:
+	# Linhas seguintes de uma Sequência: coladas na anterior, só com o tempo
+	# mínimo para andar uma pista. É aí que mora o zigue-zague.
+	if not _fila_sequencia.is_empty():
+		return _agendar(_fila_sequencia.pop_front(), _chegada_anterior)
+
 	var local: Dictionary = _localizar(_chegada_anterior)
 	if local.is_empty():
 		return null
@@ -118,10 +133,22 @@ func _sortear_padrao() -> Padrao:
 	for bit in [SIMPLES, TIRO, COMBO, DUPLA, DUPLA_TIRO]:
 		if onda.padroes & bit:
 			tipos.append(bit)
+	# Uma Sequência só começa se couber inteira antes da calma.
+	if (onda.padroes & SEQUENCIA) and base + FOLGA_SEQUENCIA <= local.fim_pressao:
+		tipos.append(SEQUENCIA)
 	if tipos.is_empty():
 		return null
 
-	var padrao := _montar(tipos.pick_random())
+	var tipo: int = tipos.pick_random()
+	if tipo == SEQUENCIA:
+		_montar_sequencia()
+		return _agendar(_fila_sequencia.pop_front(), base)
+	return _agendar(_montar(tipo), base)
+
+
+## Define quando o padrão chega ao jogador: o mais cedo possível a partir
+## de `base` sem quebrar nenhuma regra de justiça.
+func _agendar(padrao: Padrao, base: float) -> Padrao:
 	padrao.chegada = maxf(base, _chegada_anterior + _intervalo_minimo(_seguras_anteriores, padrao.seguras))
 	# Obstáculos precisam de tempo para descer da borda da tela.
 	padrao.chegada = maxf(padrao.chegada, _tempo + _antecedencia(padrao))
@@ -156,6 +183,24 @@ func _montar(tipo: int) -> Padrao:
 			padrao.tiro = pistas[0]
 			padrao.seguras.assign([pistas[2]])
 	return padrao
+
+
+## Sequência: 2 ou 3 linhas de dupla em que a única pista livre anda uma
+## pista por vez (zigue-zague). Nunca pula de uma ponta à outra.
+func _montar_sequencia() -> void:
+	var livre: int = randi_range(0, 2)
+	var passo: int = [-1, 1].pick_random()
+	for i in randi_range(LINHAS_SEQUENCIA_MIN, LINHAS_SEQUENCIA_MAX):
+		if i > 0:
+			if livre + passo < 0 or livre + passo > 2:
+				passo = -passo
+			livre += passo
+		var linha := Padrao.new()
+		for pista in 3:
+			if pista != livre:
+				linha.obstaculos.append(pista)
+		linha.seguras.assign([livre])
+		_fila_sequencia.append(linha)
 
 
 ## Regra 3: tempo mínimo entre dois padrões chegarem. O jogador espera o
@@ -194,8 +239,8 @@ func _velocidade_cenario() -> float:
 	return maxf(GameState.velocidade_atual, 1.0)
 
 
-## Onda em que o instante t cai e, se t estiver numa calma, quando ela
-## acaba (fim_calma = -1 quando t está na pressão). A última onda se
+## Onda em que o instante t cai, quando a pressão dela acaba e, se t estiver
+## numa calma, quando ela acaba (fim_calma = -1 na pressão). A última onda se
 ## repete até a fase terminar.
 func _localizar(t: float) -> Dictionary:
 	var ondas: Array[OndaConfig] = _config.ondas
@@ -209,7 +254,7 @@ func _localizar(t: float) -> Dictionary:
 		var fim_pressao: float = inicio + onda.duracao_pressao
 		var fim_calma: float = fim_pressao + onda.duracao_calma
 		if t < fim_calma or onda.duracao_pressao + onda.duracao_calma <= 0.0:
-			return {"onda": onda, "fim_calma": fim_calma if t >= fim_pressao else -1.0}
+			return {"onda": onda, "fim_pressao": fim_pressao, "fim_calma": fim_calma if t >= fim_pressao else -1.0}
 		inicio = fim_calma
 		indice += 1
 	return {}
