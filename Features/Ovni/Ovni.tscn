@@ -10,6 +10,8 @@ loop = true
 
 [node name="Ovni" type="Node2D" unique_id=735828122]
 physics_interpolation_mode = 1
+light_mask = 1015808
+visibility_layer = 983040
 script = ExtResource("1_ovni")
 metadata/_edit_vertical_guides_ = [-40.0, 41.0, 1.0]
 

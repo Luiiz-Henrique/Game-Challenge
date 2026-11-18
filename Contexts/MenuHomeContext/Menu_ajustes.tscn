@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bsytutl25c45a" path="res://Contexts/MenuHomeContext/moldura_de_madeira.svg" id="6_lyxm7"]
 [ext_resource type="PackedScene" uid="uid://c52c3i6mjcw1q" path="res://Features/Buttons/Botao_som.tscn" id="7_xcyci"]
 [ext_resource type="PackedScene" uid="uid://bm5c1ilrejy11" path="res://Features/Buttons/Botao_music.tscn" id="8_3yin7"]
+[ext_resource type="Texture2D" uid="uid://bkykdb00umc4g" path="res://Features/Buttons/Group 7.svg" id="8_jsebw"]
+[ext_resource type="Texture2D" uid="uid://c8jmr3f2dj302" path="res://Features/Buttons/Group 6-2.svg" id="10_eendf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcyci"]
 content_margin_top = 6.0
@@ -130,6 +132,8 @@ offset_left = 11.095978
 offset_top = 0.58099365
 offset_right = 11.207977
 offset_bottom = 1.1409912
+toggle_mode = true
+texture_pressed = ExtResource("8_jsebw")
 
 [node name="Botao_music_som" parent="." unique_id=1597482901 instance=ExtResource("8_3yin7")]
 layout_mode = 1
@@ -141,3 +145,5 @@ offset_left = 0.047973633
 offset_top = 1.0319977
 offset_right = 0.063964844
 offset_bottom = 0.0079956055
+toggle_mode = true
+texture_pressed = ExtResource("10_eendf")

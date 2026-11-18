@@ -16,7 +16,6 @@ const tela_morte = preload("res://Features/Pedra/Pedra.tscn")
 
 func _ready() -> void:
 	area_detecao.body_entered.connect(_on_area_2d_body_entered)
-	_reposicionar()
 
 
 
@@ -29,22 +28,10 @@ func configurar_textura(textura: Texture2D) -> void:
 	sprite.scale = Vector2.ONE * (largura_na_tela / textura.get_size().x)
 
 
-## Tira o obstáculo da fase: some da tela e deixa de colidir.
-func desativar() -> void:
-	hide()
-	process_mode = Node.PROCESS_MODE_DISABLED
-
-
-## Método público orquestrado pelo GameContext (call down).
+## Método público orquestrado pela feature Obstaculos (call down). Quem
+## posiciona e libera a pedra é a Obstaculos.
 func mover(delta: float, velocidade_atual: float) -> void:
 	position.y += velocidade_atual * delta
-	if position.y > get_viewport_rect().size.y + 100:
-		_reposicionar()
-
-
-func _reposicionar() -> void:
-	position.y = -100.0
-	position.x = float(GameState.PISTAS_X.pick_random())
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -38,12 +38,13 @@ autoplay = "correr"
 position = Vector2(0, 14.5)
 shape = SubResource("CapsuleShape2D_eaqf0")
 
-[node name="SomSwipe" type="AudioStreamPlayer" parent="." unique_id=933484785]
-stream = ExtResource("4_6ejaw")
-volume_db = -40.0
-bus = &"SFX"
-
 [node name="AudioCorrida" type="AudioStreamPlayer" parent="." unique_id=1678887488]
 process_mode = 1
 volume_db = -50.0
 bus = &"SFX"
+
+[node name="SomSwipe" type="AudioStreamPlayer" parent="." unique_id=1320590638]
+stream = ExtResource("4_6ejaw")
+volume_db = -25.0
+bus = &"SFX"
+playback_type = 1

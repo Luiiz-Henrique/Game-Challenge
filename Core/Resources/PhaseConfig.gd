@@ -21,6 +21,19 @@ extends Resource
 @export var textura_obstaculo: Texture2D
 @export var tem_ovni: bool = true
 
+@export_group("Padrões e ondas")
+## Linha do tempo da fase, na ordem. A última onda se repete até o fim.
+## Vazio = comportamento antigo (um obstáculo por vez e tiros por Timer).
+@export var ondas: Array[OndaConfig] = []
+## Segundos que o jogador leva para perceber e decidir para onde ir.
+@export var tempo_reacao: float = 0.3
+## Segundos para andar uma pista (atravessar a tela = 2x este valor).
+@export var tempo_por_pista: float = 0.25
+## Altura (px) em que obstáculo e jogador se sobrepõem ao passar um pelo outro.
+@export var altura_contato: float = 100.0
+## Segundos que o Ovni pisca antes de cada tiro.
+@export var aviso_tiro: float = 0.3
+
 @export_group("Barra / Objetivo")
 enum ModoBarra { PROGRESSO_TEMPO, VIDA_OVNI }
 @export var modo_barra: ModoBarra = ModoBarra.PROGRESSO_TEMPO

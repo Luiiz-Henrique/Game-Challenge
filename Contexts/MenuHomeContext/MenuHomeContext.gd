@@ -27,7 +27,6 @@ func _on_botao_jogar_pressed() -> void:
 	var destino := CENA_TUTORIAL if TutorialProgresso.deve_exibir() else CENA_MAPA
 	TransicaoTela.trocar_cena(get_tree(), destino)
 
-
 func _on_botao_ajustes_pressed() -> void:
 	botao_ajustes.disabled = true
 	TransicaoTela.trocar_cena(get_tree(), CENA_AJUSTES)

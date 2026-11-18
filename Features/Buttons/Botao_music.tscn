@@ -16,5 +16,5 @@ offset_bottom = 38.334
 texture_normal = ExtResource("1_5gpih")
 ignore_texture_size = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1298053198]
+[node name="Audio_botoes" type="AudioStreamPlayer" parent="." unique_id=1298053198]
 stream = ExtResource("4_wx22k")

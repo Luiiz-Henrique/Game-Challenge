@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qgsj51bwmb1p"]
 
 [ext_resource type="PackedScene" uid="uid://bsdo7fyicjbcr" path="res://Contexts/GameContext/GameContext.tscn" id="1_base"]
-[ext_resource type="Resource" path="res://Core/Resources/Phases/Fase3.tres" id="2_config"]
+[ext_resource type="Resource" uid="uid://d0bjvnirrwf34" path="res://Core/Resources/Phases/Fase3.tres" id="2_config"]
 [ext_resource type="PackedScene" uid="uid://bxwvgmj0qseiy" path="res://Features/Cenarios/CenarioFase3/Final/Fase3_12.tscn" id="f1"]
 [ext_resource type="PackedScene" uid="uid://cpk54q7ooftns" path="res://Features/Cenarios/CenarioFase3/Final/Fase3_13.tscn" id="f2"]
 [ext_resource type="PackedScene" uid="uid://byegae43xwe43" path="res://Features/Cenarios/CenarioFase3/Final/Fase3_14.tscn" id="f3"]
@@ -30,3 +30,11 @@ config_fase = ExtResource("2_config")
 usar_transicao = true
 lista_inicio = Array[PackedScene]([ExtResource("i1"), ExtResource("i2"), ExtResource("i3"), ExtResource("i4"), ExtResource("i5"), ExtResource("i6"), ExtResource("i7"), ExtResource("i8"), ExtResource("i9"), ExtResource("i10")])
 lista_fim = Array[PackedScene]([ExtResource("f1"), ExtResource("f2"), ExtResource("f3"), ExtResource("f4"), ExtResource("f5"), ExtResource("f6"), ExtResource("f7"), ExtResource("f8"), ExtResource("f9")])
+
+[node name="Ovni" parent="." index="3" unique_id=735828122]
+light_mask = 1015808
+visibility_layer = 1015808
+
+[node name="Pause" parent="." index="7" unique_id=1079135318]
+light_mask = 31744
+visibility_layer = 31744
